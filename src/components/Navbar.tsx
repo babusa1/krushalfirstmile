@@ -23,6 +23,16 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const scrollToRequestForm = () => {
+    const requestFormSection = document.getElementById('request-form-section');
+    if (requestFormSection) {
+      requestFormSection.scrollIntoView({ behavior: 'smooth' });
+      // Ensure form is shown
+      const event = new CustomEvent('showRequestForm');
+      document.dispatchEvent(event);
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -55,15 +65,7 @@ const Navbar = () => {
                 ? "bg-krushal-purple text-white hover:bg-krushal-brightPurple" 
                 : "bg-krushal-brightPurple text-white hover:bg-krushal-purple"
             )}
-            onClick={() => {
-              const requestFormSection = document.getElementById('request-form-section');
-              if (requestFormSection) {
-                requestFormSection.scrollIntoView({ behavior: 'smooth' });
-                // Ensure form is shown
-                const event = new CustomEvent('showRequestForm');
-                document.dispatchEvent(event);
-              }
-            }}
+            onClick={scrollToRequestForm}
           >
             List your agent
           </button>
@@ -98,21 +100,16 @@ const Navbar = () => {
           <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
           
-          <button 
-            className="w-full mt-2 px-4 py-2.5 bg-krushal-brightPurple text-white rounded-md font-medium hover:bg-krushal-purple transition-colors text-sm sm:text-base"
+          {/* List Your Agent as menu item instead of button */}
+          <MobileNavLink 
+            href="#" 
+            label="List your agent" 
             onClick={() => {
               setIsMobileMenuOpen(false);
-              const requestFormSection = document.getElementById('request-form-section');
-              if (requestFormSection) {
-                requestFormSection.scrollIntoView({ behavior: 'smooth' });
-                // Ensure form is shown
-                const event = new CustomEvent('showRequestForm');
-                document.dispatchEvent(event);
-              }
-            }}
-          >
-            List your agent
-          </button>
+              scrollToRequestForm();
+            }} 
+            highlight={true}
+          />
         </div>
       </div>
     </header>
@@ -143,16 +140,30 @@ interface MobileNavLinkProps {
   href: string;
   label: string;
   onClick: () => void;
+  highlight?: boolean;
 }
 
-const MobileNavLink = ({ href, label, onClick }: MobileNavLinkProps) => (
-  <Link
-    to={href}
-    className="text-krushal-darkPurple dark:text-white font-medium py-2 border-b border-gray-100 dark:border-gray-700 text-sm sm:text-base"
-    onClick={onClick}
-  >
-    {label}
-  </Link>
-);
+const MobileNavLink = ({ href, label, onClick, highlight }: MobileNavLinkProps) => {
+  if (href === "#" && highlight) {
+    return (
+      <button
+        className="w-full text-left text-krushal-purple dark:text-krushal-lightPurple font-medium py-2 border-b border-gray-100 dark:border-gray-700 text-sm sm:text-base"
+        onClick={onClick}
+      >
+        {label}
+      </button>
+    );
+  }
+  
+  return (
+    <Link
+      to={href}
+      className="text-krushal-darkPurple dark:text-white font-medium py-2 border-b border-gray-100 dark:border-gray-700 text-sm sm:text-base"
+      onClick={onClick}
+    >
+      {label}
+    </Link>
+  );
+};
 
 export default Navbar;
