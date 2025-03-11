@@ -1,0 +1,171 @@
+
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { X, Send, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
+
+interface ContactFormProps {
+  onClose: () => void;
+}
+
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+const initialFormData: FormData = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  message: ''
+};
+
+const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast.success("Your message has been sent successfully!");
+      onClose();
+    }, 1500);
+  };
+
+  return (
+    <div className="p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl font-bold text-deep-purple-600 dark:text-deep-purple-300">
+          Send us a Message
+        </h2>
+        <button
+          onClick={onClose}
+          className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+        >
+          <X className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+        </button>
+      </div>
+      
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-deep-purple-500 dark:bg-gray-700 dark:text-white text-sm"
+              placeholder="Enter your first name"
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-deep-purple-500 dark:bg-gray-700 dark:text-white text-sm"
+              placeholder="Enter your last name"
+            />
+          </div>
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-deep-purple-500 dark:bg-gray-700 dark:text-white text-sm"
+            placeholder="Enter your email address"
+          />
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-deep-purple-500 dark:bg-gray-700 dark:text-white text-sm"
+            placeholder="Enter your phone number"
+          />
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows={4}
+            className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-deep-purple-500 dark:bg-gray-700 dark:text-white text-sm"
+            placeholder="How can we help you?"
+          />
+        </div>
+        
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full flex items-center justify-center gap-2 px-6 py-2.5 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                <Send className="h-4 w-4" />
+                Send Message
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;

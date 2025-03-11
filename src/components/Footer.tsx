@@ -1,16 +1,23 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ContactForm from './ContactForm';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
+  const [showContactForm, setShowContactForm] = React.useState(false);
+
+  const toggleContactForm = () => {
+    setShowContactForm(!showContactForm);
+  };
 
   return (
     <footer className="bg-white dark:bg-krushal-darkPurple border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,6 +38,16 @@ const Footer: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               {t('footer.description')}
             </p>
+            
+            <div className="mt-4">
+              <button 
+                onClick={toggleContactForm}
+                className="px-4 py-2 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md transition-colors flex items-center gap-2 text-sm"
+              >
+                <Mail className="h-4 w-4" />
+                {t('footer.sendMessage')}
+              </button>
+            </div>
             
             <div className="flex space-x-4 pt-2">
               <SocialLink href="#" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
@@ -83,26 +100,52 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-krushal-purple dark:text-krushal-lightPurple mt-0.5" />
+                <MapPin className="h-5 w-5 text-deep-orange-500 dark:text-deep-orange-300 mt-0.5" />
                 <span className="text-gray-600 dark:text-gray-300 text-sm">
-                  123 Innovation Street, Tech Park, Bangalore, India
+                  L-148, 5TH Main Road<br />
+                  Sector 6, HSR Layout<br />
+                  Bengaluru, Karnataka 560102<br />
+                  India
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-krushal-purple dark:text-krushal-lightPurple" />
-                <a href="mailto:info@krushal.ai" className="text-gray-600 dark:text-gray-300 text-sm hover:text-krushal-purple dark:hover:text-krushal-lightPurple transition-colors">
-                  info@krushal.ai
-                </a>
+              <li className="flex flex-col space-y-2">
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-5 w-5 text-deep-orange-500 dark:text-deep-orange-300" />
+                  <a href="mailto:info@krushalconnect.com" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
+                    info@krushalconnect.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 ml-8">
+                  <a href="mailto:support@krushalconnect.com" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
+                    support@krushalconnect.com
+                  </a>
+                </div>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-krushal-purple dark:text-krushal-lightPurple" />
-                <a href="tel:+919876543210" className="text-gray-600 dark:text-gray-300 text-sm hover:text-krushal-purple dark:hover:text-krushal-lightPurple transition-colors">
-                  +91 9876 543 210
-                </a>
+              <li className="flex flex-col space-y-1">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5 text-deep-orange-500 dark:text-deep-orange-300" />
+                  <a href="tel:+918001234567" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
+                    +91 (800) 123-4567
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 ml-8">
+                  <span className="text-gray-500 dark:text-gray-400 text-xs">
+                    Mon-Fri: 9:00 AM - 6:00 PM IST
+                  </span>
+                </div>
               </li>
             </ul>
           </motion.div>
         </div>
+        
+        {/* Contact Form Modal */}
+        {showContactForm && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={toggleContactForm}>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+              <ContactForm onClose={toggleContactForm} />
+            </div>
+          </div>
+        )}
         
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -139,7 +182,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, label }) => (
   <li>
     <Link 
       to={href}
-      className="text-gray-600 dark:text-gray-300 text-sm hover:text-krushal-purple dark:hover:text-krushal-lightPurple transition-colors"
+      className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors"
     >
       {label}
     </Link>

@@ -74,6 +74,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.categories': 'Agent Categories',
     'footer.contactus': 'Contact Us',
     'footer.copyright': 'All rights reserved. First Mile as a Service',
+    'footer.sendMessage': 'Send us a Message',
     'notfound.title': '404',
     'notfound.message': 'Oops! Page not found',
     'notfound.return': 'Return to Home',
