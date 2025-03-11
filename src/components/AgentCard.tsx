@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -75,6 +74,13 @@ const AgentCard: React.FC<AgentCardProps> = ({
       
       // Education & Employment
       "Government Scholarships Advisor": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
+      
+      // Education & Skill Development - Updated with new images
+      "Government Scholarships Advisor": "/lovable-uploads/f567c812-08c5-49e0-9ac2-43fbd47c93ad.png",
+      "Free Online Courses Finder": "/lovable-uploads/c92d85bb-82ca-472e-872e-cc33c3fefcfc.png",
+      "Vocational Training Guide": "/lovable-uploads/a7886bf9-6c8c-4682-8474-f07d20448f9c.png",
+      "English Learning Assistant": "/lovable-uploads/6af6eed4-c8a7-4c4d-844d-b5e5447822eb.png",
+      "Skill Development & Certification Advisor": "/lovable-uploads/d985e960-ac61-4c84-b86f-bbb1dcb320cf.png",
     };
     
     return agentImages[agent.title];

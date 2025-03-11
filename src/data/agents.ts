@@ -1,4 +1,3 @@
-
 import { Agent } from '@/components/AgentCard';
 
 // Featured agents (Krushal Agents)
@@ -230,37 +229,41 @@ export const allAgents: Agent[] = [
     category: "Healthcare & Medicine",
     image: "/lovable-uploads/182cdf45-08d0-4bf7-923b-0d31c4334afb.png" // Added new image
   },
-  // Education & Skill Development
+  // Education & Skill Development - Updated with new images
   {
     id: "agent27",
     title: "Government Scholarships Advisor",
     description: "Helps individuals find and apply for government scholarships.",
     category: "Education & Skill Development",
-    image: "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png"
+    image: "/lovable-uploads/f567c812-08c5-49e0-9ac2-43fbd47c93ad.png"
   },
   {
     id: "agent28",
     title: "Free Online Courses Finder",
     description: "Assists in discovering free online courses for skill development.",
-    category: "Education & Skill Development"
+    category: "Education & Skill Development",
+    image: "/lovable-uploads/c92d85bb-82ca-472e-872e-cc33c3fefcfc.png"
   },
   {
     id: "agent29",
     title: "Vocational Training Guide",
     description: "Provides information about vocational training opportunities in various fields.",
-    category: "Education & Skill Development"
+    category: "Education & Skill Development",
+    image: "/lovable-uploads/a7886bf9-6c8c-4682-8474-f07d20448f9c.png"
   },
   {
     id: "agent30",
     title: "English Learning Assistant",
     description: "Offers resources and tips for learning and improving English language skills.",
-    category: "Education & Skill Development"
+    category: "Education & Skill Development",
+    image: "/lovable-uploads/6af6eed4-c8a7-4c4d-844d-b5e5447822eb.png"
   },
   {
     id: "agent31",
     title: "Skill Development & Certification Advisor",
     description: "Helps individuals find skill development programs and certifications to enhance career prospects.",
-    category: "Education & Skill Development"
+    category: "Education & Skill Development",
+    image: "/lovable-uploads/d985e960-ac61-4c84-b86f-bbb1dcb320cf.png"
   },
   // Employment & Livelihood
   {
