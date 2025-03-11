@@ -1,4 +1,3 @@
-
 import { Agent } from '@/components/AgentCard';
 
 // Featured agents (Krushal Agents)
@@ -200,13 +199,14 @@ export const allAgents: Agent[] = [
     title: "Free Medical Care Finder",
     description: "Helps individuals find free or affordable medical care facilities nearby.",
     category: "Healthcare & Medicine",
-    image: "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png"
+    image: "/lovable-uploads/020b7723-7f3b-4818-992f-0498b5b3e2c0.png"
   },
   {
     id: "agent23",
     title: "Common Disease Remedies Advisor",
     description: "Provides advice on common disease remedies and treatment options.",
-    category: "Healthcare & Medicine"
+    category: "Healthcare & Medicine",
+    image: "/lovable-uploads/f5045f36-6e61-4c40-8fea-d78f3007223b.png"
   },
   {
     id: "agent24",

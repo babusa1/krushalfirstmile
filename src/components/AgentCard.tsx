@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -55,9 +54,9 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Fertilizers & Pesticides Advisor": "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png",
       "Market Prices for Commodity": "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png",
       
-      // Healthcare - Updated with new image
-      "Conversational AI for Elders": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png",
-      "Free Medical Care Finder": "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png",
+      // Healthcare - Updated with new images
+      "Free Medical Care Finder": "/lovable-uploads/020b7723-7f3b-4818-992f-0498b5b3e2c0.png",
+      "Common Disease Remedies Advisor": "/lovable-uploads/f5045f36-6e61-4c40-8fea-d78f3007223b.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
       
       // Weather & Disaster - Updated with new images
