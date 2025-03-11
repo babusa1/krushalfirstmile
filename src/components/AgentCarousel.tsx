@@ -199,4 +199,34 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) =
   );
 };
 
+// Add the missing functions for navigation/autoplay
+const nextSlide = () => {
+  setCurrent(current === agents.length - 1 ? 0 : current + 1);
+};
+
+const prevSlide = () => {
+  setCurrent(current === 0 ? agents.length - 1 : current - 1);
+};
+
+const goToSlide = (index: number) => {
+  setCurrent(index);
+};
+
+// Start or reset autoplay
+const startAutoPlay = () => {
+  if (autoPlayRef.current) {
+    clearInterval(autoPlayRef.current);
+  }
+  
+  if (isAutoPlaying) {
+    autoPlayRef.current = setInterval(() => {
+      setCurrent(prev => (prev === agents.length - 1 ? 0 : prev + 1));
+    }, 5000);
+  }
+};
+
+// Pause autoplay on hover
+const handleMouseEnter = () => setIsAutoPlaying(false);
+const handleMouseLeave = () => setIsAutoPlaying(true);
+
 export default AgentCarousel;

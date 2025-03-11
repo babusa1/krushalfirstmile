@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
@@ -49,8 +48,6 @@ const Navbar = () => {
           <NavLink href="/about" label={t('nav.about')} isScrolled={isScrolled} />
           <NavLink href="/contact" label={t('nav.contact')} isScrolled={isScrolled} />
           
-          <LanguageSelector />
-          
           <button 
             className={cn(
               "px-4 py-2 rounded-md font-medium transition-all duration-300",
@@ -73,8 +70,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-2">
-          <LanguageSelector />
+        <div className="md:hidden flex items-center">
           <button
             onClick={toggleMobileMenu}
             className="text-krushal-darkPurple dark:text-white"
