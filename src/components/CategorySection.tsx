@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
@@ -23,7 +22,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
   
   const categories: Category[] = [
     {
-      id: "agriculture",
+      id: "Agriculture & Farming",
       name: t('category.agriculture'),
       description: "Best farming techniques, crop diseases, weather forecasts, government schemes, market prices, fertilizers & pesticides",
       icon: (
@@ -33,7 +32,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "livestock",
+      id: "Livestock & Dairy",
       name: t('category.livestock'),
       description: "Cattle, poultry, goat, and fish farming, animal diseases, veterinary care, dairy production, government subsidies",
       icon: (
@@ -43,7 +42,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "schemes",
+      id: "Government Schemes & Subsidies",
       name: t('category.schemes'),
       description: "MGNREGA, PM-Kisan, Kisan Credit Card, PMAY-Gramin, Ayushman Bharat, Mudra loans, Fasal Bima Yojana",
       icon: (
@@ -53,7 +52,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "healthcare",
+      id: "Healthcare & Medicine",
       name: t('category.healthcare'),
       description: "Free or affordable medical care, common disease remedies, nearest PHCs/CHCs, maternal & child health, vaccinations",
       icon: (
@@ -63,7 +62,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "education",
+      id: "Education & Skill Development",
       name: t('category.education'),
       description: "Government scholarships, free online courses, vocational training (IT, carpentry, tailoring), English learning",
       icon: (
@@ -75,7 +74,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "employment",
+      id: "Employment & Livelihood",
       name: t('category.employment'),
       description: "Government job vacancies (railways, teaching, police), private jobs, work-from-home, urban job migration",
       icon: (
@@ -85,7 +84,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "financial",
+      id: "Digital & Financial Services",
       name: t('category.financial'),
       description: "Online banking (UPI, Aadhaar-linked payments), KYC documentation, accessing govt portals (DigiLocker, UMANG), cybersecurity awareness",
       icon: (
@@ -95,7 +94,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "weather",
+      id: "Weather & Disaster Management",
       name: t('category.weather'),
       description: "Rainfall predictions, flood & drought preparedness, cyclone alerts, disaster relief funds",
       icon: (
@@ -105,7 +104,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
       )
     },
     {
-      id: "technology",
+      id: "Technology & Mobile Usage",
       name: t('category.technology'),
       description: "Smartphone usage for business & learning, social media (WhatsApp, Facebook, YouTube), internet connectivity",
       icon: (

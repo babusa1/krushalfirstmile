@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define available languages (just English for now)
@@ -88,7 +87,6 @@ const translations: Record<Language, Record<string, string>> = {
     'category.education': 'Education & Skill Development',
     'category.employment': 'Employment & Livelihood',
     'category.financial': 'Digital & Financial Services',
-    'category.women': 'Women & Self-Help Groups (SHGs)',
     'category.weather': 'Weather & Disaster Management',
     'category.technology': 'Technology & Mobile Usage',
     'category.governance': 'Local Governance & Legal Issues',
