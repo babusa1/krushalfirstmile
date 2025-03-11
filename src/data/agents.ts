@@ -104,21 +104,21 @@ export const allAgents: Agent[] = [
     title: "Weather Forecast Agent",
     description: "Delivers accurate, localized weather forecasts to help farmers plan their activities and protect crops from adverse conditions.",
     category: "Weather & Disaster Management",
-    image: "/lovable-uploads/be51a951-0119-48b1-9c3d-469b70770608.png"
+    image: "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png"
   },
   {
     id: "agent10",
     title: "Market Price Predictor",
     description: "Analyzes market trends and predicts future crop prices, helping farmers make informed decisions about when to sell their produce.",
     category: "Agriculture & Farming",
-    image: "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png"
+    image: "/lovable-uploads/2df351f7-015b-48ef-aaf1-6d155110e68a.png"
   },
   {
     id: "agent11",
     title: "Fertilizers & Pesticides Advisor",
     description: "Recommends appropriate fertilizers and pesticides based on crop type, soil condition, and specific farming needs.",
     category: "Agriculture & Farming",
-    image: "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png"
+    image: "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png"
   },
   // Livestock & Dairy
   {

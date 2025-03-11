@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -38,7 +39,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       
       // Financial Services
       "Technical Evaluation for Fund Management": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
-      "Market Price Predictor": "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png",
+      "Market Price Predictor": "/lovable-uploads/2df351f7-015b-48ef-aaf1-6d155110e68a.png",
       
       // Livestock & Dairy
       "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
@@ -51,7 +52,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       // Agriculture & Farming - Updated with new images
       "Farming Techniques Advisor": "/lovable-uploads/348533c2-cf7d-4b3c-8967-a3e37b29089f.png",
       "Crop Disease Identifier": "/lovable-uploads/e568fd53-774d-4af0-9e7b-28d880bbb771.png",
-      "Fertilizers & Pesticides Advisor": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
+      "Fertilizers & Pesticides Advisor": "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png",
       "Market Prices for Commodity": "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png",
       
       // Healthcare
@@ -60,7 +61,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
       
       // Weather & Disaster
-      "Weather Forecast Agent": "/lovable-uploads/be51a951-0119-48b1-9c3d-469b70770608.png",
+      "Weather Forecast Agent": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
       "Disaster Relief Advisor": "/lovable-uploads/b67ef5b1-f5f1-4545-91e0-4b3d520f694f.png",
       "Rainfall Predictor": "/lovable-uploads/e86db0e9-16ad-443e-b884-6429b7f44c17.png",
       "Flood & Drought Preparedness Advisor": "/lovable-uploads/b67ef5b1-f5f1-4545-91e0-4b3d520f694f.png",
@@ -83,7 +84,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Livestock & Dairy": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
       "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
       "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
-      "Weather & Disaster Management": "/lovable-uploads/be51a951-0119-48b1-9c3d-469b70770608.png",
+      "Weather & Disaster Management": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
       "Government Schemes & Subsidies": "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png",
       "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
