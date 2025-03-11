@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -65,9 +66,10 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Rainfall Predictor": "/lovable-uploads/c538b404-7d08-4a56-981c-6039b3fd5035.png",
       "Flood & Drought Preparedness Advisor": "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png",
       
-      // Government Schemes
+      // Government Schemes - Fixed the interchanged images
       "Government Subsidies Advisor": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png",
-      "Scheme Eligibility Checker": "/lovable-uploads/299a42d2-bab0-416b-a6c4-a93178515679.png", // Updated image
+      "Scheme Eligibility Checker": "/lovable-uploads/299a42d2-bab0-416b-a6c4-a93178515679.png",
+      "Application Assistant": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png",
       
       // Education & Employment
       "Government Scholarships Advisor": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
@@ -84,7 +86,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
       "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
       "Weather & Disaster Management": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
-      "Government Schemes & Subsidies": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png", // Updated image for government schemes
+      "Government Schemes & Subsidies": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png",
       "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
       "Women & Self-Help Groups (SHGs)": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the same image for SHGs category

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -49,9 +50,10 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     "Rainfall Predictor": "/lovable-uploads/c538b404-7d08-4a56-981c-6039b3fd5035.png",
     "Flood & Drought Preparedness Advisor": "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png",
     
-    // Government Schemes
+    // Government Schemes - Fixed the interchanged images
     "Government Subsidies Advisor": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png",
-    "Scheme Eligibility Checker": "/lovable-uploads/299a42d2-bab0-416b-a6c4-a93178515679.png", // Updated image
+    "Scheme Eligibility Checker": "/lovable-uploads/299a42d2-bab0-416b-a6c4-a93178515679.png",
+    "Application Assistant": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png",
     
     // Education & Employment
     "Government Scholarships Advisor": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
