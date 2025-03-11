@@ -36,7 +36,7 @@ export const featuredAgents: Agent[] = [
     title: "Milk Volume Predictor for Dairy Cows",
     description: "Krushal's smart-litres projects future milk volume for individual cows over the next 12 months. By analyzing breed, age, body condition, and production history, it helps dairies estimate logistics and plan resource allocation effectively.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/96faf64d-4be2-40b2-ac13-50727b7a4077.png",
+    image: "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png", // Updated image
     features: [
       "Predicts milk volume for 12 months in advance",
       "Analyzes cow's breed, age, and body condition",

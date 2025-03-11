@@ -43,7 +43,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       
       // Livestock & Dairy - Updated with new images
       "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
-      "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/96faf64d-4be2-40b2-ac13-50727b7a4077.png",
+      "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png", // Updated image
       "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
       "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png",
       "Animal Disease Identifier": "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png",
@@ -56,7 +56,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Market Prices for Commodity": "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png",
       
       // Healthcare - Updated with new image
-      "Conversational AI for Elders": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the new image
+      "Conversational AI for Elders": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png",
       "Free Medical Care Finder": "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
       
