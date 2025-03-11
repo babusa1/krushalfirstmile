@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,7 +17,7 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Map of agent titles to the specific images - Correctly mapped based on shared images
+  // Map of agent titles to the specific images - Updated Mortgage Document Extractor image
   const agentImages: Record<string, string> = {
     // Financial Services
     "Mortgage Document Extractor": "/lovable-uploads/b16423de-2102-4aa4-8a34-9a7893b13806.png",

@@ -31,7 +31,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
 }) => {
   const { t } = useLanguage();
 
-  // Map of agent titles to the specific images - Correctly mapped based on shared images
+  // Map of agent titles to the specific images - Updated Mortgage Document Extractor image
   const getAgentSpecificImage = () => {
     const agentImages: Record<string, string> = {
       // Financial Services
