@@ -140,21 +140,21 @@ export const allAgents: Agent[] = [
     title: "Government Subsidies Advisor",
     description: "Informs farmers about available government subsidies for livestock and dairy farming and guides them through the application process.",
     category: "Government Schemes & Subsidies",
-    image: "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png"
+    image: "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png" // Updated with correct image
   },
   {
     id: "agent15",
     title: "Veterinary Care Assistant",
     description: "Provides veterinary advice, connects farmers with nearby vets, and offers preventive care tips for livestock health.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png"
+    image: "/lovable-uploads/8552d548-83d8-406e-9e79-3b40992c62e5.png" // Updated with correct image
   },
   {
     id: "agent16",
     title: "Dairy Production Optimizer",
     description: "Monitors dairy production, tracks milk yield, and suggests ways to improve dairy farming efficiency and product quality.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png" // Updated with new image
+    image: "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png"
   },
   // Weather & Disaster Management - Updated with new images
   {

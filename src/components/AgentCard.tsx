@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -44,9 +45,9 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
       "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/96faf64d-4be2-40b2-ac13-50727b7a4077.png",
       "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
-      "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png", // Updated with new image
+      "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png",
       "Animal Disease Identifier": "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png",
-      "Veterinary Care Assistant": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png",
+      "Veterinary Care Assistant": "/lovable-uploads/8552d548-83d8-406e-9e79-3b40992c62e5.png", // Updated with correct image
       
       // Agriculture & Farming
       "Farming Techniques Advisor": "/lovable-uploads/348533c2-cf7d-4b3c-8967-a3e37b29089f.png",
@@ -61,12 +62,12 @@ const AgentCard: React.FC<AgentCardProps> = ({
       
       // Weather & Disaster - Updated with new images
       "Weather Forecast Agent": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
-      "Disaster Relief Advisor": "/lovable-uploads/305b3735-e1a4-4a43-b050-ec7a7f002e19.png", // Updated with new image
-      "Rainfall Predictor": "/lovable-uploads/c538b404-7d08-4a56-981c-6039b3fd5035.png", // Updated with new image
-      "Flood & Drought Preparedness Advisor": "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png", // Updated with new image
+      "Disaster Relief Advisor": "/lovable-uploads/305b3735-e1a4-4a43-b050-ec7a7f002e19.png",
+      "Rainfall Predictor": "/lovable-uploads/c538b404-7d08-4a56-981c-6039b3fd5035.png",
+      "Flood & Drought Preparedness Advisor": "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png",
       
       // Government Schemes
-      "Government Subsidies Advisor": "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png",
+      "Government Subsidies Advisor": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png", // Updated with correct image
       "Scheme Eligibility Checker": "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png",
       
       // Education & Employment
@@ -80,11 +81,11 @@ const AgentCard: React.FC<AgentCardProps> = ({
   const getCategoryImage = () => {
     const categoryImages: Record<string, string> = {
       "Digital & Financial Services": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
-      "Livestock & Dairy": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png", // Updated with new image
+      "Livestock & Dairy": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
       "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
       "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
       "Weather & Disaster Management": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
-      "Government Schemes & Subsidies": "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png",
+      "Government Schemes & Subsidies": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png", // Updated with correct image
       "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
       "Women & Self-Help Groups (SHGs)": "/lovable-uploads/ec8255f1-f6eb-420f-afdd-29bc8707fe54.png",
