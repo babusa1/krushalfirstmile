@@ -13,9 +13,10 @@ interface Category {
 
 interface CategorySectionProps {
   onCategoryClick: (category: string) => void;
+  onExploreCategory: (category: string) => void;
 }
 
-const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick }) => {
+const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onExploreCategory }) => {
   const { t } = useLanguage();
   
   const categories: Category[] = [
@@ -151,7 +152,13 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick }) =>
                   <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 line-clamp-3">
                     {category.description}
                   </p>
-                  <div className="flex items-center text-primary dark:text-krushal-lightPurple font-medium text-xs sm:text-sm">
+                  <div 
+                    className="flex items-center text-primary dark:text-krushal-lightPurple font-medium text-xs sm:text-sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onExploreCategory(category.id);
+                    }}
+                  >
                     <span>{t('categories.explore')}</span>
                     <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
