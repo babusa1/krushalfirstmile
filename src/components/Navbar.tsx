@@ -31,6 +31,8 @@ const Navbar = () => {
       const event = new CustomEvent('showRequestForm');
       document.dispatchEvent(event);
     }
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -76,7 +78,7 @@ const Navbar = () => {
         {/* Mobile Menu Button - Only visible on mobile */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden text-krushal-darkPurple dark:text-white"
+          className="md:hidden flex items-center justify-center h-10 w-10 text-krushal-darkPurple dark:text-white"
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? (
@@ -88,28 +90,24 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div
-        className={cn(
-          "fixed top-[60px] sm:top-[72px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden transition-transform duration-300 ease-in-out z-40",
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        )}
-      >
-        <nav className="container mx-auto py-4 flex flex-col space-y-4">
-          <MobileNavLink href="/" label={t('nav.home')} onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink href="/agents" label={t('nav.agents')} onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink 
-            href="#" 
-            label={t('nav.list_agent') || "List your agent"}
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              scrollToRequestForm();
-            }}
-            highlight={true}
-          />
-        </nav>
-      </div>
+      {isMobileMenuOpen && (
+        <div
+          className="fixed top-[60px] sm:top-[72px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden z-40"
+        >
+          <nav className="container mx-auto py-4 flex flex-col space-y-4">
+            <MobileNavLink href="/" label={t('nav.home')} onClick={() => setIsMobileMenuOpen(false)} />
+            <MobileNavLink href="/agents" label={t('nav.agents')} onClick={() => setIsMobileMenuOpen(false)} />
+            <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
+            <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
+            <button
+              className="w-full text-left text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-krushal-purple dark:text-krushal-lightPurple"
+              onClick={scrollToRequestForm}
+            >
+              {t('nav.list_agent') || "List your agent"}
+            </button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
@@ -138,21 +136,9 @@ interface MobileNavLinkProps {
   href: string;
   label: string;
   onClick: () => void;
-  highlight?: boolean;
 }
 
-const MobileNavLink = ({ href, label, onClick, highlight }: MobileNavLinkProps) => {
-  if (href === "#" && highlight) {
-    return (
-      <button
-        className="w-full text-left text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-krushal-purple dark:text-krushal-lightPurple"
-        onClick={onClick}
-      >
-        {label}
-      </button>
-    );
-  }
-  
+const MobileNavLink = ({ href, label, onClick }: MobileNavLinkProps) => {
   return (
     <Link
       to={href}
