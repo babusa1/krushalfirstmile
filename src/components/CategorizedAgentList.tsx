@@ -28,7 +28,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
 
   // Update selected category when initialSelectedCategory changes
   useEffect(() => {
-    if (initialSelectedCategory !== null) {
+    if (initialSelectedCategory !== undefined) {
       setSelectedCategory(initialSelectedCategory);
     }
   }, [initialSelectedCategory]);

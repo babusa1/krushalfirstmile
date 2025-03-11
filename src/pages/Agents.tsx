@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -36,11 +36,13 @@ const Agents = () => {
             className="text-center"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-krushal-darkPurple dark:text-white leading-tight mb-4">
-              {t('available.title')}
+              {categoryParam ? `${categoryParam} Agents` : t('available.title')}
             </h1>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Browse our complete collection of AI agents designed to assist with various tasks across multiple domains.
+              {categoryParam 
+                ? `Browse our collection of AI agents designed for ${categoryParam}.`
+                : 'Browse our complete collection of AI agents designed to assist with various tasks across multiple domains.'}
             </p>
           </motion.div>
         </div>
@@ -52,7 +54,7 @@ const Agents = () => {
           <CategorizedAgentList 
             agents={allAgents} 
             onAgentClick={handleAgentClick} 
-            categoryTitle={t('available.title')}
+            categoryTitle={categoryParam ? `${categoryParam} Agents` : t('available.title')}
             searchPlaceholder={t('available.search')}
             allCategoriesLabel={t('available.all')}
             noAgentsMessage={t('available.none')}

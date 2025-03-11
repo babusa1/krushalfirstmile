@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AgentCarousel from '@/components/AgentCarousel';
@@ -14,6 +15,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { allAgents, featuredAgents } from '@/data/agents';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -40,6 +42,10 @@ const Index = () => {
     if (agentListSection) {
       agentListSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleExploreCategory = (category: string) => {
+    navigate(`/agents?category=${encodeURIComponent(category)}`);
   };
 
   const toggleRequestForm = () => {
@@ -143,7 +149,10 @@ const Index = () => {
 
       {/* Category Section */}
       <section className="py-16 px-6 bg-white dark:bg-gray-900">
-        <CategorySection onCategoryClick={handleCategoryClick} />
+        <CategorySection 
+          onCategoryClick={handleCategoryClick} 
+          onExploreCategory={handleExploreCategory}
+        />
       </section>
 
       {/* Agent Request Form */}
