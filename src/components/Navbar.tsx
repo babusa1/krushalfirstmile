@@ -41,7 +41,9 @@ const Navbar = () => {
           : 'bg-transparent'
       )}
     >
+      {/* Main navbar container */}
       <div className="container mx-auto flex items-center justify-between">
+        {/* Logo - same for both mobile and desktop */}
         <Link to="/" className="flex items-center">
           <img
             src="/lovable-uploads/f39e4e62-303a-4211-8623-78d6a814b86c.png"
@@ -50,7 +52,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - hidden on mobile */}
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
           <NavLink href="/" label={t('nav.home')} isScrolled={isScrolled} />
           <NavLink href="/agents" label={t('nav.agents')} isScrolled={isScrolled} />
@@ -73,13 +75,13 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden text-krushal-darkPurple dark:text-white p-1"
+          className="md:hidden text-krushal-darkPurple dark:text-white"
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? (
-            <X className="h-5 w-5 sm:h-6 sm:w-6" />
+            <X className="h-6 w-6" />
           ) : (
-            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+            <Menu className="h-6 w-6" />
           )}
         </button>
       </div>
@@ -87,11 +89,11 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <div
         className={cn(
-          "fixed top-[60px] sm:top-[76px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden transition-transform duration-300 ease-in-out z-40",
+          "fixed top-[60px] sm:top-[72px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden transition-transform duration-300 ease-in-out z-40",
           isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <div className="container mx-auto py-3 px-4 sm:px-6 flex flex-col space-y-3">
+        <nav className="container mx-auto py-4 flex flex-col space-y-4">
           <MobileNavLink href="/" label={t('nav.home')} onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink href="/agents" label={t('nav.agents')} onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
@@ -102,10 +104,10 @@ const Navbar = () => {
             onClick={() => {
               setIsMobileMenuOpen(false);
               scrollToRequestForm();
-            }} 
+            }}
             highlight={true}
           />
-        </div>
+        </nav>
       </div>
     </header>
   );
