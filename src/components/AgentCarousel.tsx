@@ -17,13 +17,12 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Map of agent titles to the specific images you shared
-  const agentImages = {
+  // Map of agent titles to the specific images - Correctly mapped based on shared images
+  const agentImages: Record<string, string> = {
     // Financial Services
     "Mortgage Document Extractor": "/lovable-uploads/4dff860c-4af6-41b2-a63b-c51f402a5462.png",
     "Technical Evaluation for Fund Management": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
     "Market Price Predictor": "/lovable-uploads/4b27cae2-5f77-4c71-a509-a84b877e1fee.png",
-    "Market Prices for Commodity": "/lovable-uploads/4b27cae2-5f77-4c71-a509-a84b877e1fee.png",
     
     // Livestock & Dairy
     "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/6b4a6161-e57e-4214-ba6e-ca2ed4748e70.png",
@@ -35,6 +34,7 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     "Farming Techniques Advisor": "/lovable-uploads/831d6630-2414-4d70-a085-368ab8eb7154.png",
     "Crop Disease Identifier": "/lovable-uploads/0232c051-75a9-4397-a516-0512dc84422d.png",
     "Fertilizers & Pesticides Advisor": "/lovable-uploads/9730fba6-a832-48d2-a0c3-1b373edabcec.png",
+    "Market Prices for Commodity": "/lovable-uploads/4b27cae2-5f77-4c71-a509-a84b877e1fee.png",
     
     // Healthcare
     "Conversational AI for Elders": "/lovable-uploads/ec8255f1-f6eb-420f-afdd-29bc8707fe54.png",
@@ -58,10 +58,10 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
   // Apply appropriate image to each agent
   const enhancedAgents = agents.map(agent => ({
     ...agent,
-    image: agent.image || agentImages[agent.title as keyof typeof agentImages] || 
+    image: agent.image || agentImages[agent.title] || 
            // Fallback images by category
            (() => {
-              const categoryFallbacks = {
+              const categoryFallbacks: Record<string, string> = {
                 "Digital & Financial Services": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
                 "Livestock & Dairy": "/lovable-uploads/6b4a6161-e57e-4214-ba6e-ca2ed4748e70.png",
                 "Agriculture & Farming": "/lovable-uploads/9730fba6-a832-48d2-a0c3-1b373edabcec.png",
@@ -74,7 +74,7 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
                 "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png",
                 "Local Governance & Legal Issues": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png"
               };
-              return categoryFallbacks[agent.category as keyof typeof categoryFallbacks] || 
+              return categoryFallbacks[agent.category] || 
                      "/lovable-uploads/45ee1443-ab39-4200-a1ad-13d4b6fb77ae.png"; // Default image
            })()
   }));
