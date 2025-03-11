@@ -44,6 +44,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     setTimeout(() => {
       setIsSubmitting(false);
       toast.success("Your message has been sent successfully!");
+      setFormData(initialFormData); // Reset the form
       onClose();
     }, 1500);
   };
