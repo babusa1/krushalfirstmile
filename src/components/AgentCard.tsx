@@ -85,6 +85,13 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Work-from-Home Job Guide": "/lovable-uploads/2d39fce9-577f-4190-9abb-91c37f6cfceb.png",
       "Urban Job Migration Assistant": "/lovable-uploads/e8776c9c-13de-406a-9030-0270d9c5173d.png",
       "Freelance Opportunities Advisor": "/lovable-uploads/de49edb5-ee4d-4713-880e-6323e37ace98.png",
+      
+      // Local Governance & Legal Issues - New images added
+      "Land Records & Property Disputes Advisor": "/lovable-uploads/d710bda7-8106-4e49-82c1-0ca873d23f8b.png",
+      "RTI & Grievance Redressal Agent": "/lovable-uploads/7d6b08d2-c6e2-4475-ad49-9f747a2e0caa.png",
+      "Village Development Project Assistant": "/lovable-uploads/5f2d27db-914f-41a8-acd2-3629b8430b34.png",
+      "Legal Aid & Property Law Advisor": "/lovable-uploads/520da880-f93b-48a0-97ff-1f12c27a759e.png",
+      "Panchayat and Local Governance Advisor": "/lovable-uploads/90d4f459-e479-4a3c-a935-a1fa00bfeebe.png"
     };
     
     return agentImages[agent.title];
@@ -103,7 +110,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
       "Women & Self-Help Groups (SHGs)": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the same image for SHGs category
       "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png",
-      "Local Governance & Legal Issues": "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png"
+      "Local Governance & Legal Issues": "/lovable-uploads/90d4f459-e479-4a3c-a935-a1fa00bfeebe.png" // Updated to use one of the new images as category image
     };
     
     return categoryImages[agent.category] || "/lovable-uploads/45ee1443-ab39-4200-a1ad-13d4b6fb77ae.png"; // Default image

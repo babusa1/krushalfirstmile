@@ -394,35 +394,40 @@ export const allAgents: Agent[] = [
     description: "Helps individuals learn basic and advanced technology skills to improve personal and professional life.",
     category: "Technology & Mobile Usage"
   },
-  // Local Governance & Legal Issues
+  // Local Governance & Legal Issues - Updated with new images
   {
     id: "agent52",
     title: "Land Records & Property Disputes Advisor",
     description: "Helps with checking land records and resolving property disputes.",
-    category: "Local Governance & Legal Issues"
+    category: "Local Governance & Legal Issues",
+    image: "/lovable-uploads/d710bda7-8106-4e49-82c1-0ca873d23f8b.png"
   },
   {
     id: "agent53",
     title: "RTI & Grievance Redressal Agent",
     description: "Assists individuals in filing RTIs (Right to Information) and resolving grievances.",
-    category: "Local Governance & Legal Issues"
+    category: "Local Governance & Legal Issues",
+    image: "/lovable-uploads/7d6b08d2-c6e2-4475-ad49-9f747a2e0caa.png"
   },
   {
     id: "agent54",
     title: "Village Development Project Assistant",
     description: "Provides support and information on local village development projects and initiatives.",
-    category: "Local Governance & Legal Issues"
+    category: "Local Governance & Legal Issues",
+    image: "/lovable-uploads/5f2d27db-914f-41a8-acd2-3629b8430b34.png"
   },
   {
     id: "agent55",
     title: "Legal Aid & Property Law Advisor",
     description: "Offers legal advice on property matters and disputes, including guidance on local laws.",
-    category: "Local Governance & Legal Issues"
+    category: "Local Governance & Legal Issues",
+    image: "/lovable-uploads/520da880-f93b-48a0-97ff-1f12c27a759e.png"
   },
   {
     id: "agent56",
     title: "Panchayat and Local Governance Advisor",
     description: "Offers information and advice on local governance, including the panchayat system.",
-    category: "Local Governance & Legal Issues"
+    category: "Local Governance & Legal Issues",
+    image: "/lovable-uploads/90d4f459-e479-4a3c-a935-a1fa00bfeebe.png"
   }
 ];
