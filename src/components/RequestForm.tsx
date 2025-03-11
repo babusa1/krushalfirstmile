@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const categories = [
   "Agriculture & Farming",
@@ -40,6 +41,7 @@ const RequestForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -76,7 +78,7 @@ const RequestForm: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white mb-3"
         >
-          Submit Your Agent
+          {t('form.title')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -84,7 +86,7 @@ const RequestForm: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-gray-600 dark:text-gray-300"
         >
-          Share your AI agent with us, and we'll evaluate it for potential inclusion in our first mile modernization initiative.
+          {t('form.description')}
         </motion.p>
       </div>
 
@@ -98,7 +100,7 @@ const RequestForm: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Your Name
+              {t('form.name')}
             </label>
             <input
               type="text"
@@ -108,13 +110,13 @@ const RequestForm: React.FC = () => {
               onChange={handleChange}
               required
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
-              placeholder="John Doe"
+              placeholder={t('form.placeholder.name')}
             />
           </div>
           
           <div className="space-y-2">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Email Address
+              {t('form.email')}
             </label>
             <input
               type="email"
@@ -124,7 +126,7 @@ const RequestForm: React.FC = () => {
               onChange={handleChange}
               required
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
-              placeholder="your@email.com"
+              placeholder={t('form.placeholder.email')}
             />
           </div>
         </div>
@@ -132,7 +134,7 @@ const RequestForm: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label htmlFor="agentName" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Agent Name
+              {t('form.agentName')}
             </label>
             <input
               type="text"
@@ -142,13 +144,13 @@ const RequestForm: React.FC = () => {
               onChange={handleChange}
               required
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
-              placeholder="Smart Farm Assistant"
+              placeholder={t('form.placeholder.agentName')}
             />
           </div>
           
           <div className="space-y-2">
             <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Agent Category
+              {t('form.agentCategory')}
             </label>
             <select
               id="category"
@@ -158,7 +160,7 @@ const RequestForm: React.FC = () => {
               required
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
             >
-              <option value="">Select a category</option>
+              <option value="">{t('form.placeholder.category')}</option>
               {categories.map(category => (
                 <option key={category} value={category}>
                   {category}
@@ -170,7 +172,7 @@ const RequestForm: React.FC = () => {
         
         <div className="space-y-2">
           <label htmlFor="agentDescription" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Agent Description
+            {t('form.agentDescription')}
           </label>
           <textarea
             id="agentDescription"
@@ -180,13 +182,13 @@ const RequestForm: React.FC = () => {
             required
             rows={4}
             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
-            placeholder="Describe what your agent does and how it can help people in rural areas..."
+            placeholder={t('form.placeholder.description')}
           />
         </div>
         
         <div className="space-y-2">
           <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Contact Number (optional)
+            {t('form.contactNumber')}
           </label>
           <input
             type="tel"
@@ -195,7 +197,7 @@ const RequestForm: React.FC = () => {
             value={formData.contactNumber}
             onChange={handleChange}
             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
-            placeholder="+91 9876543210"
+            placeholder={t('form.placeholder.contact')}
           />
         </div>
         
@@ -208,20 +210,20 @@ const RequestForm: React.FC = () => {
             {isSubmitting ? (
               <span className="flex items-center justify-center">
                 <Loader2 className="h-5 w-5 mr-2 animate-spin" />
-                Processing...
+                {t('form.processing')}
               </span>
             ) : isSubmitted ? (
               <span className="flex items-center justify-center">
                 <Check className="h-5 w-5 mr-2" />
-                Submitted Successfully
+                {t('form.success')}
               </span>
             ) : (
-              "Submit Agent for Evaluation"
+              t('form.submit')
             )}
           </button>
           
           <p className="text-xs text-center mt-4 text-gray-500 dark:text-gray-400">
-            We'll review your submission and get back to you within 24 hours.
+            {t('form.note')}
           </p>
         </div>
       </motion.form>

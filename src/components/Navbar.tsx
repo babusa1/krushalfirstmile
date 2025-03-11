@@ -3,10 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,10 +44,12 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink href="/" label="Home" isScrolled={isScrolled} />
-          <NavLink href="/agents" label="Agents" isScrolled={isScrolled} />
-          <NavLink href="/about" label="About Us" isScrolled={isScrolled} />
-          <NavLink href="/contact" label="Contact" isScrolled={isScrolled} />
+          <NavLink href="/" label={t('nav.home')} isScrolled={isScrolled} />
+          <NavLink href="/agents" label={t('nav.agents')} isScrolled={isScrolled} />
+          <NavLink href="/about" label={t('nav.about')} isScrolled={isScrolled} />
+          <NavLink href="/contact" label={t('nav.contact')} isScrolled={isScrolled} />
+          
+          <LanguageSelector />
           
           <button 
             className={cn(
@@ -63,22 +68,25 @@ const Navbar = () => {
               }
             }}
           >
-            Submit Agent
+            {t('nav.submit')}
           </button>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMobileMenu}
-          className="md:hidden text-krushal-darkPurple dark:text-white"
-          aria-label="Toggle Menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        <div className="md:hidden flex items-center space-x-2">
+          <LanguageSelector />
+          <button
+            onClick={toggleMobileMenu}
+            className="text-krushal-darkPurple dark:text-white"
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -89,10 +97,10 @@ const Navbar = () => {
         )}
       >
         <div className="container mx-auto py-4 px-6 flex flex-col space-y-4">
-          <MobileNavLink href="/" label="Home" onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink href="/agents" label="Agents" onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink href="/about" label="About Us" onClick={() => setIsMobileMenuOpen(false)} />
-          <MobileNavLink href="/contact" label="Contact" onClick={() => setIsMobileMenuOpen(false)} />
+          <MobileNavLink href="/" label={t('nav.home')} onClick={() => setIsMobileMenuOpen(false)} />
+          <MobileNavLink href="/agents" label={t('nav.agents')} onClick={() => setIsMobileMenuOpen(false)} />
+          <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
+          <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
           
           <button 
             className="w-full mt-4 px-4 py-3 bg-krushal-brightPurple text-white rounded-md font-medium hover:bg-krushal-purple transition-colors"
@@ -107,7 +115,7 @@ const Navbar = () => {
               }
             }}
           >
-            Submit Agent
+            {t('nav.submit')}
           </button>
         </div>
       </div>

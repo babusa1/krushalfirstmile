@@ -7,9 +7,20 @@ import AgentCard, { Agent } from './AgentCard';
 interface AgentListProps {
   agents: Agent[];
   onAgentClick: (agent: Agent) => void;
+  categoryTitle?: string;
+  searchPlaceholder?: string;
+  allCategoriesLabel?: string;
+  noAgentsMessage?: string;
 }
 
-const CategorizedAgentList: React.FC<AgentListProps> = ({ agents, onAgentClick }) => {
+const CategorizedAgentList: React.FC<AgentListProps> = ({ 
+  agents, 
+  onAgentClick,
+  categoryTitle = "Available Agents",
+  searchPlaceholder = "Search agents...",
+  allCategoriesLabel = "All Categories",
+  noAgentsMessage = "No agents found matching your criteria."
+}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -35,7 +46,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({ agents, onAgentClick }
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white">
-              Available Agents
+              {categoryTitle}
             </h2>
             
             <div className="relative w-full md:w-1/3">
@@ -44,7 +55,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({ agents, onAgentClick }
               </div>
               <input
                 type="text"
-                placeholder="Search agents..."
+                placeholder={searchPlaceholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-krushal-purple dark:bg-gray-800 dark:text-white"
@@ -61,7 +72,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({ agents, onAgentClick }
                   : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
               }`}
             >
-              All Categories
+              {allCategoriesLabel}
             </button>
             
             {categories.map(category => (
@@ -93,7 +104,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({ agents, onAgentClick }
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600 dark:text-gray-300">No agents found matching your criteria.</p>
+            <p className="text-gray-600 dark:text-gray-300">{noAgentsMessage}</p>
           </div>
         )}
       </div>

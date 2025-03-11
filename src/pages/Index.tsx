@@ -9,6 +9,7 @@ import CategorizedAgentList from '@/components/CategorizedAgentList';
 import RequestForm from '@/components/RequestForm';
 import { Agent } from '@/components/AgentCard';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Mock data for featured agents
 const featuredAgents: Agent[] = [
@@ -179,6 +180,7 @@ const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [showRequestForm, setShowRequestForm] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Listen for custom event to show the request form
@@ -248,11 +250,11 @@ const Index = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-krushal-darkPurple dark:text-white leading-tight">
-                First Mile Modernization
+                {t('hero.title')}
               </h1>
               
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                We methodically unlock hidden value in anchor value chains, catalyzing higher earnings for both producers and offtakers. Our approach extends to adjacent value chains, modernizing local ecosystems.
+                {t('hero.description')}
               </p>
               
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
@@ -260,14 +262,14 @@ const Index = () => {
                   className="px-6 py-3 bg-krushal-purple text-white rounded-md font-medium hover:bg-krushal-brightPurple transition-colors shadow-md hover:shadow-lg"
                   onClick={scrollToRequestForm}
                 >
-                  Submit Your Agent
+                  {t('hero.submit')}
                 </button>
                 
                 <a 
                   href="#featured-agents"
                   className="px-6 py-3 border border-krushal-purple text-krushal-purple rounded-md font-medium hover:bg-krushal-purple/10 transition-colors flex items-center justify-center"
                 >
-                  Explore Agents
+                  {t('hero.explore')}
                 </a>
               </div>
             </motion.div>
@@ -301,7 +303,7 @@ const Index = () => {
               href="#featured-agents"
               className="inline-flex flex-col items-center text-krushal-purple dark:text-krushal-lightPurple hover:text-krushal-brightPurple dark:hover:text-white transition-colors"
             >
-              <span className="text-sm font-medium mb-2">Discover Our AI Agents</span>
+              <span className="text-sm font-medium mb-2">{t('hero.discover')}</span>
               <ChevronDown className="h-6 w-6 animate-bounce" />
             </a>
           </motion.div>
@@ -318,10 +320,10 @@ const Index = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
-              Featured Krushal Agents
+              {t('featured.title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Our AI agents are designed to modernize first mile operations, improving productivity and access in rural economies.
+              {t('featured.description')}
             </p>
           </motion.div>
 
@@ -350,10 +352,10 @@ const Index = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
-              Submit Your Agent
+              {t('form.title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Have an AI agent that could help with first mile modernization? Share it with us for evaluation.
+              {t('form.description')}
             </p>
           </motion.div>
 
@@ -367,6 +369,10 @@ const Index = () => {
           <CategorizedAgentList 
             agents={allAgents} 
             onAgentClick={handleAgentClick} 
+            categoryTitle={t('available.title')}
+            searchPlaceholder={t('available.search')}
+            allCategoriesLabel={t('available.all')}
+            noAgentsMessage={t('available.none')}
           />
         </div>
       </section>

@@ -3,6 +3,7 @@ import React from 'react';
 import { X } from 'lucide-react';
 import { Agent } from './AgentCard';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface AgentDetailsModalProps {
   agent: Agent | null;
@@ -11,6 +12,8 @@ interface AgentDetailsModalProps {
 }
 
 const AgentDetailsModal: React.FC<AgentDetailsModalProps> = ({ agent, isOpen, onClose }) => {
+  const { t } = useLanguage();
+  
   if (!agent) return null;
 
   return (
@@ -73,7 +76,7 @@ const AgentDetailsModal: React.FC<AgentDetailsModalProps> = ({ agent, isOpen, on
                   
                   {agent.features && agent.features.length > 0 && (
                     <div className="mt-6">
-                      <h3 className="text-lg font-semibold mb-3 text-krushal-darkPurple dark:text-white">Key Features</h3>
+                      <h3 className="text-lg font-semibold mb-3 text-krushal-darkPurple dark:text-white">{t('modal.features')}</h3>
                       <ul className="list-disc pl-5 space-y-2">
                         {agent.features.map((feature, index) => (
                           <li key={index}>{feature}</li>
@@ -85,11 +88,11 @@ const AgentDetailsModal: React.FC<AgentDetailsModalProps> = ({ agent, isOpen, on
                 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <button className="px-6 py-3 bg-krushal-purple text-white rounded-md font-medium hover:bg-krushal-brightPurple transition-colors shadow-sm hover:shadow-md">
-                    Try This Agent
+                    {t('modal.try')}
                   </button>
                   
                   <button className="px-6 py-3 border border-krushal-purple text-krushal-purple rounded-md font-medium hover:bg-krushal-purple/10 transition-colors">
-                    Request More Info
+                    {t('modal.info')}
                   </button>
                 </div>
               </div>

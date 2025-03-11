@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Category {
   id: string;
@@ -110,6 +111,8 @@ const categories: Category[] = [
 ];
 
 const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick }) => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-16 px-6">
       <div className="container mx-auto">
@@ -120,10 +123,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick }) =>
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
-            Agent Categories
+            {t('categories.title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Discover AI agents across various categories designed to support rural productivity, improve quality, and enhance access.
+            {t('categories.description')}
           </p>
         </motion.div>
 
@@ -149,7 +152,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick }) =>
                     {category.description}
                   </p>
                   <div className="flex items-center text-krushal-purple dark:text-krushal-lightPurple font-medium text-sm">
-                    <span>Explore agents</span>
+                    <span>{t('categories.explore')}</span>
                     <ChevronRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
