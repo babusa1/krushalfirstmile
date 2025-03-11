@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -71,9 +72,6 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Government Subsidies Advisor": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png",
       "Scheme Eligibility Checker": "/lovable-uploads/299a42d2-bab0-416b-a6c4-a93178515679.png",
       "Application Assistant": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png",
-      
-      // Education & Employment
-      "Government Scholarships Advisor": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       
       // Education & Skill Development - Updated with new images
       "Government Scholarships Advisor": "/lovable-uploads/f567c812-08c5-49e0-9ac2-43fbd47c93ad.png",
