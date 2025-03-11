@@ -24,15 +24,15 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     "Technical Evaluation for Fund Management": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
     "Market Price Predictor": "/lovable-uploads/2df351f7-015b-48ef-aaf1-6d155110e68a.png",
     
-    // Livestock & Dairy
+    // Livestock & Dairy - Updated with new images
     "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
     "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/96faf64d-4be2-40b2-ac13-50727b7a4077.png",
-    "Livestock Management Advisory": "/lovable-uploads/8ae74bd9-9500-44af-bf68-9a9098007bfe.png",
-    "Dairy Production Optimizer": "/lovable-uploads/fb35766b-f70c-49f4-953c-05d198e9e4d5.png",
-    "Animal Disease Identifier": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
-    "Veterinary Care Assistant": "/lovable-uploads/ae565069-86f6-4d81-bce0-e6e9ff756e53.png",
+    "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
+    "Dairy Production Optimizer": "/lovable-uploads/6134b2e9-5e84-4869-ae18-04610a96db2d.png",
+    "Animal Disease Identifier": "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png",
+    "Veterinary Care Assistant": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png",
     
-    // Agriculture & Farming - Updated with new images
+    // Agriculture & Farming
     "Farming Techniques Advisor": "/lovable-uploads/348533c2-cf7d-4b3c-8967-a3e37b29089f.png",
     "Crop Disease Identifier": "/lovable-uploads/e568fd53-774d-4af0-9e7b-28d880bbb771.png",
     "Fertilizers & Pesticides Advisor": "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png",
@@ -65,7 +65,7 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
            (() => {
               const categoryFallbacks: Record<string, string> = {
                 "Digital & Financial Services": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
-                "Livestock & Dairy": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
+                "Livestock & Dairy": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png", // Updated with new image
                 "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
                 "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
                 "Weather & Disaster Management": "/lovable-uploads/be51a951-0119-48b1-9c3d-469b70770608.png",

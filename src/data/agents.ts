@@ -77,7 +77,7 @@ export const featuredAgents: Agent[] = [
 // Full list of all agents
 export const allAgents: Agent[] = [
   ...featuredAgents,
-  // Agriculture & Farming - Updated with new images
+  // Agriculture & Farming
   {
     id: "agent6",
     title: "Market Prices for Commodity",
@@ -120,20 +120,20 @@ export const allAgents: Agent[] = [
     category: "Agriculture & Farming",
     image: "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png"
   },
-  // Livestock & Dairy
+  // Livestock & Dairy - Updated with new images
   {
     id: "agent12",
     title: "Livestock Management Advisory",
     description: "Provides best practices for feeding, breeding, and health monitoring of livestock to improve productivity and welfare.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/8ae74bd9-9500-44af-bf68-9a9098007bfe.png"
+    image: "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png"
   },
   {
     id: "agent13",
     title: "Animal Disease Identifier",
     description: "Identifies animal diseases based on symptoms and provides recommendations for veterinary care and treatment options.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png"
+    image: "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png"
   },
   {
     id: "agent14",
@@ -147,14 +147,14 @@ export const allAgents: Agent[] = [
     title: "Veterinary Care Assistant",
     description: "Provides veterinary advice, connects farmers with nearby vets, and offers preventive care tips for livestock health.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/ae565069-86f6-4d81-bce0-e6e9ff756e53.png"
+    image: "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png"
   },
   {
     id: "agent16",
     title: "Dairy Production Optimizer",
     description: "Monitors dairy production, tracks milk yield, and suggests ways to improve dairy farming efficiency and product quality.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/fb35766b-f70c-49f4-953c-05d198e9e4d5.png"
+    image: "/lovable-uploads/6134b2e9-5e84-4869-ae18-04610a96db2d.png"
   },
   // Weather & Disaster Management
   {
