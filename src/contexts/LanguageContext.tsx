@@ -32,6 +32,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.agents': 'Agents',
     'nav.about': 'About Us',
     'nav.contact': 'Contact',
+    'nav.list_agent': 'List Agent',  // Fixed translation
     'nav.submit': 'List your agent',
     'hero.title': 'First Mile Modernization',
     'hero.description': 'We methodically unlock hidden value in anchor value chains, catalyzing higher earnings for both producers and offtakers. Our approach extends to adjacent value chains, modernizing local ecosystems.',
