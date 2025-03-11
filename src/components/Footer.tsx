@@ -1,10 +1,12 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-white dark:bg-krushal-darkPurple border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-6 py-12">
@@ -27,7 +29,7 @@ const Footer: React.FC = () => {
             </div>
             
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              We handpick first mile value chains and fix productivity, quality and access gaps to modernize local economies.
+              {t('footer.description')}
             </p>
             
             <div className="flex space-x-4 pt-2">
@@ -43,13 +45,13 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="text-lg font-semibold text-krushal-darkPurple dark:text-white mb-4">
-              Quick Links
+              {t('footer.quicklinks')}
             </h3>
             <ul className="space-y-3">
-              <FooterLink href="/" label="Home" />
-              <FooterLink href="/agents" label="Agents" />
-              <FooterLink href="/about" label="About Us" />
-              <FooterLink href="/contact" label="Contact" />
+              <FooterLink href="/" label={t('nav.home')} />
+              <FooterLink href="/agents" label={t('nav.agents')} />
+              <FooterLink href="/about" label={t('nav.about')} />
+              <FooterLink href="/contact" label={t('nav.contact')} />
               <FooterLink href="/blog" label="Blog" />
             </ul>
           </motion.div>
@@ -60,14 +62,14 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-lg font-semibold text-krushal-darkPurple dark:text-white mb-4">
-              Agent Categories
+              {t('footer.categories')}
             </h3>
             <ul className="space-y-3">
-              <FooterLink href="/category/agriculture" label="Agriculture & Farming" />
-              <FooterLink href="/category/livestock" label="Livestock & Dairy" />
-              <FooterLink href="/category/healthcare" label="Healthcare & Medicine" />
-              <FooterLink href="/category/education" label="Education & Skill Development" />
-              <FooterLink href="/category/technology" label="Technology & Mobile Usage" />
+              <FooterLink href="/category/agriculture" label={t('category.agriculture')} />
+              <FooterLink href="/category/livestock" label={t('category.livestock')} />
+              <FooterLink href="/category/healthcare" label={t('category.healthcare')} />
+              <FooterLink href="/category/education" label={t('category.education')} />
+              <FooterLink href="/category/technology" label={t('category.technology')} />
             </ul>
           </motion.div>
           
@@ -77,7 +79,7 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="text-lg font-semibold text-krushal-darkPurple dark:text-white mb-4">
-              Contact Us
+              {t('footer.contactus')}
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
@@ -104,7 +106,7 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Krushal.ai. All rights reserved. First Mile as a Service™
+            &copy; {new Date().getFullYear()} Krushal.ai. {t('footer.copyright')}
           </p>
         </div>
       </div>

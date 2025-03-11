@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { InfoIcon, ExternalLink } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export interface Agent {
   id: string;
@@ -28,6 +28,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
   featured = false,
   delay = 0 
 }) => {
+  const { t } = useLanguage();
+
   // Generate a default image URL based on the agent category
   const getDefaultImage = () => {
     const categoryImages = {
@@ -133,13 +135,13 @@ const AgentCard: React.FC<AgentCardProps> = ({
               }}
             >
               <InfoIcon className="h-4 w-4" />
-              <span>Learn more</span>
+              <span>{t('learn.more')}</span>
             </button>
             
             {featured && (
               <button className="text-sm font-medium text-[#7B1FA2] hover:text-[#9C27B0] dark:text-[#BA68C8] flex items-center gap-1 transition-colors">
                 <ExternalLink className="h-4 w-4" />
-                <span>Try now</span>
+                <span>{t('try.now')}</span>
               </button>
             )}
           </div>
