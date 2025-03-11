@@ -47,7 +47,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
       "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png",
       "Animal Disease Identifier": "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png",
-      "Veterinary Care Assistant": "/lovable-uploads/8552d548-83d8-406e-9e79-3b40992c62e5.png", // Updated with correct image
+      "Veterinary Care Assistant": "/lovable-uploads/8552d548-83d8-406e-9e79-3b40992c62e5.png", 
       
       // Agriculture & Farming
       "Farming Techniques Advisor": "/lovable-uploads/348533c2-cf7d-4b3c-8967-a3e37b29089f.png",
@@ -55,8 +55,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Fertilizers & Pesticides Advisor": "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png",
       "Market Prices for Commodity": "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png",
       
-      // Healthcare
-      "Conversational AI for Elders": "/lovable-uploads/ec8255f1-f6eb-420f-afdd-29bc8707fe54.png",
+      // Healthcare - Updated with correct image
+      "Conversational AI for Elders": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png", // Updated image
       "Free Medical Care Finder": "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
       
@@ -67,7 +67,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Flood & Drought Preparedness Advisor": "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png",
       
       // Government Schemes
-      "Government Subsidies Advisor": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png", // Updated with correct image
+      "Government Subsidies Advisor": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png",
       "Scheme Eligibility Checker": "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png",
       
       // Education & Employment
@@ -85,10 +85,10 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
       "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
       "Weather & Disaster Management": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
-      "Government Schemes & Subsidies": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png", // Updated with correct image
+      "Government Schemes & Subsidies": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png",
       "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
-      "Women & Self-Help Groups (SHGs)": "/lovable-uploads/ec8255f1-f6eb-420f-afdd-29bc8707fe54.png",
+      "Women & Self-Help Groups (SHGs)": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png", // Updated with correct image
       "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png",
       "Local Governance & Legal Issues": "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png"
     };
