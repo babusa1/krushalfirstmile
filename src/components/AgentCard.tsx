@@ -28,6 +28,23 @@ const AgentCard: React.FC<AgentCardProps> = ({
   featured = false,
   delay = 0 
 }) => {
+  // Generate a default image URL based on the agent category if no image is provided
+  const getDefaultImage = () => {
+    const categoryImages = {
+      "Digital & Financial Services": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "Livestock & Dairy": "https://images.unsplash.com/photo-1516381548400-349d680edb56",
+      "Agriculture & Farming": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449",
+      "Healthcare & Medicine": "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      "Weather & Disaster Management": "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17",
+      "Government Schemes & Subsidies": "https://images.unsplash.com/photo-1605664041952-4a2855d9531b",
+    };
+    
+    return categoryImages[agent.category as keyof typeof categoryImages] || 
+           "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
+  };
+
+  const imageUrl = agent.image || getDefaultImage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -50,26 +67,26 @@ const AgentCard: React.FC<AgentCardProps> = ({
           </span>
         )}
         
-        {agent.image ? (
-          <div className="mb-4 overflow-hidden rounded-lg h-40 bg-gray-100 dark:bg-gray-800">
-            <img 
-              src={agent.image} 
-              alt={agent.title} 
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            />
+        <div className="mb-4 overflow-hidden rounded-lg h-40 bg-gray-100 dark:bg-gray-800 relative">
+          <img 
+            src={imageUrl}
+            alt={agent.title} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            onError={(e) => {
+              // Fallback to a placeholder if the image fails to load
+              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <div className="absolute bottom-2 left-2">
+            <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-krushal-purple/80 text-white backdrop-blur-sm">
+              {agent.category}
+            </span>
           </div>
-        ) : (
-          <div className="mb-4 overflow-hidden rounded-lg h-40 bg-gradient-to-r from-krushal-purple/20 to-krushal-lightPurple/20 flex justify-center items-center">
-            <span className="text-krushal-purple dark:text-krushal-lavender text-4xl font-bold opacity-50">{agent.title.substring(0, 2)}</span>
-          </div>
-        )}
+        </div>
         
         <div className="space-y-3">
           <h3 className="text-lg font-semibold text-krushal-darkPurple dark:text-white">{agent.title}</h3>
-          
-          <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-krushal-lavender/30 text-krushal-darkPurple dark:text-krushal-lavender">
-            {agent.category}
-          </span>
           
           <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{agent.description}</p>
           
