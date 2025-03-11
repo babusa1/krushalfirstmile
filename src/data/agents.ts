@@ -22,7 +22,7 @@ export const featuredAgents: Agent[] = [
     title: "Smart Ration Agent for HF and Jersey Cows",
     description: "Krushal's smart-poshan provides personalized feed recommendations for dairy cows based on breed, age, calving history, and milk production. Optimizes nutrition while keeping fodder availability as a priority, resulting in cost-effective ration plans.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
+    image: "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png", // Updated image
     features: [
       "Analyzes cow breed, age, and calving history",
       "Considers current milk production",
