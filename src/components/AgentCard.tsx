@@ -31,56 +31,98 @@ const AgentCard: React.FC<AgentCardProps> = ({
 }) => {
   const { t } = useLanguage();
 
-  // Generate a default image URL based on the agent category
-  const getDefaultImage = () => {
+  // Generate a default image URL based on the agent category with improved relevance
+  const getCategoryImage = () => {
     const categoryImages = {
-      "Digital & Financial Services": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&h=800",
-      "Livestock & Dairy": "https://images.unsplash.com/photo-1535567679266-c133fe5d9e3d?auto=format&fit=crop&w=1200&h=800",
-      "Agriculture & Farming": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&h=800",
-      "Healthcare & Medicine": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&h=800",
-      "Weather & Disaster Management": "https://images.unsplash.com/photo-1600377927594-ceae8f8c9058?auto=format&fit=crop&w=1200&h=800",
-      "Government Schemes & Subsidies": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&h=800",
-      "Education & Skill Development": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&h=800",
-      "Employment & Livelihood": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&h=800",
-      "Women & Self-Help Groups": "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=1200&h=800",
-      "Technology & Mobile Usage": "https://images.unsplash.com/photo-1495204475232-40fe3f258358?auto=format&fit=crop&w=1200&h=800",
-      "Local Governance & Legal Issues": "https://images.unsplash.com/photo-1575505586569-646b2ca898fc?auto=format&fit=crop&w=1200&h=800"
+      "Digital & Financial Services": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&h=800",
+      "Livestock & Dairy": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1200&h=800",
+      "Agriculture & Farming": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&h=800",
+      "Healthcare & Medicine": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&h=800",
+      "Weather & Disaster Management": "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=1200&h=800",
+      "Government Schemes & Subsidies": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&h=800",
+      "Education & Skill Development": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&h=800",
+      "Employment & Livelihood": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=800",
+      "Women & Self-Help Groups": "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1200&h=800",
+      "Technology & Mobile Usage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=800",
+      "Local Governance & Legal Issues": "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?auto=format&fit=crop&w=1200&h=800"
     };
     
     return categoryImages[agent.category as keyof typeof categoryImages] || 
-           "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=800";
+           "https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?auto=format&fit=crop&w=1200&h=800"; // More tech-focused default
   };
 
-  // Agent-specific images mapping
+  // Agent-specific images mapping with improved relevance
   const getAgentSpecificImage = () => {
-    const agentImages = {
-      "Mortgage Document Extractor": "https://images.unsplash.com/photo-1554224155-8d04cb21cd56?auto=format&fit=crop&w=1200&h=800",
-      "Smart Ration Agent for HF and Jersey Cows": "https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=1200&h=800",
-      "Milk Volume Predictor for Dairy Cows": "https://images.unsplash.com/photo-1630699144339-420f59b4747a?auto=format&fit=crop&w=1200&h=800",
-      "Conversational AI for Elders": "https://images.unsplash.com/photo-1573497620292-4c990d24560f?auto=format&fit=crop&w=1200&h=800",
-      "Technical Evaluation for Fund Management": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&h=800",
-      "Market Price Predictor": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&h=800",
-      "Farming Techniques Advisor": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1200&h=800",
-      "Crop Disease Identifier": "https://images.unsplash.com/photo-1574943320219-361228354af9?auto=format&fit=crop&w=1200&h=800",
-      "Weather Forecast Agent": "https://images.unsplash.com/photo-1525490829609-d166ddb58678?auto=format&fit=crop&w=1200&h=800",
-      "Fertilizers & Pesticides Advisor": "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=1200&h=800",
-      "Livestock Management Advisory": "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?auto=format&fit=crop&w=1200&h=800",
-      "Animal Disease Identifier": "https://images.unsplash.com/photo-1485809069980-bafae4e654ad?auto=format&fit=crop&w=1200&h=800",
-      "Government Subsidies Advisor": "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1200&h=800",
-      "Veterinary Care Assistant": "https://images.unsplash.com/photo-1589736379748-01fe6140dd1a?auto=format&fit=crop&w=1200&h=800",
-      "Dairy Production Optimizer": "https://images.unsplash.com/photo-1569267089567-35878a2c5b38?auto=format&fit=crop&w=1200&h=800",
-      "Disaster Relief Advisor": "https://images.unsplash.com/photo-1473662170213-c9b39eb03f3b?auto=format&fit=crop&w=1200&h=800",
-      "Rainfall Predictor": "https://images.unsplash.com/photo-1515694346937-94d85e41e695?auto=format&fit=crop&w=1200&h=800",
-      "Flood & Drought Preparedness Advisor": "https://images.unsplash.com/photo-1578175525760-2569fe9be9fc?auto=format&fit=crop&w=1200&h=800",
-      "Scheme Eligibility Checker": "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&h=800",
-      "Application Assistant": "https://images.unsplash.com/photo-1581768738844-7b28d2c537dc?auto=format&fit=crop&w=1200&h=800"
+    // Map for specific agent titles to highly relevant images
+    const agentImages: Record<string, string> = {
+      // Digital & Financial Services
+      "Mortgage Document Extractor": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=800",
+      "Technical Evaluation for Fund Management": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=800",
+      "Online Banking Assistance": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&h=800",
+      "KYC Documentation Advisor": "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1200&h=800",
+      "Digital Payment Solutions Guide": "https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1200&h=800",
+      "Cybersecurity Awareness Agent": "https://images.unsplash.com/photo-1510511233900-1982d92bd835?auto=format&fit=crop&w=1200&h=800",
+      
+      // Livestock & Dairy
+      "Smart Ration Agent for HF and Jersey Cows": "https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=1200&h=800",
+      "Milk Volume Predictor for Dairy Cows": "https://images.unsplash.com/photo-1534937665259-74edf3b6ced2?auto=format&fit=crop&w=1200&h=800",
+      "Livestock Management Advisory": "https://images.unsplash.com/photo-1500595046743-cd271d694e30?auto=format&fit=crop&w=1200&h=800",
+      "Animal Disease Identifier": "https://images.unsplash.com/photo-1604077137850-c6d2e2a66483?auto=format&fit=crop&w=1200&h=800",
+      "Veterinary Care Assistant": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&w=1200&h=800",
+      "Dairy Production Optimizer": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1200&h=800",
+      
+      // Agriculture & Farming
+      "Market Price Predictor": "https://images.unsplash.com/photo-1480944657103-7fed22359e1d?auto=format&fit=crop&w=1200&h=800",
+      "Farming Techniques Advisor": "https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1200&h=800",
+      "Crop Disease Identifier": "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=1200&h=800",
+      "Fertilizers & Pesticides Advisor": "https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c?auto=format&fit=crop&w=1200&h=800",
+      "Market Prices for Commodity": "https://images.unsplash.com/photo-1459257831348-f0cdd359235f?auto=format&fit=crop&w=1200&h=800",
+      
+      // Weather & Disaster Management
+      "Weather Forecast Agent": "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?auto=format&fit=crop&w=1200&h=800",
+      "Disaster Relief Advisor": "https://images.unsplash.com/photo-1543349689-9a4d426bee8e?auto=format&fit=crop&w=1200&h=800",
+      "Rainfall Predictor": "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=1200&h=800",
+      "Flood & Drought Preparedness Advisor": "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?auto=format&fit=crop&w=1200&h=800",
+      
+      // Healthcare & Medicine
+      "Conversational AI for Elders": "https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=1200&h=800",
+      "Free Medical Care Finder": "https://images.unsplash.com/photo-1516549655669-df918a1973aa?auto=format&fit=crop&w=1200&h=800",
+      "Common Disease Remedies Advisor": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=800",
+      "Nearest PHC/CHC Locator": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&h=800",
+      "Maternal & Child Health Assistant": "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&fit=crop&w=1200&h=800",
+      "Vaccination Schedule Advisor": "https://images.unsplash.com/photo-1626319350908-7b7f79d6de3c?auto=format&fit=crop&w=1200&h=800",
+      
+      // Government & Education
+      "Government Subsidies Advisor": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&h=800",
+      "Scheme Eligibility Checker": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&h=800",
+      "Application Assistant": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&h=800",
+      "Government Scholarships Advisor": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&h=800",
+      "Free Online Courses Finder": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&h=800",
+      
+      // Women & Self-Help Groups
+      "Business Opportunities for Women": "https://images.unsplash.com/photo-1573496773605-f5b9c6ca5b62?auto=format&fit=crop&w=1200&h=800",
+      "Government Loan Advisor for Women Entrepreneurs": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&h=800",
+      "Self-Help Group Support Agent": "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&h=800",
+      "Home-Based Business Ideas Advisor": "https://images.unsplash.com/photo-1556745753-b2904692b3cd?auto=format&fit=crop&w=1200&h=800",
+      
+      // Employment & Technology
+      "Government Job Vacancies Finder": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&h=800",
+      "Private Job Opportunities Agent": "https://images.unsplash.com/photo-1568598035424-7070b67317d2?auto=format&fit=crop&w=1200&h=800",
+      "Work-from-Home Job Guide": "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=1200&h=800",
+      "Smartphone Usage for Business & Learning Advisor": "https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1200&h=800",
+      "Social Media Management Agent": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&h=800",
+      
+      // Legal & Governance
+      "Land Records & Property Disputes Advisor": "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=1200&h=800",
+      "RTI & Grievance Redressal Agent": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&h=800",
+      "Legal Aid & Property Law Advisor": "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1200&h=800"
     };
     
-    return agentImages[agent.title as keyof typeof agentImages];
+    return agentImages[agent.title];
   };
 
   // First try agent-specific image, then use agent.image if provided, or fall back to category image
-  const imageUrl = getAgentSpecificImage() || agent.image || getDefaultImage();
+  const imageUrl = getAgentSpecificImage() || agent.image || getCategoryImage();
 
   return (
     <motion.div
@@ -111,7 +153,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             onError={(e) => {
               // Fallback to a placeholder if the image fails to load
-              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=800";
+              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?auto=format&fit=crop&w=1200&h=800";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>

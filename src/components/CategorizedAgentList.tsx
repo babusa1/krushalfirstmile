@@ -29,9 +29,15 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
 
   // Filter agents based on search and category
   const filteredAgents = agents.filter(agent => {
-    const matchesSearch = agent.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         agent.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = 
+      agent.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      agent.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      agent.category.toLowerCase().includes(searchTerm.toLowerCase());
+    
     const matchesCategory = selectedCategory ? agent.category === selectedCategory : true;
+    
+    // If there's a search term but no category selected, or if there's both
+    // a search term and category selected, then return all matches
     return matchesSearch && matchesCategory;
   });
 
