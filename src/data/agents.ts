@@ -185,13 +185,14 @@ export const allAgents: Agent[] = [
     title: "Scheme Eligibility Checker",
     description: "Determines which government schemes a farmer is eligible for based on their profile and farming activities.",
     category: "Government Schemes & Subsidies",
-    image: "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png"
+    image: "/lovable-uploads/299a42d2-bab0-416b-a6c4-a93178515679.png" // Updated image
   },
   {
     id: "agent21",
     title: "Application Assistant",
     description: "Guides farmers through the application process for various government schemes and subsidies to maximize success rates.",
-    category: "Government Schemes & Subsidies"
+    category: "Government Schemes & Subsidies",
+    image: "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png" // Updated category image
   },
   // Healthcare & Medicine
   {
