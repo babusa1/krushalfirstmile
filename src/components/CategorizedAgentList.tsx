@@ -34,10 +34,10 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
       agent.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       agent.category.toLowerCase().includes(searchTerm.toLowerCase());
     
+    // If a category is selected, only include agents in that category that match the search
+    // If no category is selected, include all agents that match the search
     const matchesCategory = selectedCategory ? agent.category === selectedCategory : true;
     
-    // If there's a search term but no category selected, or if there's both
-    // a search term and category selected, then return all matches
     return matchesSearch && matchesCategory;
   });
 
@@ -119,3 +119,4 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
 };
 
 export default CategorizedAgentList;
+
