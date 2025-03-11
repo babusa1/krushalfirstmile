@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -23,29 +24,12 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="space-y-4"
           >
-            <div className="flex items-center gap-2">
+            <div>
               <img
                 src="/lovable-uploads/f39e4e62-303a-4211-8623-78d6a814b86c.png"
-                alt="Krushal.ai"
+                alt="Krushal"
                 className="h-10 w-auto"
               />
-              <span className="font-bold text-xl text-krushal-darkPurple dark:text-white">
-                Krushal.ai
-              </span>
-            </div>
-            
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              {t('footer.description')}
-            </p>
-            
-            <div className="mt-4">
-              <button 
-                onClick={toggleContactForm}
-                className="px-4 py-2 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md transition-colors flex items-center gap-2 text-sm"
-              >
-                <Mail className="h-4 w-4" />
-                {t('footer.sendMessage')}
-              </button>
             </div>
             
             <div className="flex space-x-4 pt-2">
@@ -59,6 +43,16 @@ const Footer: React.FC = () => {
                 icon={<Linkedin className="h-5 w-5" />} 
                 label="LinkedIn" 
               />
+            </div>
+            
+            <div>
+              <button 
+                onClick={toggleContactForm}
+                className="px-4 py-2 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md transition-colors flex items-center gap-2 text-sm"
+              >
+                <Mail className="h-4 w-4" />
+                {t('footer.sendMessage')}
+              </button>
             </div>
           </motion.div>
           
@@ -155,7 +149,7 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Krushal.ai. {t('footer.copyright')}
+            &copy; {new Date().getFullYear()} Krushal. {t('footer.copyright')}
           </p>
         </div>
       </div>
