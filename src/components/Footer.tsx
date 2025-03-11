@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
               <FooterLink href="/agents" label={t('nav.agents')} />
               <FooterLink href="/about" label={t('nav.about')} />
               <FooterLink href="/contact" label={t('nav.contact')} />
-              <FooterLink href="/blog" label="Blog" />
+              {/* Removed Blog link */}
             </ul>
           </motion.div>
           
