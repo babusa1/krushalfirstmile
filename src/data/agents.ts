@@ -154,29 +154,29 @@ export const allAgents: Agent[] = [
     title: "Dairy Production Optimizer",
     description: "Monitors dairy production, tracks milk yield, and suggests ways to improve dairy farming efficiency and product quality.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/6134b2e9-5e84-4869-ae18-04610a96db2d.png"
+    image: "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png" // Updated with new image
   },
-  // Weather & Disaster Management
+  // Weather & Disaster Management - Updated with new images
   {
     id: "agent17",
     title: "Disaster Relief Advisor",
     description: "Provides information on available disaster relief funds and assists farmers in applying for support after natural calamities.",
     category: "Weather & Disaster Management",
-    image: "/lovable-uploads/b67ef5b1-f5f1-4545-91e0-4b3d520f694f.png"
+    image: "/lovable-uploads/305b3735-e1a4-4a43-b050-ec7a7f002e19.png" // Updated with new image
   },
   {
     id: "agent18",
     title: "Rainfall Predictor",
     description: "Provides accurate rainfall predictions for different regions, helping farmers plan irrigation and crop management.",
     category: "Weather & Disaster Management",
-    image: "/lovable-uploads/e86db0e9-16ad-443e-b884-6429b7f44c17.png"
+    image: "/lovable-uploads/c538b404-7d08-4a56-981c-6039b3fd5035.png" // Updated with new image
   },
   {
     id: "agent19",
     title: "Flood & Drought Preparedness Advisor",
     description: "Offers advice on how to prepare for and mitigate the effects of floods and droughts on agricultural operations.",
     category: "Weather & Disaster Management",
-    image: "/lovable-uploads/b67ef5b1-f5f1-4545-91e0-4b3d520f694f.png"
+    image: "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png" // Updated with new image
   },
   // Government Schemes & Subsidies
   {

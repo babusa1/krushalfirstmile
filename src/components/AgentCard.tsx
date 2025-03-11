@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -45,7 +44,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/95e46186-5b24-4155-9ad3-9a496ca7905b.png",
       "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/96faf64d-4be2-40b2-ac13-50727b7a4077.png",
       "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
-      "Dairy Production Optimizer": "/lovable-uploads/6134b2e9-5e84-4869-ae18-04610a96db2d.png",
+      "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png", // Updated with new image
       "Animal Disease Identifier": "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png",
       "Veterinary Care Assistant": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png",
       
@@ -60,11 +59,11 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Free Medical Care Finder": "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
       
-      // Weather & Disaster
+      // Weather & Disaster - Updated with new images
       "Weather Forecast Agent": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
-      "Disaster Relief Advisor": "/lovable-uploads/b67ef5b1-f5f1-4545-91e0-4b3d520f694f.png",
-      "Rainfall Predictor": "/lovable-uploads/e86db0e9-16ad-443e-b884-6429b7f44c17.png",
-      "Flood & Drought Preparedness Advisor": "/lovable-uploads/b67ef5b1-f5f1-4545-91e0-4b3d520f694f.png",
+      "Disaster Relief Advisor": "/lovable-uploads/305b3735-e1a4-4a43-b050-ec7a7f002e19.png", // Updated with new image
+      "Rainfall Predictor": "/lovable-uploads/c538b404-7d08-4a56-981c-6039b3fd5035.png", // Updated with new image
+      "Flood & Drought Preparedness Advisor": "/lovable-uploads/3fb5e93b-3a19-408a-817e-a3a95636b6ab.png", // Updated with new image
       
       // Government Schemes
       "Government Subsidies Advisor": "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png",
