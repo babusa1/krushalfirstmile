@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
@@ -24,6 +25,10 @@ const initialFormData: FormData = {
   message: ''
 };
 
+// Initialize EmailJS - for best practices, this should be called once in your application
+// You can also add this to your main.tsx file instead
+emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+
 const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,15 +52,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         reply_to: formData.email,
         phone_number: formData.phone,
         message: formData.message,
-        to_email: 'info@krushal.com'
+        to_email: 'info@krushal.com' // You can change this to your actual email
       };
 
       // Send email using EmailJS
       await emailjs.send(
         'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
         'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        templateParams
+        // Public key is already initialized above
       );
 
       toast.success("Your message has been sent successfully! We'll get back to you within 24 hours.");

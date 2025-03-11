@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -6,6 +5,7 @@ import { ChevronRight, Home, Loader2, Upload } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import emailjs from 'emailjs-com';
 
 const categories = [
   "Agriculture & Farming",
@@ -94,26 +94,15 @@ const SubmitAgent = () => {
         message: emailContent,
       };
 
-      // Send email using Email.js
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          service_id: 'service_krushal',  // Replace with your Email.js service ID
-          template_id: 'template_agent_submission',  // Replace with your Email.js template ID
-          user_id: 'user_krushal',  // Replace with your Email.js user ID
-          template_params: templateParams,
-        }),
-      });
+      // Send email using EmailJS
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams
+      );
 
-      if (response.ok) {
-        toast.success("Your agent has been submitted successfully! We'll review it soon.");
-        navigate('/');
-      } else {
-        throw new Error('Failed to send email');
-      }
+      toast.success("Your agent has been submitted successfully! We'll review it soon.");
+      navigate('/');
     } catch (error) {
       console.error('Error sending email:', error);
       toast.error("There was a problem submitting your agent. Please try again.");
