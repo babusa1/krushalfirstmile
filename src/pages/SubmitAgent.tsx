@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Home, Loader2, Upload } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { cn } from '@/lib/utils';
 
 const categories = [
   "Agriculture & Farming",
@@ -23,18 +24,102 @@ const categories = [
 const SubmitAgent = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    category: '',
+    agentName: '',
+    agentDescription: '',
+    remarks: '',
+    userBenefits: '',
+    technology: '',
+    file: null as File | null
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData(prev => ({
+        ...prev,
+        file: e.target.files![0]
+      }));
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Prepare email content
+      const emailContent = `
+        New Agent Submission:
+        
+        Personal Information:
+        ---------------------
+        Full Name: ${formData.fullName}
+        Email: ${formData.email}
+        Phone: ${formData.phone || 'Not provided'}
+        
+        Agent Information:
+        -----------------
+        Category: ${formData.category}
+        Agent Name: ${formData.agentName}
+        Description: ${formData.agentDescription}
+        Additional Remarks: ${formData.remarks || 'None'}
+        
+        Submission Details:
+        ------------------
+        User Benefits: ${formData.userBenefits}
+        Technology Used: ${formData.technology}
+      `;
+
+      // EmailJS configuration
+      const templateParams = {
+        to_email: 'krushal@example.com', // Replace with actual Krushal email
+        from_name: formData.fullName,
+        from_email: formData.email,
+        subject: `New Agent Submission: ${formData.agentName}`,
+        message: emailContent,
+      };
+
+      // Send email using Email.js
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_krushal',  // Replace with your Email.js service ID
+          template_id: 'template_agent_submission',  // Replace with your Email.js template ID
+          user_id: 'user_krushal',  // Replace with your Email.js user ID
+          template_params: templateParams,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Your agent has been submitted successfully! We'll review it soon.");
+        navigate('/');
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error("There was a problem submitting your agent. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      toast.success("Your agent has been submitted successfully! We'll review it within 24 hours.");
-      navigate('/');
-    }, 2000);
+    }
   };
 
   return (
@@ -79,6 +164,9 @@ const SubmitAgent = () => {
                     </label>
                     <input
                       type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                     />
@@ -90,6 +178,9 @@ const SubmitAgent = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                     />
@@ -101,6 +192,9 @@ const SubmitAgent = () => {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                     />
                   </div>
@@ -117,6 +211,9 @@ const SubmitAgent = () => {
                       Category of Agent <span className="text-red-500">*</span>
                     </label>
                     <select
+                      name="category"
+                      value={formData.category}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                     >
@@ -135,6 +232,9 @@ const SubmitAgent = () => {
                     </label>
                     <input
                       type="text"
+                      name="agentName"
+                      value={formData.agentName}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                     />
@@ -145,6 +245,9 @@ const SubmitAgent = () => {
                       Agent Description <span className="text-red-500">*</span>
                     </label>
                     <textarea
+                      name="agentDescription"
+                      value={formData.agentDescription}
+                      onChange={handleInputChange}
                       required
                       rows={4}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
@@ -157,6 +260,9 @@ const SubmitAgent = () => {
                       Remarks/Additional Information (Optional)
                     </label>
                     <textarea
+                      name="remarks"
+                      value={formData.remarks}
+                      onChange={handleInputChange}
                       rows={3}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                       placeholder="Please add any other relevant information, such as the expected user benefit, potential improvements, or limitations."
@@ -175,6 +281,9 @@ const SubmitAgent = () => {
                       How does this agent benefit users? <span className="text-red-500">*</span>
                     </label>
                     <textarea
+                      name="userBenefits"
+                      value={formData.userBenefits}
+                      onChange={handleInputChange}
                       required
                       rows={4}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
@@ -187,6 +296,9 @@ const SubmitAgent = () => {
                       Technology or Platforms Used <span className="text-red-500">*</span>
                     </label>
                     <textarea
+                      name="technology"
+                      value={formData.technology}
+                      onChange={handleInputChange}
                       required
                       rows={3}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
@@ -207,13 +319,24 @@ const SubmitAgent = () => {
                             className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary-dark focus-within:outline-none"
                           >
                             <span>Upload a file</span>
-                            <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                            <input 
+                              id="file-upload" 
+                              name="file-upload" 
+                              type="file" 
+                              className="sr-only" 
+                              onChange={handleFileChange}
+                            />
                           </label>
                           <p className="pl-1">or drag and drop</p>
                         </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400">
                           PDF, PNG, JPG up to 10MB
                         </p>
+                        {formData.file && (
+                          <p className="text-sm text-green-500">
+                            File selected: {formData.file.name}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -230,7 +353,10 @@ const SubmitAgent = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+                  className={cn(
+                    "px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center",
+                    "bg-krushal-purple hover:bg-krushal-brightPurple"
+                  )}
                 >
                   {isSubmitting ? (
                     <>
