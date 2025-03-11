@@ -61,6 +61,13 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     "Vocational Training Guide": "/lovable-uploads/a7886bf9-6c8c-4682-8474-f07d20448f9c.png",
     "English Learning Assistant": "/lovable-uploads/6af6eed4-c8a7-4c4d-844d-b5e5447822eb.png",
     "Skill Development & Certification Advisor": "/lovable-uploads/d985e960-ac61-4c84-b86f-bbb1dcb320cf.png",
+    
+    // Employment & Livelihood - Added new images
+    "Government Job Vacancies Finder": "/lovable-uploads/4b42453c-3f0d-48db-ae47-52b8a7a41013.png",
+    "Private Job Opportunities Agent": "/lovable-uploads/21c55412-08ba-4a68-afd0-6d48c377e552.png",
+    "Work-from-Home Job Guide": "/lovable-uploads/2d39fce9-577f-4190-9abb-91c37f6cfceb.png",
+    "Urban Job Migration Assistant": "/lovable-uploads/e8776c9c-13de-406a-9030-0270d9c5173d.png",
+    "Freelance Opportunities Advisor": "/lovable-uploads/de49edb5-ee4d-4713-880e-6323e37ace98.png",
   };
 
   // Apply appropriate image to each agent

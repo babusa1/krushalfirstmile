@@ -265,36 +265,41 @@ export const allAgents: Agent[] = [
     category: "Education & Skill Development",
     image: "/lovable-uploads/d985e960-ac61-4c84-b86f-bbb1dcb320cf.png"
   },
-  // Employment & Livelihood
+  // Employment & Livelihood - Updated with new images
   {
     id: "agent32",
     title: "Government Job Vacancies Finder",
     description: "Provides updates on government job vacancies (railways, police, etc.) in various sectors.",
-    category: "Employment & Livelihood"
+    category: "Employment & Livelihood",
+    image: "/lovable-uploads/4b42453c-3f0d-48db-ae47-52b8a7a41013.png"
   },
   {
     id: "agent33",
     title: "Private Job Opportunities Agent",
     description: "Finds private job openings in different industries, including remote work opportunities.",
-    category: "Employment & Livelihood"
+    category: "Employment & Livelihood",
+    image: "/lovable-uploads/21c55412-08ba-4a68-afd0-6d48c377e552.png"
   },
   {
     id: "agent34",
     title: "Work-from-Home Job Guide",
     description: "Suggests various work-from-home job opportunities and guides on how to apply.",
-    category: "Employment & Livelihood"
+    category: "Employment & Livelihood",
+    image: "/lovable-uploads/2d39fce9-577f-4190-9abb-91c37f6cfceb.png"
   },
   {
     id: "agent35",
     title: "Urban Job Migration Assistant",
     description: "Provides support for individuals migrating to urban areas for job opportunities.",
-    category: "Employment & Livelihood"
+    category: "Employment & Livelihood",
+    image: "/lovable-uploads/e8776c9c-13de-406a-9030-0270d9c5173d.png"
   },
   {
     id: "agent36",
     title: "Freelance Opportunities Advisor",
     description: "Offers advice and resources for finding freelance work in various fields.",
-    category: "Employment & Livelihood"
+    category: "Employment & Livelihood",
+    image: "/lovable-uploads/de49edb5-ee4d-4713-880e-6323e37ace98.png"
   },
   // Digital & Financial Services
   {
