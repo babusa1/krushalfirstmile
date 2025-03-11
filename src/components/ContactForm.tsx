@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
+import emailjs from 'emailjs-com';
 
 interface ContactFormProps {
   onClose: () => void;
@@ -35,18 +36,37 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    // In a real application, this would send the data to info@krushal.com
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        reply_to: formData.email,
+        phone_number: formData.phone,
+        message: formData.message,
+        to_email: 'info@krushal.com'
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
       toast.success("Your message has been sent successfully! We'll get back to you within 24 hours.");
-      setFormData(initialFormData); // Reset the form
+      setFormData(initialFormData);
       onClose();
-    }, 1500);
+    } catch (error) {
+      toast.error('Failed to send message. Please try again later.');
+      console.error('Email sending failed:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
