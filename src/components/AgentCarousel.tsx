@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,11 +7,14 @@ import AgentCard, { Agent } from './AgentCard';
 interface AgentCarouselProps {
   agents: Agent[];
   onAgentClick: (agent: Agent) => void;
+  compact?: boolean;
 }
 
-const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) => {
+const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, compact = false }) => {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   // Map of agent titles to highly relevant image URLs
@@ -34,7 +38,12 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) =
                 "Agriculture & Farming": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&h=800",
                 "Healthcare & Medicine": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&h=800",
                 "Weather & Disaster Management": "https://images.unsplash.com/photo-1600377927594-ceae8f8c9058?auto=format&fit=crop&w=1200&h=800",
-                "Government Schemes & Subsidies": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&h=800"
+                "Government Schemes & Subsidies": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&h=800",
+                "Education & Skill Development": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&h=800",
+                "Employment & Livelihood": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&h=800",
+                "Women & Self-Help Groups (SHGs)": "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&h=800",
+                "Technology & Mobile Usage": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1200&h=800",
+                "Local Governance & Legal Issues": "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1200&h=800"
               };
               return categoryFallbacks[agent.category as keyof typeof categoryFallbacks] || 
                      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=800";
@@ -81,29 +90,56 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) =
   const handleMouseEnter = () => setIsAutoPlaying(false);
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
+  // Touch handlers for swipe on mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <div 
       className="relative w-full overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <div className="absolute top-1/2 left-2 z-10 transform -translate-y-1/2">
         <button
           onClick={prevSlide}
-          className="p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
+          className="p-1 sm:p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
       </div>
       
       <div className="absolute top-1/2 right-2 z-10 transform -translate-y-1/2">
         <button
           onClick={nextSlide}
-          className="p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
+          className="p-1 sm:p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
       </div>
 
@@ -126,14 +162,14 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) =
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center mt-2 space-x-1.5">
+      <div className="flex justify-center mt-1 sm:mt-2 space-x-1 sm:space-x-1.5">
         {enhancedAgents.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
               index === current 
-                ? 'bg-[#7B1FA2] w-4' 
+                ? 'bg-[#7B1FA2] w-3 sm:w-4' 
                 : 'bg-gray-300 dark:bg-gray-600 hover:bg-[#CE93D8] dark:hover:bg-[#CE93D8]'
             }`}
             aria-label={`Go to slide ${index + 1}`}

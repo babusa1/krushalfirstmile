@@ -84,16 +84,23 @@
   body {
     @apply bg-background text-foreground font-sans;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-medium tracking-tight;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -109,13 +116,23 @@
   }
 }
 
-/* Glass effect components */
+/* Responsive container utilities */
+.container-fluid {
+  @apply w-full px-4 sm:px-6 md:px-8 mx-auto;
+  max-width: 1536px;
+}
+
+.section-padding {
+  @apply py-10 md:py-16 lg:py-20;
+}
+
+/* Glass effect components - improved for better mobile support */
 .glass {
-  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  @apply bg-white/80 backdrop-blur-sm md:backdrop-blur-md border border-white/20 shadow-sm;
 }
 
 .dark .glass {
-  @apply bg-black/50 backdrop-blur-md border border-white/10 shadow-sm;
+  @apply bg-black/50 backdrop-blur-sm md:backdrop-blur-md border border-white/10 shadow-sm;
 }
 
 /* Fade in animation for sections */
@@ -144,9 +161,15 @@
   animation-delay: 0.5s;
 }
 
-/* Card hover effect */
+/* Card hover effect - optimized for mobile */
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-md hover:translate-y-[-5px];
+  @apply transition-all duration-300;
+}
+
+@media (min-width: 768px) {
+  .card-hover:hover {
+    @apply shadow-md -translate-y-1;
+  }
 }
 
 /* Button animations */
@@ -154,57 +177,57 @@
   animation: pulse 2s infinite;
 }
 
-/* Custom typography */
+/* Custom typography - enhanced for responsive sizes */
 .heading-xl {
-  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
   line-height: 1.1;
 }
 
 .heading-lg {
-  @apply text-3xl md:text-4xl font-bold;
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold;
   line-height: 1.2;
 }
 
 .heading-md {
-  @apply text-2xl md:text-3xl font-bold;
+  @apply text-xl sm:text-2xl md:text-3xl font-bold;
   line-height: 1.3;
 }
 
 .heading-sm {
-  @apply text-xl md:text-2xl font-medium;
+  @apply text-lg sm:text-xl md:text-2xl font-medium;
   line-height: 1.4;
 }
 
 .body-lg {
-  @apply text-lg leading-relaxed;
+  @apply text-base md:text-lg leading-relaxed;
 }
 
 .body-md {
-  @apply text-base leading-relaxed;
+  @apply text-sm md:text-base leading-relaxed;
 }
 
 .body-sm {
-  @apply text-sm leading-relaxed;
+  @apply text-xs md:text-sm leading-relaxed;
 }
 
-/* For the carousel dots */
+/* For the carousel dots - improved for small screens */
 .carousel-dots {
-  @apply flex gap-2 justify-center mt-6;
+  @apply flex gap-1 md:gap-2 justify-center mt-4 md:mt-6;
 }
 
 .carousel-dot {
-  @apply w-2 h-2 rounded-full bg-gray-300 transition-all duration-300;
+  @apply w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gray-300 transition-all duration-300;
 }
 
 .carousel-dot.active {
-  @apply w-4 bg-krushal-brightPurple;
+  @apply w-3 md:w-4 bg-krushal-brightPurple;
 }
 
-/* Reveal animations */
+/* Optimized reveal animations */
 @keyframes reveal {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -231,4 +254,73 @@
 
 .reveal:nth-child(5) {
   animation-delay: 0.4s;
+}
+
+/* Responsive utilities */
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+}
+
+.responsive-flex {
+  @apply flex flex-col sm:flex-row;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  button, a {
+    @apply tap-highlight-transparent touch-callout-none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  
+  input, select, textarea {
+    @apply text-base;
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Added keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fix for App.css conflicts */
+#root {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
