@@ -1,3 +1,4 @@
+
 import { Agent } from '@/components/AgentCard';
 
 // Featured agents (Krushal Agents)
@@ -63,7 +64,7 @@ export const featuredAgents: Agent[] = [
     title: "Technical Evaluation for Fund Management",
     description: "Comprehensive technical due diligence solution covering financial management, security analysis, data infrastructure, and technology stack review. Ensures regulatory compliance and innovation readiness for investment firms and financial institutions.",
     category: "Digital & Financial Services",
-    image: "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
+    image: "/lovable-uploads/8306145d-3f75-4988-a6ff-16533c4388a2.png", // Updated with the new image
     features: [
       "Financial management assessment",
       "Security and risk analysis",

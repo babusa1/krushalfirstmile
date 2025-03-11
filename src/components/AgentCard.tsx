@@ -37,8 +37,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
       // Financial Services - Updated with new image
       "Mortgage Document Extractor": "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
       
-      // Financial Services
-      "Technical Evaluation for Fund Management": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
+      // Financial Services - Updated with new image
+      "Technical Evaluation for Fund Management": "/lovable-uploads/8306145d-3f75-4988-a6ff-16533c4388a2.png",
       "Market Price Predictor": "/lovable-uploads/2df351f7-015b-48ef-aaf1-6d155110e68a.png",
       
       // Livestock & Dairy - Updated with new images
