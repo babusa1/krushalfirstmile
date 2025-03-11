@@ -148,16 +148,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex items-center justify-center gap-2 px-6 py-2.5 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="h-4 w-4 animate-spin" />
+                <Loader2 className="h-5 w-5 animate-spin" />
                 Sending...
               </>
             ) : (
               <>
-                <Send className="h-4 w-4" />
+                <Send className="h-5 w-5" />
                 Send Message
               </>
             )}
