@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
@@ -249,7 +248,7 @@ const Index = () => {
               className="w-full lg:w-1/2 space-y-6"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-krushal-darkPurple dark:text-white leading-tight">
-                First Mile as a Service for Rural Modernization
+                First Mile Modernization
               </h1>
               
               <p className="text-lg text-gray-600 dark:text-gray-300">
