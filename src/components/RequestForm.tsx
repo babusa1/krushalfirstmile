@@ -21,7 +21,7 @@ const RequestForm: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white mb-3"
         >
-          List your agent
+          {t('nav.list_agent')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -43,7 +43,7 @@ const RequestForm: React.FC = () => {
           onClick={handleFormClick}
           className="w-full sm:w-auto px-8 py-4 bg-krushal-purple text-white rounded-lg font-medium hover:bg-krushal-brightPurple transition-colors shadow-sm hover:shadow-md"
         >
-          List your agent
+          {t('nav.list_agent')}
         </button>
       </motion.div>
     </div>
