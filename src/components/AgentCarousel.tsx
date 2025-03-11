@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,27 +17,32 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Map of agent titles to highly relevant image URLs - improved with more accurate non-robotic images
+  // Map of agent titles to the new uploaded images
   const agentImages = {
-    "Mortgage Document Extractor": "https://images.unsplash.com/photo-1554224155-6d2f99c7dff1?auto=format&fit=crop&w=1200&h=800",
-    "Smart Ration Agent for HF and Jersey Cows": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1200&h=800",
-    "Milk Volume Predictor for Dairy Cows": "https://images.unsplash.com/photo-1535185384516-07317cc9c7e1?auto=format&fit=crop&w=1200&h=800",
-    "Conversational AI for Elders": "https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1200&h=800",
-    "Technical Evaluation for Fund Management": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&h=800",
-    "Animal Disease Identifier": "https://images.unsplash.com/photo-1583779791512-eecbcf636337?auto=format&fit=crop&w=1200&h=800",
-    "Livestock Management Advisory": "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&h=800",
-    "Market Price Predictor": "https://images.unsplash.com/photo-1491349174775-aaafddd81942?auto=format&fit=crop&w=1200&h=800",
-    "Farming Techniques Advisor": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&h=800",
-    "Crop Disease Identifier": "https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1200&h=800",
-    "Fertilizers & Pesticides Advisor": "https://images.unsplash.com/photo-1563514227147-6d2e624f82b8?auto=format&fit=crop&w=1200&h=800",
-    "Veterinary Care Assistant": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&h=800",
-    "Free Medical Care Finder": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&h=800",
-    "Common Disease Remedies Advisor": "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1200&h=800",
-    "Vaccination Schedule Advisor": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&h=800",
-    "Government Subsidies Advisor": "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?auto=format&fit=crop&w=1200&h=800",
-    "Government Scholarships Advisor": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&h=800",
-    "English Learning Assistant": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&h=800",
-    "Disaster Relief Advisor": "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=1200&h=800"
+    // Weather & Disaster Management
+    "Weather Forecast Agent": "/lovable-uploads/15cb07a5-ac4d-4a30-bc4e-620a0df82e25.png", // Weather icon with globe
+    "Rainfall Predictor": "/lovable-uploads/f52c19be-6583-43c7-b3c7-8357ace6a935.png", // Drought image
+    "Disaster Relief Advisor": "/lovable-uploads/9ee63691-4755-42bb-ab49-80b49d91f88f.png", // NDRF rescue boat
+    "Flood & Drought Preparedness Advisor": "/lovable-uploads/f52c19be-6583-43c7-b3c7-8357ace6a935.png", // Drought cracked earth
+    
+    // Agriculture & Farming
+    "Market Price Predictor": "/lovable-uploads/398e260e-3bca-4d63-8e8f-ffe0ac045da7.png", // Commodity prices
+    "Farming Techniques Advisor": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png", // Farmer with expert
+    "Crop Disease Identifier": "/lovable-uploads/45ee1443-ab39-4200-a1ad-13d4b6fb77ae.png", // Smart farming tech on crops
+    "Fertilizers & Pesticides Advisor": "/lovable-uploads/263f6c76-cc18-47dc-8f1a-667ac26e51a8.png", // Farmer spreading fertilizer
+    "Market Prices for Commodity": "/lovable-uploads/398e260e-3bca-4d63-8e8f-ffe0ac045da7.png", // Commodity prices
+    
+    // Livestock & Dairy
+    "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/9d31e375-bef2-462c-aea7-255797f66a9f.png", // Cows in fenced area
+    "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/b5165487-9428-47ea-8b14-bdad5a979143.png", // Milk jug with cow
+    "Livestock Management Advisory": "/lovable-uploads/dd35e560-c202-4708-9662-a9f207b122a8.png", // Multiple cows in field
+    "Animal Disease Identifier": "/lovable-uploads/aec2dcc7-d9c8-4405-a569-64d470f2ea12.png", // Vets examining cat
+    "Veterinary Care Assistant": "/lovable-uploads/aec2dcc7-d9c8-4405-a569-64d470f2ea12.png", // Vets examining cat
+    "Dairy Production Optimizer": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png", // Dairy cow with smartphone
+    
+    // Digital & Financial Services
+    "Mortgage Document Extractor": "/lovable-uploads/2ab73554-1297-414c-8e4b-66b49cc64bd5.png", // Mortgage documents
+    "Technical Evaluation for Fund Management": "/lovable-uploads/2ab73554-1297-414c-8e4b-66b49cc64bd5.png", // Financial documents
   };
 
   // Apply appropriate image to each agent
@@ -46,20 +52,20 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
            // Improved fallback images by category - ensure no robotic images
            (() => {
               const categoryFallbacks = {
-                "Digital & Financial Services": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&h=800",
-                "Livestock & Dairy": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1200&h=800",
-                "Agriculture & Farming": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&h=800",
-                "Healthcare & Medicine": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&h=800",
-                "Weather & Disaster Management": "https://images.unsplash.com/photo-1514632595-4944383f2737?auto=format&fit=crop&w=1200&h=800",
-                "Government Schemes & Subsidies": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=800",
-                "Education & Skill Development": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&h=800",
-                "Employment & Livelihood": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=800",
-                "Women & Self-Help Groups": "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=1200&h=800",
-                "Technology & Mobile Usage": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1200&h=800",
-                "Local Governance & Legal Issues": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&h=800"
+                "Digital & Financial Services": "/lovable-uploads/2ab73554-1297-414c-8e4b-66b49cc64bd5.png", // Mortgage/financial documents
+                "Livestock & Dairy": "/lovable-uploads/b5165487-9428-47ea-8b14-bdad5a979143.png", // Milk jug with cow
+                "Agriculture & Farming": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png", // Farmer with expert
+                "Healthcare & Medicine": "/lovable-uploads/aec2dcc7-d9c8-4405-a569-64d470f2ea12.png", // Medical professionals
+                "Weather & Disaster Management": "/lovable-uploads/f52c19be-6583-43c7-b3c7-8357ace6a935.png", // Drought cracked earth
+                "Government Schemes & Subsidies": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png", // Govt official with farmer
+                "Education & Skill Development": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png", // Education scene
+                "Employment & Livelihood": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png", // Professional discussion
+                "Women & Self-Help Groups": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png", // Community group
+                "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png", // Smartphone with cows
+                "Local Governance & Legal Issues": "/lovable-uploads/78b4e12a-94eb-42ba-8dda-84ff2b0dcbb1.png" // Governance interaction
               };
               return categoryFallbacks[agent.category as keyof typeof categoryFallbacks] || 
-                     "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=800";
+                     "/lovable-uploads/45ee1443-ab39-4200-a1ad-13d4b6fb77ae.png"; // Default tech farming image
            })()
   }));
 
