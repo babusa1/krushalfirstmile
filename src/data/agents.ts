@@ -337,31 +337,36 @@ export const allAgents: Agent[] = [
     id: "agent42",
     title: "Business Opportunities for Women",
     description: "Offers guidance on business opportunities for women in various sectors.",
-    category: "Women & Self-Help Groups (SHGs)"
+    category: "Women & Self-Help Groups (SHGs)",
+    image: "/lovable-uploads/ef295d48-839d-4d5e-84e5-a98196df7182.png"
   },
   {
     id: "agent43",
     title: "Government Loan Advisor for Women Entrepreneurs",
     description: "Provides information on government loans and financial support available to women entrepreneurs.",
-    category: "Women & Self-Help Groups (SHGs)"
+    category: "Women & Self-Help Groups (SHGs)",
+    image: "/lovable-uploads/26ba45c8-91c6-4bc0-a2c1-ca2bea6cb647.png"
   },
   {
     id: "agent44",
     title: "Self-Help Group Support Agent",
     description: "Assists women in forming and managing Self-Help Groups (SHGs) for business and social purposes.",
-    category: "Women & Self-Help Groups (SHGs)"
+    category: "Women & Self-Help Groups (SHGs)",
+    image: "/lovable-uploads/0583a573-dd79-41c3-a8bd-e9847fad649e.png"
   },
   {
     id: "agent45",
     title: "Home-Based Business Ideas Advisor",
     description: "Suggests ideas for home-based businesses, including stitching, handicrafts, and food processing.",
-    category: "Women & Self-Help Groups (SHGs)"
+    category: "Women & Self-Help Groups (SHGs)",
+    image: "/lovable-uploads/ff69718b-ab86-4f51-afe5-ba70afb7ea78.png"
   },
   {
     id: "agent46",
     title: "Handicrafts & Food Processing Opportunities Advisor",
     description: "Offers guidance on starting a business in handicrafts and food processing sectors.",
-    category: "Women & Self-Help Groups (SHGs)"
+    category: "Women & Self-Help Groups (SHGs)",
+    image: "/lovable-uploads/267b6dc5-4d55-4fc1-8ab9-13e897abfede.png"
   },
   // Technology & Mobile Usage
   {

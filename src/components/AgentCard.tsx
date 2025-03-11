@@ -9,6 +9,7 @@ export interface Agent {
   title: string;
   description: string;
   image?: string;
+  imagePath?: string;
   category: string;
   features?: string[];
 }
