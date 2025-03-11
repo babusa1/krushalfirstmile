@@ -55,8 +55,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Fertilizers & Pesticides Advisor": "/lovable-uploads/9afa3dda-7cd3-4e7e-a674-12737ff61641.png",
       "Market Prices for Commodity": "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png",
       
-      // Healthcare - Updated with correct image
-      "Conversational AI for Elders": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png", // Updated image
+      // Healthcare - Updated with new image
+      "Conversational AI for Elders": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the new image
       "Free Medical Care Finder": "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
       
@@ -88,7 +88,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Government Schemes & Subsidies": "/lovable-uploads/99e6d757-987e-4164-9519-a87f8d9c6bfa.png",
       "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
-      "Women & Self-Help Groups (SHGs)": "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png", // Updated with correct image
+      "Women & Self-Help Groups (SHGs)": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the same image for SHGs category
       "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png",
       "Local Governance & Legal Issues": "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png"
     };

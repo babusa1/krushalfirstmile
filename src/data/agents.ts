@@ -1,4 +1,3 @@
-
 import { Agent } from '@/components/AgentCard';
 
 // Featured agents (Krushal Agents)
@@ -50,7 +49,7 @@ export const featuredAgents: Agent[] = [
     title: "Conversational AI for Elders",
     description: "An AI companion that assists elderly individuals with daily tasks, appointment reminders, and medication tracking. Provides emotional support through natural conversations and keeps users informed with news updates and information relevant to their interests.",
     category: "Healthcare & Medicine",
-    image: "/lovable-uploads/69a9e06b-3ad2-4316-ab17-3c194d30e1d9.png", // Updated image
+    image: "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the new image
     features: [
       "Daily task notifications and reminders",
       "Medical history tracking and appointment management",
