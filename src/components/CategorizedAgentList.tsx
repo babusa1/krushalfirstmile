@@ -60,49 +60,51 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
           className="flex flex-col mb-6 sm:mb-10"
         >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white">
               {categoryTitle}
             </h2>
             
             <div className="relative w-full md:w-1/3">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+                <Search className="h-5 w-5 text-gray-400" />
               </div>
               <input
                 type="text"
                 placeholder={searchPlaceholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white text-sm sm:text-base"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white text-base"
               />
             </div>
           </div>
           
-          <div className="flex flex-wrap gap-2 mb-6 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
-                selectedCategory === null
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
-              }`}
-            >
-              {allCategoriesLabel}
-            </button>
-            
-            {categories.map(category => (
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 mb-6 overflow-x-auto">
+            <div className="flex flex-wrap gap-2 pb-2">
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
-                  selectedCategory === category
+                onClick={() => setSelectedCategory(null)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                  selectedCategory === null
                     ? 'bg-primary text-white'
                     : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
-                {category}
+                {allCategoriesLabel}
               </button>
-            ))}
+              
+              {categories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                    selectedCategory === category
+                      ? 'bg-primary text-white'
+                      : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -119,7 +121,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
           </div>
         ) : (
           <div className="text-center py-8 sm:py-12">
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">{noAgentsMessage}</p>
+            <p className="text-gray-600 dark:text-gray-300 text-base">{noAgentsMessage}</p>
           </div>
         )}
       </div>

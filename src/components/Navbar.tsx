@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -41,9 +42,9 @@ const Navbar = () => {
           : 'bg-transparent'
       )}
     >
-      {/* Main navbar container */}
+      {/* Main navbar container - simplified for mobile */}
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo - same for both mobile and desktop */}
+        {/* Logo */}
         <Link to="/" className="flex items-center">
           <img
             src="/lovable-uploads/f39e4e62-303a-4211-8623-78d6a814b86c.png"
@@ -68,11 +69,11 @@ const Navbar = () => {
             )}
             onClick={scrollToRequestForm}
           >
-            List your agent
+            {t('nav.list_agent') || "List your agent"}
           </button>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Only visible on mobile */}
         <button
           onClick={toggleMobileMenu}
           className="md:hidden text-krushal-darkPurple dark:text-white"
@@ -100,7 +101,7 @@ const Navbar = () => {
           <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink 
             href="#" 
-            label="List your agent" 
+            label={t('nav.list_agent') || "List your agent"}
             onClick={() => {
               setIsMobileMenuOpen(false);
               scrollToRequestForm();
@@ -144,7 +145,7 @@ const MobileNavLink = ({ href, label, onClick, highlight }: MobileNavLinkProps) 
   if (href === "#" && highlight) {
     return (
       <button
-        className="w-full text-left text-krushal-purple dark:text-krushal-lightPurple font-medium py-2 border-b border-gray-100 dark:border-gray-700 text-sm sm:text-base"
+        className="w-full text-left text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-krushal-purple dark:text-krushal-lightPurple"
         onClick={onClick}
       >
         {label}
@@ -155,7 +156,7 @@ const MobileNavLink = ({ href, label, onClick, highlight }: MobileNavLinkProps) 
   return (
     <Link
       to={href}
-      className="text-krushal-darkPurple dark:text-white font-medium py-2 border-b border-gray-100 dark:border-gray-700 text-sm sm:text-base"
+      className="text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-krushal-darkPurple dark:text-white"
       onClick={onClick}
     >
       {label}

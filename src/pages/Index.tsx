@@ -75,7 +75,7 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Section with Integrated Carousel */}
-      <section className="pt-28 md:pt-32 lg:pt-36 pb-16 px-6" id="featured-agents">
+      <section className="pt-24 md:pt-32 lg:pt-36 pb-16 px-6" id="featured-agents">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <motion.div 
@@ -84,17 +84,17 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               className="w-full lg:w-1/2 space-y-6"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-krushal-darkPurple dark:text-white leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-krushal-darkPurple dark:text-white leading-tight">
                 {t('hero.title')}
               </h1>
               
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300">
                 {t('hero.description')}
               </p>
               
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
                 <button 
-                  className="px-6 py-3 bg-krushal-purple text-white rounded-md font-medium hover:bg-krushal-brightPurple transition-colors shadow-md hover:shadow-lg"
+                  className="px-6 py-3 bg-krushal-purple text-white rounded-md font-medium hover:bg-krushal-brightPurple transition-colors shadow-md hover:shadow-lg text-base"
                   onClick={scrollToRequestForm}
                 >
                   {t('hero.submit')}
@@ -102,7 +102,7 @@ const Index = () => {
                 
                 <a 
                   href="#agent-list"
-                  className="px-6 py-3 border border-krushal-purple text-krushal-purple rounded-md font-medium hover:bg-krushal-purple/10 transition-colors flex items-center justify-center"
+                  className="px-6 py-3 border border-krushal-purple text-krushal-purple rounded-md font-medium hover:bg-krushal-purple/10 transition-colors flex items-center justify-center text-base"
                 >
                   {t('hero.explore')}
                 </a>
@@ -118,7 +118,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-krushal-purple/20 to-krushal-lightPurple/20 blur-xl"></div>
                 <div className="relative bg-white dark:bg-krushal-darkPurple/90 rounded-xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-                  <h2 className="text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white px-6 pt-4 pb-2">
+                  <h2 className="text-xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white px-6 pt-4 pb-2">
                     {t('featured.title')}
                   </h2>
                   <AgentCarousel 
@@ -140,7 +140,7 @@ const Index = () => {
               href="#agent-list"
               className="inline-flex flex-col items-center text-krushal-purple dark:text-krushal-lightPurple hover:text-krushal-brightPurple dark:hover:text-white transition-colors"
             >
-              <span className="text-sm font-medium mb-2">{t('hero.discover')}</span>
+              <span className="text-base font-medium mb-2">{t('hero.discover')}</span>
               <ChevronDown className="h-6 w-6 animate-bounce" />
             </a>
           </motion.div>
@@ -167,10 +167,10 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
               {t('form.title')}
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base dark:text-gray-300 max-w-3xl mx-auto">
               {t('form.description')}
             </p>
           </motion.div>
