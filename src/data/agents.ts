@@ -77,27 +77,27 @@ export const featuredAgents: Agent[] = [
 // Full list of all agents
 export const allAgents: Agent[] = [
   ...featuredAgents,
-  // Agriculture & Farming
+  // Agriculture & Farming - Updated with new images
   {
     id: "agent6",
     title: "Market Prices for Commodity",
     description: "Provides real-time commodity market prices to help farmers make informed decisions.",
     category: "Agriculture & Farming",
-    image: "/lovable-uploads/a532ae3d-a09d-419a-8ef4-93b47115c74c.png"
+    image: "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png"
   },
   {
     id: "agent7",
     title: "Farming Techniques Advisor",
     description: "Provides best farming practices, crop rotation strategies, and sustainable agriculture tips to improve yield and soil health.",
     category: "Agriculture & Farming",
-    image: "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png"
+    image: "/lovable-uploads/348533c2-cf7d-4b3c-8967-a3e37b29089f.png"
   },
   {
     id: "agent8",
     title: "Crop Disease Identifier",
     description: "Analyzes images or descriptions of crop symptoms to diagnose diseases and recommend appropriate treatments.",
     category: "Agriculture & Farming",
-    image: "/lovable-uploads/15cff069-89af-492d-bee3-827de6c8942c.png"
+    image: "/lovable-uploads/e568fd53-774d-4af0-9e7b-28d880bbb771.png"
   },
   {
     id: "agent9",

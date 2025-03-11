@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,7 +16,7 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Map of agent titles to the specific images - Updated Mortgage Document Extractor image
+  // Map of agent titles to the specific images - Updated with new images
   const agentImages: Record<string, string> = {
     // Financial Services
     "Mortgage Document Extractor": "/lovable-uploads/b16423de-2102-4aa4-8a34-9a7893b13806.png",
@@ -32,11 +31,11 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     "Animal Disease Identifier": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
     "Veterinary Care Assistant": "/lovable-uploads/ae565069-86f6-4d81-bce0-e6e9ff756e53.png",
     
-    // Agriculture & Farming
-    "Farming Techniques Advisor": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
-    "Crop Disease Identifier": "/lovable-uploads/15cff069-89af-492d-bee3-827de6c8942c.png",
+    // Agriculture & Farming - Updated with new images
+    "Farming Techniques Advisor": "/lovable-uploads/348533c2-cf7d-4b3c-8967-a3e37b29089f.png",
+    "Crop Disease Identifier": "/lovable-uploads/e568fd53-774d-4af0-9e7b-28d880bbb771.png",
     "Fertilizers & Pesticides Advisor": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
-    "Market Prices for Commodity": "/lovable-uploads/a532ae3d-a09d-419a-8ef4-93b47115c74c.png",
+    "Market Prices for Commodity": "/lovable-uploads/761d635e-e105-4484-b87f-7702c4472a42.png",
     
     // Healthcare
     "Conversational AI for Elders": "/lovable-uploads/ec8255f1-f6eb-420f-afdd-29bc8707fe54.png",
