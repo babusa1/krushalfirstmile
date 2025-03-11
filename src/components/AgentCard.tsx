@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -126,23 +127,21 @@ const AgentCard: React.FC<AgentCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: delay * 0.1 }}
       className={cn(
-        "relative overflow-hidden rounded-xl card-hover",
+        "agent-card-mobile",
         featured ? "bg-gradient-to-br from-white to-[#EDE7F6]/30 dark:from-primary dark:to-[#7E57C2]/30" : "bg-white dark:bg-primary/90",
-        "border border-gray-200 dark:border-gray-800",
-        "shadow-sm hover:shadow-lg",
         "transition-all duration-300 ease-in-out",
         className
       )}
       onClick={onClick}
     >
-      <div className="p-4 sm:p-6">
+      <div className="relative">
         {featured && (
-          <span className="absolute top-2 right-2 sm:top-4 sm:right-4 px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-semibold rounded-full bg-secondary text-white">
-            Featured
+          <span className="absolute top-3 right-3 px-2.5 py-1 text-sm font-semibold rounded-full bg-secondary text-white z-10">
+            {t('featured.badge')}
           </span>
         )}
         
-        <div className="mb-3 sm:mb-4 overflow-hidden rounded-lg h-32 sm:h-40 bg-gray-100 dark:bg-gray-800 relative">
+        <div className="h-40 sm:h-44 overflow-hidden relative">
           <img 
             src={imageUrl}
             alt={agent.title} 
@@ -152,34 +151,38 @@ const AgentCard: React.FC<AgentCardProps> = ({
               (e.target as HTMLImageElement).src = "/lovable-uploads/45ee1443-ab39-4200-a1ad-13d4b6fb77ae.png";
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-          <div className="absolute bottom-1 sm:bottom-2 left-1 sm:left-2">
-            <span className="inline-block px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-medium rounded-full bg-primary/80 text-white backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div className="absolute bottom-3 left-3">
+            <span className="inline-block px-2.5 py-1 text-sm font-medium rounded-full bg-primary/80 text-white backdrop-blur-sm">
               {agent.category}
             </span>
           </div>
         </div>
         
-        <div className="space-y-2 sm:space-y-3">
-          <h3 className="text-base sm:text-lg font-semibold text-primary dark:text-white line-clamp-2">{agent.title}</h3>
+        <div className="agent-card-mobile-content">
+          <h3 className="agent-card-mobile-title line-clamp-2">
+            {agent.title}
+          </h3>
           
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{agent.description}</p>
+          <p className="agent-card-mobile-description">
+            {agent.description}
+          </p>
           
-          <div className="pt-1 sm:pt-2 flex items-center justify-between">
+          <div className="pt-2 flex items-center justify-between">
             <button 
-              className="text-xs sm:text-sm font-medium text-primary hover:text-primary/80 dark:text-krushal-lightPurple flex items-center gap-1 transition-colors"
+              className="agent-card-mobile-action hover:text-primary/80 dark:hover:text-krushal-lightPurple/80 transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
                 onClick && onClick();
               }}
             >
-              <InfoIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+              <InfoIcon className="h-4 w-4" />
               <span>{t('learn.more')}</span>
             </button>
             
             {featured && (
-              <button className="text-xs sm:text-sm font-medium text-secondary hover:text-secondary/80 dark:text-secondary/90 flex items-center gap-1 transition-colors">
-                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
+              <button className="text-sm font-medium text-secondary hover:text-secondary/80 dark:text-secondary/90 flex items-center gap-1 transition-colors">
+                <ExternalLink className="h-4 w-4" />
                 <span>{t('try.now')}</span>
               </button>
             )}

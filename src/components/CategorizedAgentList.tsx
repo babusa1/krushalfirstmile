@@ -82,7 +82,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
             <div className="flex flex-wrap gap-2 pb-2">
               <button
                 onClick={() => setSelectedCategory(null)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`px-4 py-2.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
                   selectedCategory === null
                     ? 'bg-primary text-white'
                     : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
@@ -95,7 +95,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
                     selectedCategory === category
                       ? 'bg-primary text-white'
                       : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
@@ -109,7 +109,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
         </motion.div>
 
         {filteredAgents.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
             {filteredAgents.map((agent, index) => (
               <AgentCard
                 key={agent.id}
@@ -121,7 +121,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
           </div>
         ) : (
           <div className="text-center py-8 sm:py-12">
-            <p className="text-gray-600 dark:text-gray-300 text-base">{noAgentsMessage}</p>
+            <p className="text-lg text-gray-600 dark:text-gray-300">{noAgentsMessage}</p>
           </div>
         )}
       </div>

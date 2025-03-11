@@ -117,18 +117,34 @@
   @apply text-base text-gray-700;
 }
 
-/* Mobile-specific improvements */
+/* Enterprise-scale Mobile Optimization */
 @media (max-width: 640px) {
-  .agent-card-description {
-    @apply text-sm;
-  }
-  
   body {
     @apply text-base;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
+  h1 {
+    @apply text-2xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-xl font-bold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-lg font-bold tracking-tight;
+  }
+  
+  .card-title {
+    @apply text-lg font-semibold;
+  }
+  
+  .card-description {
+    @apply text-sm leading-relaxed;
+  }
+  
+  .agent-card-title {
+    @apply text-lg;
   }
   
   .category-title {
@@ -136,14 +152,67 @@
   }
   
   .category-description {
-    @apply text-base;
+    @apply text-sm leading-relaxed;
   }
   
   .explore-button {
-    @apply text-base py-2 px-4;
+    @apply text-sm py-2 px-4;
   }
   
   .category-card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4;
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-5;
   }
+  
+  /* Enhanced mobile cards */
+  .mobile-card {
+    @apply p-4 rounded-xl shadow-md border border-gray-200 dark:border-gray-700;
+    @apply flex flex-col gap-3;
+  }
+  
+  .mobile-card-title {
+    @apply text-lg font-semibold text-krushal-darkPurple dark:text-white;
+  }
+  
+  .mobile-card-description {
+    @apply text-sm text-gray-600 dark:text-gray-300 leading-relaxed;
+  }
+  
+  .mobile-card-action {
+    @apply text-sm font-medium text-krushal-purple dark:text-krushal-lightPurple;
+  }
+}
+
+/* Category Card Enhancements */
+.category-card-mobile {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply p-5;
+  @apply transition-all duration-300 hover:shadow-xl;
+}
+
+/* Agent Card Enhancements */
+.agent-card-mobile {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply transition-all duration-300 hover:shadow-xl;
+}
+
+.agent-card-mobile-content {
+  @apply p-4 space-y-3;
+}
+
+.agent-card-mobile-title {
+  @apply text-lg font-semibold text-krushal-darkPurple dark:text-white;
+}
+
+.agent-card-mobile-description {
+  @apply text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-2;
+}
+
+.agent-card-mobile-category {
+  @apply text-xs font-medium px-2 py-1 rounded-full bg-krushal-purple/10 text-krushal-purple dark:bg-krushal-purple/20 dark:text-krushal-lightPurple;
+}
+
+.agent-card-mobile-action {
+  @apply text-sm font-medium text-krushal-purple dark:text-krushal-lightPurple flex items-center gap-1;
 }
