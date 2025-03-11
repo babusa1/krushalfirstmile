@@ -16,7 +16,8 @@ const LanguageSelector: React.FC = () => {
     setIsOpen(false);
   };
   
-  const languages: Language[] = ['en', 'ta', 'hi', 'mr'];
+  // Only include English as that's all we currently support
+  const languages: Language[] = ['en'];
 
   return (
     <div className="relative">
