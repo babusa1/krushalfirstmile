@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
@@ -153,17 +152,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-deep-purple-500 hover:bg-deep-purple-600 text-white rounded-md font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-md hover:shadow-lg border-2 border-deep-purple-400"
+            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-krushal-purple hover:bg-krushal-darkPurple text-white rounded-md font-bold transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-md hover:shadow-lg border-2 border-white"
           >
             {isSubmitting ? (
               <>
                 <Loader2 className="h-5 w-5 animate-spin" />
-                <span className="text-white font-bold">Sending...</span>
+                <span className="text-white font-bold text-lg">Sending...</span>
               </>
             ) : (
               <>
                 <Send className="h-5 w-5" />
-                <span className="text-white font-bold">Send Message</span>
+                <span className="text-white font-bold text-lg">Send Message</span>
               </>
             )}
           </button>
