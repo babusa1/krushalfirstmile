@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
@@ -153,14 +152,14 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
                   {category.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="mobile-card-title group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors">
+                  <h3 className="text-xl font-semibold group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors">
                     {category.name}
                   </h3>
-                  <p className="mobile-card-description mb-3 line-clamp-3">
+                  <p className="text-base text-gray-600 dark:text-gray-300 mb-3 line-clamp-3">
                     {category.description}
                   </p>
                   <div 
-                    className="flex items-center mobile-card-action"
+                    className="flex items-center text-base font-medium text-krushal-purple dark:text-krushal-lightPurple"
                     onClick={(e) => handleExploreClick(e, category.id)}
                   >
                     <span>{t('categories.explore')}</span>

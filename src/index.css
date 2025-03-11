@@ -163,18 +163,18 @@
     @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-5;
   }
   
-  /* Enhanced mobile cards */
+  /* Enhanced mobile cards with improved text size */
   .mobile-card {
     @apply p-4 rounded-xl shadow-md border border-gray-200 dark:border-gray-700;
     @apply flex flex-col gap-3;
   }
   
   .mobile-card-title {
-    @apply text-lg font-semibold text-krushal-darkPurple dark:text-white;
+    @apply text-xl font-semibold text-krushal-darkPurple dark:text-white;
   }
   
   .mobile-card-description {
-    @apply text-sm text-gray-600 dark:text-gray-300 leading-relaxed;
+    @apply text-base text-gray-600 dark:text-gray-300 leading-relaxed;
   }
   
   .mobile-card-action {
@@ -190,7 +190,7 @@
   @apply transition-all duration-300 hover:shadow-xl;
 }
 
-/* Agent Card Enhancements */
+/* Agent Card Enhancements with improved text size */
 .agent-card-mobile {
   @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden;
   @apply border border-gray-200 dark:border-gray-700;
@@ -202,11 +202,11 @@
 }
 
 .agent-card-mobile-title {
-  @apply text-lg font-semibold text-krushal-darkPurple dark:text-white;
+  @apply text-xl font-semibold text-krushal-darkPurple dark:text-white;
 }
 
 .agent-card-mobile-description {
-  @apply text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-2;
+  @apply text-base text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3;
 }
 
 .agent-card-mobile-category {
@@ -214,5 +214,5 @@
 }
 
 .agent-card-mobile-action {
-  @apply text-sm font-medium text-krushal-purple dark:text-krushal-lightPurple flex items-center gap-1;
+  @apply text-base font-medium text-krushal-purple dark:text-krushal-lightPurple flex items-center gap-1;
 }

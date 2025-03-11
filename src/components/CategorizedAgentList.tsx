@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
@@ -82,7 +81,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
             <div className="flex flex-wrap gap-2 pb-2">
               <button
                 onClick={() => setSelectedCategory(null)}
-                className={`px-4 py-2.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`px-4 py-2.5 rounded-full text-base font-medium transition-colors whitespace-nowrap ${
                   selectedCategory === null
                     ? 'bg-primary text-white'
                     : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
@@ -95,7 +94,7 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                  className={`px-4 py-2.5 rounded-full text-base font-medium transition-colors whitespace-nowrap ${
                     selectedCategory === category
                       ? 'bg-primary text-white'
                       : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
