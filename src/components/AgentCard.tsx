@@ -30,11 +30,13 @@ const AgentCard: React.FC<AgentCardProps> = ({
 }) => {
   const { t } = useLanguage();
 
-  // Map of agent titles to the specific images - Updated with new images
+  // Map of agent titles to the specific images
   const getAgentSpecificImage = () => {
     const agentImages: Record<string, string> = {
+      // Financial Services - Updated with new image
+      "Mortgage Document Extractor": "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
+      
       // Financial Services
-      "Mortgage Document Extractor": "/lovable-uploads/b16423de-2102-4aa4-8a34-9a7893b13806.png",
       "Technical Evaluation for Fund Management": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
       "Market Price Predictor": "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png",
       

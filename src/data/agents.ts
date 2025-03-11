@@ -7,7 +7,7 @@ export const featuredAgents: Agent[] = [
     title: "Mortgage Document Extractor",
     description: "AI agent trained to extract and process key information from mortgage documents, including warranty deeds, trust certifications, quit claim deeds, and more. Streamlines document processing for financial institutions and real estate professionals.",
     category: "Digital & Financial Services",
-    image: "/lovable-uploads/b16423de-2102-4aa4-8a34-9a7893b13806.png",
+    image: "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
     features: [
       "Extracts data from Special Warranty Deeds",
       "Processes Mortgage and Warranty Deed information",
