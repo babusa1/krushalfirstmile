@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Facebook } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactForm from './ContactForm';
 
@@ -50,9 +49,16 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="flex space-x-4 pt-2">
-              <SocialLink href="#" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
-              <SocialLink href="#" icon={<Linkedin className="h-5 w-5" />} label="LinkedIn" />
-              <SocialLink href="#" icon={<Facebook className="h-5 w-5" />} label="Facebook" />
+              <SocialLink 
+                href="https://www.facebook.com/KrushalOC" 
+                icon={<Facebook className="h-5 w-5" />} 
+                label="Facebook" 
+              />
+              <SocialLink 
+                href="https://www.linkedin.com/company/krushal/" 
+                icon={<Linkedin className="h-5 w-5" />} 
+                label="LinkedIn" 
+              />
             </div>
           </motion.div>
           
@@ -167,6 +173,8 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
   <a 
     href={href}
     aria-label={label}
+    target="_blank"
+    rel="noopener noreferrer"
     className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-krushal-darkPurple dark:text-gray-300 transition-colors"
   >
     {icon}
