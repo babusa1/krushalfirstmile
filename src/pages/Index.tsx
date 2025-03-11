@@ -466,8 +466,8 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-28 md:pt-32 lg:pt-36 pb-16 px-6">
+      {/* Hero Section with Integrated Carousel */}
+      <section className="pt-28 md:pt-32 lg:pt-36 pb-16 px-6" id="featured-agents">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <motion.div 
@@ -493,7 +493,7 @@ const Index = () => {
                 </button>
                 
                 <a 
-                  href="#featured-agents"
+                  href="#agent-list"
                   className="px-6 py-3 border border-krushal-purple text-krushal-purple rounded-md font-medium hover:bg-krushal-purple/10 transition-colors flex items-center justify-center"
                 >
                   {t('hero.explore')}
@@ -510,10 +510,12 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-krushal-purple/20 to-krushal-lightPurple/20 blur-xl"></div>
                 <div className="relative bg-white dark:bg-krushal-darkPurple/90 rounded-xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-                  <img 
-                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&h=800" 
-                    alt="First Mile Modernization" 
-                    className="w-full h-auto"
+                  <h2 className="text-2xl md:text-3xl font-bold text-krushal-darkPurple dark:text-white px-6 pt-4 pb-2">
+                    {t('featured.title')}
+                  </h2>
+                  <AgentCarousel 
+                    agents={featuredAgents} 
+                    onAgentClick={handleAgentClick} 
                   />
                 </div>
               </div>
@@ -527,37 +529,13 @@ const Index = () => {
             className="mt-16 md:mt-24 text-center"
           >
             <a 
-              href="#featured-agents"
+              href="#agent-list"
               className="inline-flex flex-col items-center text-krushal-purple dark:text-krushal-lightPurple hover:text-krushal-brightPurple dark:hover:text-white transition-colors"
             >
               <span className="text-sm font-medium mb-2">{t('hero.discover')}</span>
               <ChevronDown className="h-6 w-6 animate-bounce" />
             </a>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Featured Agents Carousel */}
-      <section id="featured-agents" className="py-16 px-6 bg-gray-50 dark:bg-gray-900/70">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
-              {t('featured.title')}
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              {t('featured.description')}
-            </p>
-          </motion.div>
-
-          <AgentCarousel 
-            agents={featuredAgents} 
-            onAgentClick={handleAgentClick} 
-          />
         </div>
       </section>
 

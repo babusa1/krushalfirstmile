@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -84,27 +83,27 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) =
 
   return (
     <div 
-      className="relative w-full overflow-hidden py-12"
+      className="relative w-full overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="absolute top-1/2 left-4 z-10 transform -translate-y-1/2">
+      <div className="absolute top-1/2 left-2 z-10 transform -translate-y-1/2">
         <button
           onClick={prevSlide}
-          className="p-2 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
+          className="p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-5 w-5" />
         </button>
       </div>
       
-      <div className="absolute top-1/2 right-4 z-10 transform -translate-y-1/2">
+      <div className="absolute top-1/2 right-2 z-10 transform -translate-y-1/2">
         <button
           onClick={nextSlide}
-          className="p-2 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
+          className="p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-5 w-5" />
         </button>
       </div>
 
@@ -116,80 +115,25 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick }) =
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="flex flex-col md:flex-row gap-6 px-6 md:px-12"
+            className="p-2 md:p-4"
           >
-            <div className="w-full md:w-1/2 flex flex-col justify-center space-y-6">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#311B92] dark:text-white"
-              >
-                {enhancedAgents[current].title}
-              </motion.h2>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-base md:text-lg text-gray-700 dark:text-gray-300"
-              >
-                {enhancedAgents[current].description}
-              </motion.p>
-              
-              {enhancedAgents[current].features && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="space-y-2"
-                >
-                  <h3 className="text-sm font-medium text-[#7B1FA2] dark:text-[#CE93D8]">Key Features:</h3>
-                  <ul className="text-sm space-y-1">
-                    {enhancedAgents[current].features?.slice(0, 3).map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="inline-block w-2 h-2 mt-1.5 mr-2 rounded-full bg-[#7B1FA2]"></span>
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="pt-4"
-              >
-                <button 
-                  onClick={() => onAgentClick(enhancedAgents[current])}
-                  className="px-6 py-3 bg-[#7B1FA2] hover:bg-[#9C27B0] text-white rounded-md font-medium transition-colors shadow-md hover:shadow-lg"
-                >
-                  Learn More
-                </button>
-              </motion.div>
-            </div>
-            
-            <div className="w-full md:w-1/2">
-              <AgentCard 
-                agent={enhancedAgents[current]} 
-                featured={true}
-                onClick={() => onAgentClick(enhancedAgents[current])}
-              />
-            </div>
+            <AgentCard 
+              agent={enhancedAgents[current]} 
+              featured={true}
+              onClick={() => onAgentClick(enhancedAgents[current])}
+            />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center mt-6 space-x-2">
+      <div className="flex justify-center mt-2 space-x-1.5">
         {enhancedAgents.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`w-2 h-2 rounded-full transition-all ${
               index === current 
-                ? 'bg-[#7B1FA2] w-6' 
+                ? 'bg-[#7B1FA2] w-4' 
                 : 'bg-gray-300 dark:bg-gray-600 hover:bg-[#CE93D8] dark:hover:bg-[#CE93D8]'
             }`}
             aria-label={`Go to slide ${index + 1}`}
