@@ -1,3 +1,4 @@
+
 import { Agent } from '@/components/AgentCard';
 
 // Featured agents (Krushal Agents)
@@ -212,7 +213,8 @@ export const allAgents: Agent[] = [
     id: "agent24",
     title: "Nearest PHC/CHC Locator",
     description: "Locates the nearest Primary Health Centers (PHCs) and Community Health Centers (CHCs).",
-    category: "Healthcare & Medicine"
+    category: "Healthcare & Medicine",
+    image: "/lovable-uploads/e8949723-18f7-400d-a706-7430318d2b77.png" // Added new image
   },
   {
     id: "agent25",
@@ -225,7 +227,8 @@ export const allAgents: Agent[] = [
     id: "agent26",
     title: "Vaccination Schedule Advisor",
     description: "Tracks vaccination schedules and alerts individuals about upcoming vaccinations.",
-    category: "Healthcare & Medicine"
+    category: "Healthcare & Medicine",
+    image: "/lovable-uploads/182cdf45-08d0-4bf7-923b-0d31c4334afb.png" // Added new image
   },
   // Education & Skill Development
   {

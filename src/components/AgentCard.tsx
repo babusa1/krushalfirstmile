@@ -59,6 +59,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Free Medical Care Finder": "/lovable-uploads/020b7723-7f3b-4818-992f-0498b5b3e2c0.png",
       "Common Disease Remedies Advisor": "/lovable-uploads/f5045f36-6e61-4c40-8fea-d78f3007223b.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
+      "Nearest PHC/CHC Locator": "/lovable-uploads/e8949723-18f7-400d-a706-7430318d2b77.png", // Added new image
+      "Vaccination Schedule Advisor": "/lovable-uploads/182cdf45-08d0-4bf7-923b-0d31c4334afb.png", // Added new image
       
       // Weather & Disaster - Updated with new images
       "Weather Forecast Agent": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",

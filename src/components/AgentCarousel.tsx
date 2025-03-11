@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -41,8 +40,9 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     // Healthcare - Updated with new images
     "Free Medical Care Finder": "/lovable-uploads/020b7723-7f3b-4818-992f-0498b5b3e2c0.png",
     "Common Disease Remedies Advisor": "/lovable-uploads/f5045f36-6e61-4c40-8fea-d78f3007223b.png",
-    "Conversational AI for Elders": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png",
     "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
+    "Nearest PHC/CHC Locator": "/lovable-uploads/e8949723-18f7-400d-a706-7430318d2b77.png", // Added new image
+    "Vaccination Schedule Advisor": "/lovable-uploads/182cdf45-08d0-4bf7-923b-0d31c4334afb.png", // Added new image
     
     // Weather & Disaster - Updated with new images
     "Weather Forecast Agent": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
@@ -71,10 +71,10 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
                 "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
                 "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
                 "Weather & Disaster Management": "/lovable-uploads/be51a951-0119-48b1-9c3d-469b70770608.png",
-                "Government Schemes & Subsidies": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png", // Updated image for government schemes
+                "Government Schemes & Subsidies": "/lovable-uploads/20e5487a-3456-4b00-9f4b-7647de934974.png",
                 "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
                 "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
-                "Women & Self-Help Groups (SHGs)": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the new image
+                "Women & Self-Help Groups (SHGs)": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png",
                 "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png",
                 "Local Governance & Legal Issues": "/lovable-uploads/fec4a608-113b-4a3a-9167-976651b61cef.png"
               };
