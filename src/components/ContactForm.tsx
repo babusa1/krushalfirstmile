@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
@@ -41,9 +40,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     setIsSubmitting(true);
     
     // Simulate form submission
+    // In a real application, this would send the data to info@krushal.com
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Your message has been sent successfully!");
+      toast.success("Your message has been sent successfully! We'll get back to you within 24 hours.");
       setFormData(initialFormData); // Reset the form
       onClose();
     }, 1500);
@@ -145,7 +145,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
           />
         </div>
         
-        <div className="pt-2">
+        <div className="pt-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+            Your message will be sent to <span className="font-semibold">info@krushal.com</span>. We'll respond within 24 hours.
+          </p>
           <button
             type="submit"
             disabled={isSubmitting}
