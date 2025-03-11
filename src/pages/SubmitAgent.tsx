@@ -50,7 +50,7 @@ const SubmitAgent = () => {
               <Home className="h-5 w-5" />
             </Link>
             <ChevronRight className="h-4 w-4 text-gray-400" />
-            <span className="text-gray-900 dark:text-white font-medium">Submit Agent</span>
+            <span className="text-gray-900 dark:text-white font-medium">List your agent</span>
           </div>
         </div>
       </nav>
@@ -64,7 +64,7 @@ const SubmitAgent = () => {
         >
           <div className="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 sm:p-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
-              Submit Your Agent for Evaluation
+              List Your Agent for Evaluation
             </h1>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -238,7 +238,7 @@ const SubmitAgent = () => {
                       Submitting...
                     </>
                   ) : (
-                    'Submit Agent'
+                    'List Agent'
                   )}
                 </button>
               </div>

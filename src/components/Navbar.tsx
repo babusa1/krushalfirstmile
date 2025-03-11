@@ -65,7 +65,7 @@ const Navbar = () => {
               }
             }}
           >
-            {t('nav.submit')}
+            List your agent
           </button>
         </nav>
 
@@ -111,7 +111,7 @@ const Navbar = () => {
               }
             }}
           >
-            {t('nav.submit')}
+            List your agent
           </button>
         </div>
       </div>
