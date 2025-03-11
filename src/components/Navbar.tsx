@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -72,22 +71,20 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={toggleMobileMenu}
-            className="text-krushal-darkPurple dark:text-white p-1"
-            aria-label="Toggle Menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5 sm:h-6 sm:w-6" />
-            ) : (
-              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
-            )}
-          </button>
-        </div>
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden text-krushal-darkPurple dark:text-white p-1"
+          aria-label="Toggle Menu"
+        >
+          {isMobileMenuOpen ? (
+            <X className="h-5 w-5 sm:h-6 sm:w-6" />
+          ) : (
+            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+          )}
+        </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Menu */}
       <div
         className={cn(
           "fixed top-[60px] sm:top-[76px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden transition-transform duration-300 ease-in-out z-40",
@@ -99,8 +96,6 @@ const Navbar = () => {
           <MobileNavLink href="/agents" label={t('nav.agents')} onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
-          
-          {/* List Your Agent as menu item instead of button */}
           <MobileNavLink 
             href="#" 
             label="List your agent" 
