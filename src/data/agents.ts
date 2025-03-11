@@ -7,6 +7,7 @@ export const featuredAgents: Agent[] = [
     title: "Mortgage Document Extractor",
     description: "AI agent trained to extract and process key information from mortgage documents, including warranty deeds, trust certifications, quit claim deeds, and more. Streamlines document processing for financial institutions and real estate professionals.",
     category: "Digital & Financial Services",
+    image: "/lovable-uploads/4dff860c-4af6-41b2-a63b-c51f402a5462.png",
     features: [
       "Extracts data from Special Warranty Deeds",
       "Processes Mortgage and Warranty Deed information",
@@ -20,6 +21,7 @@ export const featuredAgents: Agent[] = [
     title: "Smart Ration Agent for HF and Jersey Cows",
     description: "Krushal's smart-poshan provides personalized feed recommendations for dairy cows based on breed, age, calving history, and milk production. Optimizes nutrition while keeping fodder availability as a priority, resulting in cost-effective ration plans.",
     category: "Livestock & Dairy",
+    image: "/lovable-uploads/6b4a6161-e57e-4214-ba6e-ca2ed4748e70.png",
     features: [
       "Analyzes cow breed, age, and calving history",
       "Considers current milk production",
@@ -33,6 +35,7 @@ export const featuredAgents: Agent[] = [
     title: "Milk Volume Predictor for Dairy Cows",
     description: "Krushal's smart-litres projects future milk volume for individual cows over the next 12 months. By analyzing breed, age, body condition, and production history, it helps dairies estimate logistics and plan resource allocation effectively.",
     category: "Livestock & Dairy",
+    image: "/lovable-uploads/9b285c09-5b4b-4736-adb7-1e7435911fcd.png",
     features: [
       "Predicts milk volume for 12 months in advance",
       "Analyzes cow's breed, age, and body condition",
@@ -46,6 +49,7 @@ export const featuredAgents: Agent[] = [
     title: "Conversational AI for Elders",
     description: "An AI companion that assists elderly individuals with daily tasks, appointment reminders, and medication tracking. Provides emotional support through natural conversations and keeps users informed with news updates and information relevant to their interests.",
     category: "Healthcare & Medicine",
+    image: "/lovable-uploads/ec8255f1-f6eb-420f-afdd-29bc8707fe54.png",
     features: [
       "Daily task notifications and reminders",
       "Medical history tracking and appointment management",
@@ -59,6 +63,7 @@ export const featuredAgents: Agent[] = [
     title: "Technical Evaluation for Fund Management",
     description: "Comprehensive technical due diligence solution covering financial management, security analysis, data infrastructure, and technology stack review. Ensures regulatory compliance and innovation readiness for investment firms and financial institutions.",
     category: "Digital & Financial Services",
+    image: "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
     features: [
       "Financial management assessment",
       "Security and risk analysis",
@@ -77,44 +82,51 @@ export const allAgents: Agent[] = [
     id: "agent6",
     title: "Market Prices for Commodity",
     description: "Provides real-time commodity market prices to help farmers make informed decisions.",
-    category: "Agriculture & Farming"
+    category: "Agriculture & Farming",
+    image: "/lovable-uploads/4b27cae2-5f77-4c71-a509-a84b877e1fee.png"
   },
   {
     id: "agent7",
     title: "Farming Techniques Advisor",
     description: "Provides best farming practices, crop rotation strategies, and sustainable agriculture tips to improve yield and soil health.",
-    category: "Agriculture & Farming"
+    category: "Agriculture & Farming",
+    image: "/lovable-uploads/831d6630-2414-4d70-a085-368ab8eb7154.png"
   },
   {
     id: "agent8",
     title: "Crop Disease Identifier",
     description: "Analyzes images or descriptions of crop symptoms to diagnose diseases and recommend appropriate treatments.",
-    category: "Agriculture & Farming"
+    category: "Agriculture & Farming",
+    image: "/lovable-uploads/0232c051-75a9-4397-a516-0512dc84422d.png"
   },
   {
     id: "agent9",
     title: "Weather Forecast Agent",
     description: "Delivers accurate, localized weather forecasts to help farmers plan their activities and protect crops from adverse conditions.",
-    category: "Weather & Disaster Management"
+    category: "Weather & Disaster Management",
+    image: "/lovable-uploads/3c1417c4-6fc3-427f-83fe-46fcb4ef16d6.png"
   },
   {
     id: "agent10",
     title: "Market Price Predictor",
     description: "Analyzes market trends and predicts future crop prices, helping farmers make informed decisions about when to sell their produce.",
-    category: "Agriculture & Farming"
+    category: "Agriculture & Farming",
+    image: "/lovable-uploads/4b27cae2-5f77-4c71-a509-a84b877e1fee.png"
   },
   {
     id: "agent11",
     title: "Fertilizers & Pesticides Advisor",
     description: "Recommends appropriate fertilizers and pesticides based on crop type, soil condition, and specific farming needs.",
-    category: "Agriculture & Farming"
+    category: "Agriculture & Farming",
+    image: "/lovable-uploads/9730fba6-a832-48d2-a0c3-1b373edabcec.png"
   },
   // Livestock & Dairy
   {
     id: "agent12",
     title: "Livestock Management Advisory",
     description: "Provides best practices for feeding, breeding, and health monitoring of livestock to improve productivity and welfare.",
-    category: "Livestock & Dairy"
+    category: "Livestock & Dairy",
+    image: "/lovable-uploads/6adcf8ce-dbe5-41c8-880b-52e25959f9c2.png"
   },
   {
     id: "agent13",
@@ -126,7 +138,8 @@ export const allAgents: Agent[] = [
     id: "agent14",
     title: "Government Subsidies Advisor",
     description: "Informs farmers about available government subsidies for livestock and dairy farming and guides them through the application process.",
-    category: "Government Schemes & Subsidies"
+    category: "Government Schemes & Subsidies",
+    image: "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png"
   },
   {
     id: "agent15",
@@ -138,33 +151,38 @@ export const allAgents: Agent[] = [
     id: "agent16",
     title: "Dairy Production Optimizer",
     description: "Monitors dairy production, tracks milk yield, and suggests ways to improve dairy farming efficiency and product quality.",
-    category: "Livestock & Dairy"
+    category: "Livestock & Dairy",
+    image: "/lovable-uploads/079ebe7a-c566-4c7e-81ba-ea224b5dc37e.png"
   },
   // Weather & Disaster Management
   {
     id: "agent17",
     title: "Disaster Relief Advisor",
     description: "Provides information on available disaster relief funds and assists farmers in applying for support after natural calamities.",
-    category: "Weather & Disaster Management"
+    category: "Weather & Disaster Management",
+    image: "/lovable-uploads/d1eaf6be-a19a-46b3-a0d4-892696cc1098.png"
   },
   {
     id: "agent18",
     title: "Rainfall Predictor",
     description: "Provides accurate rainfall predictions for different regions, helping farmers plan irrigation and crop management.",
-    category: "Weather & Disaster Management"
+    category: "Weather & Disaster Management",
+    image: "/lovable-uploads/a65712d2-abc4-4552-8893-5af76ff196b4.png"
   },
   {
     id: "agent19",
     title: "Flood & Drought Preparedness Advisor",
     description: "Offers advice on how to prepare for and mitigate the effects of floods and droughts on agricultural operations.",
-    category: "Weather & Disaster Management"
+    category: "Weather & Disaster Management",
+    image: "/lovable-uploads/0bd0873d-ea16-4449-a389-076c72eba38b.png"
   },
   // Government Schemes & Subsidies
   {
     id: "agent20",
     title: "Scheme Eligibility Checker",
     description: "Determines which government schemes a farmer is eligible for based on their profile and farming activities.",
-    category: "Government Schemes & Subsidies"
+    category: "Government Schemes & Subsidies",
+    image: "/lovable-uploads/9b1090b9-c106-41b3-8ba2-4735b5ae3927.png"
   },
   {
     id: "agent21",
@@ -177,7 +195,8 @@ export const allAgents: Agent[] = [
     id: "agent22",
     title: "Free Medical Care Finder",
     description: "Helps individuals find free or affordable medical care facilities nearby.",
-    category: "Healthcare & Medicine"
+    category: "Healthcare & Medicine",
+    image: "/lovable-uploads/8d5a7733-0e74-49ea-b364-9b62f8f3bbc7.png"
   },
   {
     id: "agent23",
@@ -195,7 +214,8 @@ export const allAgents: Agent[] = [
     id: "agent25",
     title: "Maternal & Child Health Assistant",
     description: "Offers guidance on maternal and child health, including vaccination schedules and nutritional tips.",
-    category: "Healthcare & Medicine"
+    category: "Healthcare & Medicine",
+    image: "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png"
   },
   {
     id: "agent26",
@@ -208,7 +228,8 @@ export const allAgents: Agent[] = [
     id: "agent27",
     title: "Government Scholarships Advisor",
     description: "Helps individuals find and apply for government scholarships.",
-    category: "Education & Skill Development"
+    category: "Education & Skill Development",
+    image: "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png"
   },
   {
     id: "agent28",
