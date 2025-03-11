@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 interface Category {
   id: string;
@@ -18,6 +19,7 @@ interface CategorySectionProps {
 
 const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onExploreCategory }) => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   const categories: Category[] = [
     {
@@ -114,6 +116,11 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     }
   ];
 
+  const handleExploreClick = (e: React.MouseEvent, categoryId: string) => {
+    e.stopPropagation();
+    navigate(`/agents?category=${encodeURIComponent(categoryId)}`);
+  };
+
   return (
     <section className="py-12 px-4 sm:px-6">
       <div className="container mx-auto">
@@ -154,10 +161,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
                   </p>
                   <div 
                     className="flex items-center text-primary dark:text-krushal-lightPurple font-medium text-xs sm:text-sm"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onExploreCategory(category.id);
-                    }}
+                    onClick={(e) => handleExploreClick(e, category.id)}
                   >
                     <span>{t('categories.explore')}</span>
                     <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
