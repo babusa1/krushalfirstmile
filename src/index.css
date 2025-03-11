@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,16 +14,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 265 84% 32%;
-    --primary-foreground: 210 40% 98%;
+    /* Material Deep Purple & Deep Orange Palette */
+    --primary: 262 52% 47%; /* Deep Purple 500 #673AB7 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 51% 55%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 14 100% 57%; /* Deep Orange 500 #FF5722 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 262 16% 90%;
+    --muted-foreground: 262 16% 40%;
 
-    --accent: 262 83% 58%;
+    --accent: 262 52% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,18 +32,16 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 263 70% 50%;
+    --ring: 262 52% 47%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom Krushal colors for backward compatibility */
+    --krushal-purple: 262 52% 47%; /* #673AB7 */
+    --krushal-brightPurple: 262 68% 62%; /* #9575CD */
+    --krushal-darkPurple: 262 52% 25%; /* #311B92 */
+    --krushal-lightPurple: 262 52% 75%; /* #D1C4E9 */
+    --krushal-lavender: 262 52% 84%; /* #EDE7F6 */
   }
 
   .dark {
@@ -54,16 +54,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 263 70% 50%;
+    --primary: 262 52% 47%; /* Deep Purple 500 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 14 100% 57%; /* Deep Orange 500 */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 264 67% 40%;
+    --accent: 262 52% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -71,7 +71,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 263 70% 50%;
+    --ring: 262 52% 47%;
   }
 }
 
@@ -230,7 +230,7 @@
 }
 
 .carousel-dot.active {
-  @apply w-3 md:w-4 bg-krushal-brightPurple;
+  @apply w-3 md:w-4 bg-secondary;
 }
 
 /* Optimized reveal animations */
@@ -286,6 +286,24 @@
   input, select, textarea {
     @apply text-base;
     font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+  
+  /* Improved mobile spacing */
+  .container {
+    @apply px-4;
+  }
+  
+  h1 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h2 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  /* Better card layout for mobile */
+  .grid {
+    @apply gap-4;
   }
 }
 

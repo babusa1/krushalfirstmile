@@ -104,8 +104,8 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
+    const isLeftSwipe = distance > 30; // Reduced threshold for better touch response
+    const isRightSwipe = distance < -30;
 
     if (isLeftSwipe) {
       nextSlide();
@@ -123,23 +123,23 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="absolute top-1/2 left-2 z-10 transform -translate-y-1/2">
+      <div className="absolute top-1/2 left-1 sm:left-2 z-10 transform -translate-y-1/2">
         <button
           onClick={prevSlide}
-          className="p-1 sm:p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
+          className="p-1 sm:p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-primary shadow-md hover:bg-white transition-all duration-300"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+          <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
         </button>
       </div>
       
-      <div className="absolute top-1/2 right-2 z-10 transform -translate-y-1/2">
+      <div className="absolute top-1/2 right-1 sm:right-2 z-10 transform -translate-y-1/2">
         <button
           onClick={nextSlide}
-          className="p-1 sm:p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-[#311B92] shadow-md hover:bg-white transition-all duration-300"
+          className="p-1 sm:p-1.5 rounded-full bg-white/80 backdrop-blur-sm text-primary shadow-md hover:bg-white transition-all duration-300"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
+          <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
         </button>
       </div>
 
@@ -169,8 +169,8 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
             onClick={() => goToSlide(index)}
             className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
               index === current 
-                ? 'bg-[#7B1FA2] w-3 sm:w-4' 
-                : 'bg-gray-300 dark:bg-gray-600 hover:bg-[#CE93D8] dark:hover:bg-[#CE93D8]'
+                ? 'bg-secondary w-3 sm:w-4' 
+                : 'bg-gray-300 dark:bg-gray-600 hover:bg-primary dark:hover:bg-primary'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

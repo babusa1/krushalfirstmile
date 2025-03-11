@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
@@ -113,46 +114,46 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick }) =>
   ];
 
   return (
-    <section className="py-16 px-6">
+    <section className="py-12 px-4 sm:px-6">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-3 sm:mb-4">
             {t('categories.title')}
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-sm sm:text-base">
             {t('categories.description')}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {categories.map((category, index) => (
             <motion.div
               key={category.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-krushal-darkPurple/90 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-6 hover:shadow-md transition-all duration-300 group cursor-pointer"
+              className="bg-white dark:bg-krushal-darkPurple/90 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-4 sm:p-6 hover:shadow-md transition-all duration-300 group cursor-pointer"
               onClick={() => onCategoryClick(category.id)}
             >
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-krushal-purple/10 text-krushal-purple dark:bg-krushal-purple/20 dark:text-krushal-lavender">
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="p-2 sm:p-3 rounded-full bg-primary/10 text-primary dark:bg-primary/20 dark:text-krushal-lavender shrink-0">
                   {category.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-krushal-darkPurple dark:text-white mb-2 group-hover:text-krushal-purple dark:group-hover:text-krushal-lightPurple transition-colors">
+                  <h3 className="text-base sm:text-lg font-semibold text-krushal-darkPurple dark:text-white mb-1 sm:mb-2 group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors">
                     {category.name}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 line-clamp-3">
                     {category.description}
                   </p>
-                  <div className="flex items-center text-krushal-purple dark:text-krushal-lightPurple font-medium text-sm">
+                  <div className="flex items-center text-primary dark:text-krushal-lightPurple font-medium text-xs sm:text-sm">
                     <span>{t('categories.explore')}</span>
-                    <ChevronRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -88,7 +89,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       transition={{ duration: 0.6, delay: delay * 0.1 }}
       className={cn(
         "relative overflow-hidden rounded-xl card-hover",
-        featured ? "bg-gradient-to-br from-white to-[#D1C4E9]/30 dark:from-[#311B92] dark:to-[#7E57C2]/30" : "bg-white dark:bg-[#311B92]/90",
+        featured ? "bg-gradient-to-br from-white to-[#EDE7F6]/30 dark:from-primary dark:to-[#7E57C2]/30" : "bg-white dark:bg-primary/90",
         "border border-gray-200 dark:border-gray-800",
         "shadow-sm hover:shadow-lg",
         "transition-all duration-300 ease-in-out",
@@ -96,14 +97,14 @@ const AgentCard: React.FC<AgentCardProps> = ({
       )}
       onClick={onClick}
     >
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {featured && (
-          <span className="absolute top-4 right-4 px-2 py-1 text-xs font-semibold rounded-full bg-[#7B1FA2] text-white">
+          <span className="absolute top-2 right-2 sm:top-4 sm:right-4 px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-semibold rounded-full bg-secondary text-white">
             Featured
           </span>
         )}
         
-        <div className="mb-4 overflow-hidden rounded-lg h-40 bg-gray-100 dark:bg-gray-800 relative">
+        <div className="mb-3 sm:mb-4 overflow-hidden rounded-lg h-32 sm:h-40 bg-gray-100 dark:bg-gray-800 relative">
           <img 
             src={imageUrl}
             alt={agent.title} 
@@ -114,33 +115,33 @@ const AgentCard: React.FC<AgentCardProps> = ({
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-          <div className="absolute bottom-2 left-2">
-            <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-[#7B1FA2]/80 text-white backdrop-blur-sm">
+          <div className="absolute bottom-1 sm:bottom-2 left-1 sm:left-2">
+            <span className="inline-block px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-medium rounded-full bg-primary/80 text-white backdrop-blur-sm">
               {agent.category}
             </span>
           </div>
         </div>
         
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold text-[#311B92] dark:text-white">{agent.title}</h3>
+        <div className="space-y-2 sm:space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-primary dark:text-white line-clamp-2">{agent.title}</h3>
           
-          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{agent.description}</p>
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{agent.description}</p>
           
-          <div className="pt-2 flex items-center justify-between">
+          <div className="pt-1 sm:pt-2 flex items-center justify-between">
             <button 
-              className="text-sm font-medium text-[#7B1FA2] hover:text-[#9C27B0] dark:text-[#BA68C8] flex items-center gap-1 transition-colors"
+              className="text-xs sm:text-sm font-medium text-primary hover:text-primary/80 dark:text-krushal-lightPurple flex items-center gap-1 transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
                 onClick && onClick();
               }}
             >
-              <InfoIcon className="h-4 w-4" />
+              <InfoIcon className="h-3 w-3 sm:h-4 sm:w-4" />
               <span>{t('learn.more')}</span>
             </button>
             
             {featured && (
-              <button className="text-sm font-medium text-[#7B1FA2] hover:text-[#9C27B0] dark:text-[#BA68C8] flex items-center gap-1 transition-colors">
-                <ExternalLink className="h-4 w-4" />
+              <button className="text-xs sm:text-sm font-medium text-secondary hover:text-secondary/80 dark:text-secondary/90 flex items-center gap-1 transition-colors">
+                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>{t('try.now')}</span>
               </button>
             )}
