@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import AgentCard, { Agent } from './AgentCard';
@@ -10,6 +11,7 @@ interface AgentListProps {
   searchPlaceholder?: string;
   allCategoriesLabel?: string;
   noAgentsMessage?: string;
+  initialSelectedCategory?: string | null;
 }
 
 const CategorizedAgentList: React.FC<AgentListProps> = ({ 
@@ -18,10 +20,18 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
   categoryTitle = "Available Agents",
   searchPlaceholder = "Search agents...",
   allCategoriesLabel = "All Categories",
-  noAgentsMessage = "No agents found matching your criteria."
+  noAgentsMessage = "No agents found matching your criteria.",
+  initialSelectedCategory = null
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialSelectedCategory);
+
+  // Update selected category when initialSelectedCategory changes
+  useEffect(() => {
+    if (initialSelectedCategory !== null) {
+      setSelectedCategory(initialSelectedCategory);
+    }
+  }, [initialSelectedCategory]);
 
   // Extract unique categories
   const categories = Array.from(new Set(agents.map(agent => agent.category)));

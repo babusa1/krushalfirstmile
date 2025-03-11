@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AgentDetailsModal from '@/components/AgentDetailsModal';
@@ -12,6 +13,8 @@ import { allAgents } from '@/data/agents';
 const Agents = () => {
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get('category');
   const { t } = useLanguage();
 
   const handleAgentClick = (agent: Agent) => {
@@ -53,6 +56,7 @@ const Agents = () => {
             searchPlaceholder={t('available.search')}
             allCategoriesLabel={t('available.all')}
             noAgentsMessage={t('available.none')}
+            initialSelectedCategory={categoryParam}
           />
         </div>
       </section>
