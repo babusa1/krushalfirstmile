@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
@@ -119,4 +118,3 @@ const CategorizedAgentList: React.FC<AgentListProps> = ({
 };
 
 export default CategorizedAgentList;
-
