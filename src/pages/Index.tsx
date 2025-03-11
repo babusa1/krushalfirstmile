@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -181,6 +181,19 @@ const Index = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [showRequestForm, setShowRequestForm] = useState(false);
 
+  useEffect(() => {
+    // Listen for custom event to show the request form
+    const handleShowRequestForm = () => {
+      setShowRequestForm(true);
+    };
+    
+    document.addEventListener('showRequestForm', handleShowRequestForm);
+    
+    return () => {
+      document.removeEventListener('showRequestForm', handleShowRequestForm);
+    };
+  }, []);
+
   const handleAgentClick = (agent: Agent) => {
     setSelectedAgent(agent);
     setIsModalOpen(true);
@@ -198,6 +211,27 @@ const Index = () => {
 
   const toggleRequestForm = () => {
     setShowRequestForm(!showRequestForm);
+
+    // If we're showing the form, scroll to it
+    if (!showRequestForm) {
+      setTimeout(() => {
+        const formSection = document.getElementById('request-form-section');
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
+  const scrollToRequestForm = () => {
+    setShowRequestForm(true);
+    
+    setTimeout(() => {
+      const formSection = document.getElementById('request-form-section');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -225,7 +259,7 @@ const Index = () => {
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
                 <button 
                   className="px-6 py-3 bg-krushal-purple text-white rounded-md font-medium hover:bg-krushal-brightPurple transition-colors shadow-md hover:shadow-lg"
-                  onClick={toggleRequestForm}
+                  onClick={scrollToRequestForm}
                 >
                   Submit Your Agent
                 </button>
@@ -304,28 +338,29 @@ const Index = () => {
         <CategorySection onCategoryClick={handleCategoryClick} />
       </section>
 
-      {/* Agent Request Form (Conditional) */}
-      {showRequestForm && (
-        <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900/70">
-          <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
-                Submit Your Agent
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Have an AI agent that could help with first mile modernization? Share it with us for evaluation.
-              </p>
-            </motion.div>
+      {/* Agent Request Form - Always included in the DOM but conditionally visible */}
+      <section 
+        id="request-form-section" 
+        className={`py-16 px-6 bg-gray-50 dark:bg-gray-900/70 ${showRequestForm ? 'block' : 'hidden'}`}
+      >
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-krushal-darkPurple dark:text-white mb-4">
+              Submit Your Agent
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Have an AI agent that could help with first mile modernization? Share it with us for evaluation.
+            </p>
+          </motion.div>
 
-            <RequestForm />
-          </div>
-        </section>
-      )}
+          <RequestForm />
+        </div>
+      </section>
 
       {/* All Agents List */}
       <section id="agent-list" className="py-16 px-6 bg-gray-50 dark:bg-gray-900/70">

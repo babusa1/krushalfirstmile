@@ -31,18 +31,12 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center">
           <img
             src="/lovable-uploads/f39e4e62-303a-4211-8623-78d6a814b86c.png"
             alt="Krushal.ai"
             className="h-10 w-auto"
           />
-          <span className={cn(
-            "font-bold text-xl transition-colors",
-            isScrolled ? "text-krushal-darkPurple dark:text-white" : "text-krushal-purple dark:text-white"
-          )}>
-            Krushal.ai
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -59,6 +53,15 @@ const Navbar = () => {
                 ? "bg-krushal-purple text-white hover:bg-krushal-brightPurple" 
                 : "bg-krushal-brightPurple text-white hover:bg-krushal-purple"
             )}
+            onClick={() => {
+              const requestFormSection = document.getElementById('request-form-section');
+              if (requestFormSection) {
+                requestFormSection.scrollIntoView({ behavior: 'smooth' });
+                // Ensure form is shown
+                const event = new CustomEvent('showRequestForm');
+                document.dispatchEvent(event);
+              }
+            }}
           >
             Submit Agent
           </button>
@@ -91,7 +94,19 @@ const Navbar = () => {
           <MobileNavLink href="/about" label="About Us" onClick={() => setIsMobileMenuOpen(false)} />
           <MobileNavLink href="/contact" label="Contact" onClick={() => setIsMobileMenuOpen(false)} />
           
-          <button className="w-full mt-4 px-4 py-3 bg-krushal-brightPurple text-white rounded-md font-medium hover:bg-krushal-purple transition-colors">
+          <button 
+            className="w-full mt-4 px-4 py-3 bg-krushal-brightPurple text-white rounded-md font-medium hover:bg-krushal-purple transition-colors"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              const requestFormSection = document.getElementById('request-form-section');
+              if (requestFormSection) {
+                requestFormSection.scrollIntoView({ behavior: 'smooth' });
+                // Ensure form is shown
+                const event = new CustomEvent('showRequestForm');
+                document.dispatchEvent(event);
+              }
+            }}
+          >
             Submit Agent
           </button>
         </div>
