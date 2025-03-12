@@ -46,13 +46,16 @@ const Navbar = () => {
     >
       {/* Main navbar container - simplified for mobile */}
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
+        {/* Logo with Tagline */}
+        <Link to="/" className="flex flex-col items-start">
           <img
             src="/lovable-uploads/f39e4e62-303a-4211-8623-78d6a814b86c.png"
             alt="Krushal"
             className="h-8 sm:h-10 w-auto"
           />
+          <span className="text-[#F97316] text-xs sm:text-sm font-medium mt-0.5">
+            modernize the first mile
+          </span>
         </Link>
 
         {/* Desktop Navigation - hidden on mobile */}
@@ -92,7 +95,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div
-          className="fixed top-[60px] sm:top-[72px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden z-40"
+          className="fixed top-[76px] sm:top-[88px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden z-40"
         >
           <nav className="container mx-auto py-4 flex flex-col space-y-4">
             <MobileNavLink href="/" label={t('nav.home')} onClick={() => setIsMobileMenuOpen(false)} />
