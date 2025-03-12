@@ -59,7 +59,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           "transition-opacity duration-300",
           !isLoaded && "opacity-0",
           isLoaded && "opacity-100",
-          `object-${objectFit}`,
+          objectFit === 'contain' ? "object-contain" : `object-${objectFit}`,
           "w-full h-full"
         )}
         {...(priority && { fetchpriority: "high" })}

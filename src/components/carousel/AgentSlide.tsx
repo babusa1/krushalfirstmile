@@ -30,17 +30,17 @@ const AgentSlide: React.FC<AgentSlideProps> = ({ agent, featured, onClick }) => 
   if (isSpecialAgent) {
     return (
       <div className="bg-white dark:bg-primary/90 rounded-lg shadow-lg overflow-hidden">
-        <div className="h-56 sm:h-60 overflow-hidden relative">
+        <div className="h-72 sm:h-80 overflow-hidden relative flex items-center justify-center bg-white">
           <OptimizedImage 
             src={agent.image}
             alt={`${agent.title} - ${agent.category} agent`}
-            className="w-full h-full transition-transform duration-500 hover:scale-105"
-            objectFit="contain"
+            className="max-w-full max-h-full object-contain p-2"
             width={800}
             height={600}
             priority={featured}
+            objectFit="contain"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
           <div className="absolute bottom-3 left-3">
             <span className="inline-block px-2.5 py-1 text-sm font-medium rounded-full bg-primary/80 text-white backdrop-blur-sm">
               {agent.category}
