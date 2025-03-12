@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronRight, Home, Loader2, Upload } from 'lucide-react';
+import { ChevronRight, Home, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
@@ -45,8 +45,7 @@ const SubmitAgent = () => {
     agentDescription: '',
     remarks: '',
     userBenefits: '',
-    technology: '',
-    file: null as File | null
+    technology: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -57,29 +56,11 @@ const SubmitAgent = () => {
     }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData(prev => ({
-        ...prev,
-        file: e.target.files![0]
-      }));
-    }
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Convert file to base64 if it exists
-      let fileData = '';
-      let fileName = '';
-      
-      if (formData.file) {
-        fileData = await convertFileToBase64(formData.file);
-        fileName = formData.file.name;
-      }
-
       const emailContent = `
         New Agent Submission:
         
@@ -100,7 +81,6 @@ const SubmitAgent = () => {
         ------------------
         User Benefits: ${formData.userBenefits}
         Technology Used: ${formData.technology}
-        ${fileName ? `Attachment: ${fileName}` : 'No attachment provided'}
       `;
 
       const templateParams = {
@@ -108,9 +88,7 @@ const SubmitAgent = () => {
         from_name: formData.fullName,
         from_email: formData.email,
         subject: `New Agent Submission: ${formData.agentName}`,
-        message: emailContent,
-        file_data: fileData,
-        file_name: fileName
+        message: emailContent
       };
 
       await emailjs.send(
@@ -127,16 +105,6 @@ const SubmitAgent = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  // Helper function to convert file to base64
-  const convertFileToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = error => reject(error);
-    });
   };
 
   return (
@@ -321,41 +289,6 @@ const SubmitAgent = () => {
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
                       placeholder="Please specify any technologies, platforms, or integrations used to create the agent."
                     />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Agent Testing/Proof (Optional)
-                    </label>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-md">
-                      <div className="space-y-1 text-center">
-                        <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                        <div className="flex text-sm text-gray-600 dark:text-gray-400">
-                          <label
-                            htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary-dark focus-within:outline-none"
-                          >
-                            <span>Upload a file</span>
-                            <input 
-                              id="file-upload" 
-                              name="file-upload" 
-                              type="file" 
-                              className="sr-only" 
-                              onChange={handleFileChange}
-                            />
-                          </label>
-                          <p className="pl-1">or drag and drop</p>
-                        </div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          PDF, PNG, JPG up to 10MB
-                        </p>
-                        {formData.file && (
-                          <p className="text-sm text-green-500">
-                            File selected: {formData.file.name}
-                          </p>
-                        )}
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
