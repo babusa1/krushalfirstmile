@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { InfoIcon, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import OptimizedImage from './OptimizedImage';
+import { getAgentImage, getAgentImageAlt } from '@/lib/agent-image-utils';
 
 export interface Agent {
   id: string;
@@ -129,6 +132,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
 
   // First try agent-specific image, then use agent.image if provided, or fall back to category image
   const imageUrl = getAgentSpecificImage() || agent.image || getCategoryImage();
+  const imageAlt = getAgentImageAlt(agent);
 
   return (
     <motion.div
@@ -151,14 +155,12 @@ const AgentCard: React.FC<AgentCardProps> = ({
         )}
         
         <div className="h-40 sm:h-44 overflow-hidden relative">
-          <img 
+          <OptimizedImage 
             src={imageUrl}
-            alt={agent.title} 
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            onError={(e) => {
-              // Fallback to a placeholder if the image fails to load
-              (e.target as HTMLImageElement).src = "/lovable-uploads/45ee1443-ab39-4200-a1ad-13d4b6fb77ae.png";
-            }}
+            alt={imageAlt}
+            className="w-full h-full transition-transform duration-500 hover:scale-105"
+            objectFit="cover"
+            priority={featured} // Load featured images with higher priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           <div className="absolute bottom-3 left-3">
