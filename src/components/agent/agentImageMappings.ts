@@ -1,4 +1,3 @@
-
 // Map of agent titles to the specific images
 export const getAgentSpecificImage = (title: string): string | undefined => {
   const agentImages: Record<string, string> = {
@@ -13,7 +12,7 @@ export const getAgentSpecificImage = (title: string): string | undefined => {
     "Digital Payment Solutions Guide": "/lovable-uploads/06b197e0-ef65-4978-9c56-3001421522e5.png", 
     
     // Livestock & Dairy - Updated with new images
-    "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png", 
+    "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/bbae3f72-9b09-4dea-9eb0-052d7d8154b9.png", 
     "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png", 
     "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
     "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png",
