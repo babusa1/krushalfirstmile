@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Cow, Milk } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AgentCard, { Agent } from './AgentCard';
 import { getAgentImage } from '@/lib/agent-image-utils';
@@ -22,6 +23,13 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     ...agent,
     image: getAgentImage(agent)
   }));
+
+  // Get agent-specific icon
+  const getAgentIcon = (title: string) => {
+    if (title.includes("Ration")) return <Cow className="mr-2 h-5 w-5 text-secondary" />;
+    if (title.includes("Milk")) return <Milk className="mr-2 h-5 w-5 text-secondary" />;
+    return null;
+  };
 
   const nextSlide = () => {
     setCurrent(current === agents.length - 1 ? 0 : current + 1);
@@ -87,6 +95,9 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
     }
   };
   
+  const currentAgent = enhancedAgents[current];
+  const agentIcon = getAgentIcon(currentAgent.title);
+  
   return (
     <div 
       className="relative w-full overflow-hidden"
@@ -126,11 +137,64 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="p-2 md:p-4"
           >
-            <AgentCard 
-              agent={enhancedAgents[current]} 
-              featured={true}
-              onClick={() => onAgentClick(enhancedAgents[current])}
-            />
+            {/* Custom display for Krushal agents */}
+            {(currentAgent.title.includes("Ration") || currentAgent.title.includes("Milk Volume")) ? (
+              <div className="bg-white dark:bg-primary/90 rounded-lg shadow-lg overflow-hidden">
+                <div className="h-40 sm:h-44 overflow-hidden relative">
+                  <img 
+                    src={currentAgent.image}
+                    alt={currentAgent.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-3 left-3">
+                    <span className="inline-block px-2.5 py-1 text-sm font-medium rounded-full bg-primary/80 text-white backdrop-blur-sm">
+                      {currentAgent.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-4">
+                  <div className="flex items-center mb-2">
+                    {agentIcon}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">
+                      {currentAgent.title}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                    {currentAgent.description}
+                  </p>
+                  
+                  {currentAgent.features && (
+                    <div className="mt-3">
+                      <p className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Key Features:</p>
+                      <ul className="text-xs space-y-1">
+                        {currentAgent.features.slice(0, 3).map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 mr-2"></span>
+                            <span className="text-gray-600 dark:text-gray-300">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <button 
+                    onClick={() => onAgentClick(currentAgent)}
+                    className="mt-4 w-full py-2 bg-primary/10 hover:bg-primary/20 text-primary font-medium rounded-md transition-colors text-sm flex items-center justify-center"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <AgentCard 
+                agent={currentAgent} 
+                featured={true}
+                onClick={() => onAgentClick(currentAgent)}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>

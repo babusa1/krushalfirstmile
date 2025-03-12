@@ -1,3 +1,4 @@
+
 import { Agent } from '@/components/AgentCard';
 
 // Featured agents (Krushal Agents)
@@ -19,29 +20,29 @@ export const featuredAgents: Agent[] = [
   {
     id: "agent2",
     title: "Smart Ration Agent for HF and Jersey Cows",
-    description: "Krushal's smart-poshan provides personalized feed recommendations for dairy cows based on breed, age, calving history, and milk production. Optimizes nutrition while keeping fodder availability as a priority, resulting in cost-effective ration plans.",
+    description: "Krushal's smart-poshan provides personalized balanced ration recommendations for individual cows based on breed, age, calving history, and milk production. It identifies the best ration based on lowest cost and currently available fodder, ensuring optimal feeding for maximum ROI.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png", // Updated image
+    image: "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png",
     features: [
-      "Analyzes cow breed, age, and calving history",
-      "Considers current milk production",
-      "Evaluates available fodder resources",
-      "Delivers cost-effective ration recommendations",
-      "Ensures optimal nutritional requirements"
+      "Considers cow breed, age, and number of calvings",
+      "Evaluates months since last calving and pregnancy status",
+      "Analyzes current milk production levels",
+      "Recommends rations based on available fodder",
+      "Prevents under-feeding and over-feeding for optimal ROI"
     ]
   },
   {
     id: "agent3",
     title: "Milk Volume Predictor for Dairy Cows",
-    description: "Krushal's smart-litres projects future milk volume for individual cows over the next 12 months. By analyzing breed, age, body condition, and production history, it helps dairies estimate logistics and plan resource allocation effectively.",
+    description: "Krushal's smart-litres projects the likely milk volume for each cow over the next 12 months. By analyzing breed, age, body condition, calvings, and production history, it helps farmers assess income and enables dairies to plan logistics effectively.",
     category: "Livestock & Dairy",
-    image: "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png", // Updated image
+    image: "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png",
     features: [
-      "Predicts milk volume for 12 months in advance",
-      "Analyzes cow's breed, age, and body condition",
-      "Considers pregnancy status and calving history",
-      "Helps dairies optimize logistics planning",
-      "Supports large-scale production forecasting"
+      "Projects milk volume for 12 months in advance",
+      "Analyzes cow breed, age, and body condition score",
+      "Considers calvings, pregnancy status, and current production",
+      "Aggregates projections at farm, route, and dairy levels",
+      "Helps farmers assess income and dairies plan logistics"
     ]
   },
   {
@@ -49,7 +50,7 @@ export const featuredAgents: Agent[] = [
     title: "Conversational AI for Elders",
     description: "An AI companion that assists elderly individuals with daily tasks, appointment reminders, and medication tracking. Provides emotional support through natural conversations and keeps users informed with news updates and information relevant to their interests.",
     category: "Healthcare & Medicine",
-    image: "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the new image
+    image: "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png",
     features: [
       "Daily task notifications and reminders",
       "Medical history tracking and appointment management",
@@ -63,7 +64,7 @@ export const featuredAgents: Agent[] = [
     title: "Technical Evaluation for Fund Management",
     description: "Comprehensive technical due diligence solution covering financial management, security analysis, data infrastructure, and technology stack review. Ensures regulatory compliance and innovation readiness for investment firms and financial institutions.",
     category: "Digital & Financial Services",
-    image: "/lovable-uploads/8306145d-3f75-4988-a6ff-16533c4388a2.png", // Updated with the new image
+    image: "/lovable-uploads/8306145d-3f75-4988-a6ff-16533c4388a2.png",
     features: [
       "Financial management assessment",
       "Security and risk analysis",
