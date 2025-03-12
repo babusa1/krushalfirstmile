@@ -170,7 +170,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         
         <div className="pt-4">
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-            Your message will be sent to <span className="font-semibold">info@krushal.com</span>. We'll respond within 24 hours.
+            Your message will be sent to <span className="font-semibold">info@krushal.in</span>. We'll respond within 24 hours.
           </p>
           <button
             type="submit"
