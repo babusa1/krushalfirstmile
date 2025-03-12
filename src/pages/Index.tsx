@@ -60,6 +60,13 @@ const Index = () => {
     }
   };
 
+  const scrollToAgentList = () => {
+    const agentListSection = document.getElementById('agent-list');
+    if (agentListSection) {
+      agentListSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const scrollToRequestForm = () => {
     setShowRequestForm(true);
     setTimeout(() => {
@@ -100,12 +107,12 @@ const Index = () => {
                   {t('hero.submit')}
                 </button>
                 
-                <a 
-                  href="#agent-list"
+                <button 
+                  onClick={scrollToAgentList}
                   className="px-6 py-3 border border-krushal-purple text-krushal-purple rounded-md font-medium hover:bg-krushal-purple/10 transition-colors flex items-center justify-center text-base"
                 >
                   {t('hero.explore')}
-                </a>
+                </button>
               </div>
             </motion.div>
             
@@ -136,13 +143,13 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 md:mt-24 text-center"
           >
-            <a 
-              href="#agent-list"
+            <button 
+              onClick={scrollToAgentList}
               className="inline-flex flex-col items-center text-krushal-purple dark:text-krushal-lightPurple hover:text-krushal-brightPurple dark:hover:text-white transition-colors"
             >
               <span className="text-base font-medium mb-2">{t('hero.discover')}</span>
               <ChevronDown className="h-6 w-6 animate-bounce" />
-            </a>
+            </button>
           </motion.div>
         </div>
       </section>
