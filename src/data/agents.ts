@@ -373,24 +373,27 @@ export const allAgents: Agent[] = [
     category: "Women & Self-Help Groups (SHGs)",
     image: "/lovable-uploads/267b6dc5-4d55-4fc1-8ab9-13e897abfede.png"
   },
-  // Technology & Mobile Usage
+  // Technology & Mobile Usage - Updated with new images
   {
     id: "agent47",
     title: "Smartphone Usage for Business & Learning Advisor",
     description: "Offers tips on using smartphones for business and learning purposes.",
-    category: "Technology & Mobile Usage"
+    category: "Technology & Mobile Usage",
+    image: "/lovable-uploads/eb6f3c72-78a4-4383-bc96-d88bee93cce1.png"
   },
   {
     id: "agent48",
     title: "Social Media Management Agent",
     description: "Provides tips and tools for managing social media accounts for personal or business use.",
-    category: "Technology & Mobile Usage"
+    category: "Technology & Mobile Usage",
+    image: "/lovable-uploads/b506156b-6dea-4b73-aecd-71dbbbcc7296.png"
   },
   {
     id: "agent49",
     title: "Internet Connectivity Advisor",
     description: "Helps individuals find the best options for internet connectivity in their areas.",
-    category: "Technology & Mobile Usage"
+    category: "Technology & Mobile Usage",
+    image: "/lovable-uploads/7bb98b25-c033-4cf7-9d33-f99a73169c93.png"
   },
   {
     id: "agent50",

@@ -95,7 +95,12 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "RTI & Grievance Redressal Agent": "/lovable-uploads/7d6b08d2-c6e2-4475-ad49-9f747a2e0caa.png",
       "Village Development Project Assistant": "/lovable-uploads/5f2d27db-914f-41a8-acd2-3629b8430b34.png",
       "Legal Aid & Property Law Advisor": "/lovable-uploads/520da880-f93b-48a0-97ff-1f12c27a759e.png",
-      "Panchayat and Local Governance Advisor": "/lovable-uploads/90d4f459-e479-4a3c-a935-a1fa00bfeebe.png"
+      "Panchayat and Local Governance Advisor": "/lovable-uploads/90d4f459-e479-4a3c-a935-a1fa00bfeebe.png",
+      
+      // Technology & Mobile Usage - New images
+      "Smartphone Usage for Business & Learning Advisor": "/lovable-uploads/eb6f3c72-78a4-4383-bc96-d88bee93cce1.png",
+      "Social Media Management Agent": "/lovable-uploads/b506156b-6dea-4b73-aecd-71dbbbcc7296.png",
+      "Internet Connectivity Advisor": "/lovable-uploads/7bb98b25-c033-4cf7-9d33-f99a73169c93.png",
     };
     
     return agentImages[agent.title];
