@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
@@ -6,7 +7,7 @@ import emailjs from 'emailjs-com';
 
 // EmailJS credentials
 const EMAILJS_PUBLIC_KEY = "_oSvg9u-Rl1m3PVeH";
-const EMAILJS_SERVICE_ID = "service_ql61pdg";
+const EMAILJS_SERVICE_ID = "service_70acfne";
 const EMAILJS_CONTACT_TEMPLATE_ID = "template_wxzqq2i";
 
 // Initialize EmailJS with your public key

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -9,7 +10,7 @@ import emailjs from 'emailjs-com';
 
 // EmailJS credentials
 const EMAILJS_PUBLIC_KEY = "_oSvg9u-Rl1m3PVeH";
-const EMAILJS_SERVICE_ID = "service_ql61pdg";
+const EMAILJS_SERVICE_ID = "service_70acfne";
 const EMAILJS_AGENT_TEMPLATE_ID = "template_a6w9pqj";
 
 // Initialize EmailJS with your public key
