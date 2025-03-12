@@ -9,14 +9,14 @@ This application uses EmailJS to send emails directly from JavaScript without a 
 ## Step 2: Connect Your Email Service
 1. In your EmailJS dashboard, go to "Email Services"
 2. Click "Add New Service" 
-3. Choose your email provider (Gmail, Outlook, etc.)
+3. Choose your email provider (for krushal.in domain)
 4. Follow the authentication steps
 
 ## Step 3: Create Email Templates
 1. Go to "Email Templates" in your dashboard
 2. Create two templates:
-   - One for contact form submissions
-   - One for agent submissions
+   - One for contact form submissions (emails will be sent to info@krushal.in)
+   - One for agent submissions (emails will be sent to agents@krushal.in)
 3. Use these template parameters:
    - Contact form template: `from_name`, `reply_to`, `phone_number`, `message`, `to_email`
    - Agent form template: `to_email`, `from_name`, `from_email`, `subject`, `message`

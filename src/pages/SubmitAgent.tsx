@@ -91,7 +91,7 @@ const SubmitAgent = () => {
 
       // EmailJS configuration
       const templateParams = {
-        to_email: 'krushal@example.com', // Change this to your actual email
+        to_email: 'agents@krushal.in', // Updated to your official email domain
         from_name: formData.fullName,
         from_email: formData.email,
         subject: `New Agent Submission: ${formData.agentName}`,

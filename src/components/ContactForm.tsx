@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
@@ -50,7 +51,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         reply_to: formData.email,
         phone_number: formData.phone,
         message: formData.message,
-        to_email: 'info@krushal.com' // Change this to your actual email
+        to_email: 'info@krushal.in' // Updated to your official email domain
       };
 
       // Send email using EmailJS
