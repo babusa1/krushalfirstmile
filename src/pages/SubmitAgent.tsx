@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -7,9 +6,6 @@ import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import emailjs from 'emailjs-com';
-
-// Initialize EmailJS when the component mounts
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY");
 
 const categories = [
   "Agriculture & Farming",
@@ -24,6 +20,12 @@ const categories = [
   "Technology & Mobile Usage",
   "Local Governance & Legal Issues"
 ];
+
+// Initialize EmailJS with your public key (same as in ContactForm)
+emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your actual public key
+
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE"; // Replace with your actual service ID
+const EMAILJS_AGENT_TEMPLATE_ID = "YOUR_AGENT_TEMPLATE_ID_HERE"; // Replace with your actual template ID
 
 const SubmitAgent = () => {
   const navigate = useNavigate();
@@ -66,7 +68,6 @@ const SubmitAgent = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare email content
       const emailContent = `
         New Agent Submission:
         
@@ -89,19 +90,17 @@ const SubmitAgent = () => {
         Technology Used: ${formData.technology}
       `;
 
-      // EmailJS configuration
       const templateParams = {
-        to_email: 'info@krushal.in', // Updated from agents@krushal.in to info@krushal.in
+        to_email: 'info@krushal.in',
         from_name: formData.fullName,
         from_email: formData.email,
         subject: `New Agent Submission: ${formData.agentName}`,
         message: emailContent,
       };
 
-      // Send email using EmailJS
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
-        import.meta.env.VITE_EMAILJS_AGENT_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_AGENT_TEMPLATE_ID,
         templateParams
       );
 

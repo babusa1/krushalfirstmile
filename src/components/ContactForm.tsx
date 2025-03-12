@@ -5,6 +5,9 @@ import { X, Send, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import emailjs from 'emailjs-com';
 
+// Initialize EmailJS with your public key
+emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your actual public key
+
 interface ContactFormProps {
   onClose: () => void;
 }
@@ -25,8 +28,8 @@ const initialFormData: FormData = {
   message: ''
 };
 
-// Initialize EmailJS when the component mounts
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY"); 
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE"; // Replace with your actual service ID
+const EMAILJS_CONTACT_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE"; // Replace with your actual template ID
 
 const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -45,19 +48,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     setIsSubmitting(true);
 
     try {
-      // Prepare template parameters
       const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
         reply_to: formData.email,
         phone_number: formData.phone,
         message: formData.message,
-        to_email: 'info@krushal.in' // Updated to your official email domain
+        to_email: 'info@krushal.in'
       };
 
-      // Send email using EmailJS
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID", 
-        import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID || "YOUR_TEMPLATE_ID", 
+        EMAILJS_SERVICE_ID,
+        EMAILJS_CONTACT_TEMPLATE_ID,
         templateParams
       );
 
