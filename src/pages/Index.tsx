@@ -89,7 +89,7 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Section with Integrated Carousel */}
-      <section className="pt-24 md:pt-32 lg:pt-36 pb-16 px-6" id="featured-agents">
+      <section className="pt-24 md:pt-32 lg:pt-36 pb-8 px-6" id="featured-agents">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <motion.div 
@@ -148,7 +148,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 md:mt-24 text-center"
+            className="mt-8 text-center"
           >
             <button 
               onClick={scrollToAgentList}
@@ -161,8 +161,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Category Section */}
-      <section className="py-16 px-6 bg-white dark:bg-gray-900">
+      {/* Category Section - Reduced top padding */}
+      <section className="py-8 px-6 bg-white dark:bg-gray-900">
         <CategorySection 
           onCategoryClick={handleCategoryClick} 
           onExploreCategory={handleExploreCategory}
