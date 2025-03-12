@@ -71,6 +71,15 @@ const SubmitAgent = () => {
     setIsSubmitting(true);
 
     try {
+      // Convert file to base64 if it exists
+      let fileData = '';
+      let fileName = '';
+      
+      if (formData.file) {
+        fileData = await convertFileToBase64(formData.file);
+        fileName = formData.file.name;
+      }
+
       const emailContent = `
         New Agent Submission:
         
@@ -91,6 +100,7 @@ const SubmitAgent = () => {
         ------------------
         User Benefits: ${formData.userBenefits}
         Technology Used: ${formData.technology}
+        ${fileName ? `Attachment: ${fileName}` : 'No attachment provided'}
       `;
 
       const templateParams = {
@@ -99,6 +109,8 @@ const SubmitAgent = () => {
         from_email: formData.email,
         subject: `New Agent Submission: ${formData.agentName}`,
         message: emailContent,
+        file_data: fileData,
+        file_name: fileName
       };
 
       await emailjs.send(
@@ -115,6 +127,16 @@ const SubmitAgent = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Helper function to convert file to base64
+  const convertFileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
+    });
   };
 
   return (
