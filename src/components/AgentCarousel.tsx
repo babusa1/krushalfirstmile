@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Cow, Milk } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Beef, Milk } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AgentCard, { Agent } from './AgentCard';
 import { getAgentImage } from '@/lib/agent-image-utils';
@@ -26,7 +25,7 @@ const AgentCarousel: React.FC<AgentCarouselProps> = ({ agents, onAgentClick, com
 
   // Get agent-specific icon
   const getAgentIcon = (title: string) => {
-    if (title.includes("Ration")) return <Cow className="mr-2 h-5 w-5 text-secondary" />;
+    if (title.includes("Ration")) return <Beef className="mr-2 h-5 w-5 text-secondary" />;
     if (title.includes("Milk")) return <Milk className="mr-2 h-5 w-5 text-secondary" />;
     return null;
   };
