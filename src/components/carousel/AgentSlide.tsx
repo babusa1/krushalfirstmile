@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Beef, Milk, ExternalLink, InfoIcon } from 'lucide-react';
+import { Beef, Milk } from 'lucide-react';
 import AgentCard, { Agent } from '../AgentCard';
 import OptimizedImage from '../OptimizedImage';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -61,7 +61,7 @@ const AgentSlide: React.FC<AgentSlideProps> = ({ agent, featured, onClick }) => 
           
           {agent.features && (
             <div className="mt-3">
-              <p className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Key Features:</p>
+              <p className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">{t('key.features')}:</p>
               <ul className="text-xs space-y-1">
                 {agent.features.slice(0, 3).map((feature, idx) => (
                   <li key={idx} className="flex items-start">
@@ -77,7 +77,7 @@ const AgentSlide: React.FC<AgentSlideProps> = ({ agent, featured, onClick }) => 
             onClick={onClick}
             className="mt-4 w-full py-2 bg-primary/10 hover:bg-primary/20 text-primary font-medium rounded-md transition-colors text-sm flex items-center justify-center"
           >
-            Learn More
+            {t('learn.more')}
           </button>
         </div>
       </div>
