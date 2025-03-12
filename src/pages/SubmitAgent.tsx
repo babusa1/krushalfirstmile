@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -6,6 +7,9 @@ import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import emailjs from 'emailjs-com';
+
+// Initialize EmailJS when the component mounts
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY");
 
 const categories = [
   "Agriculture & Farming",
@@ -87,7 +91,7 @@ const SubmitAgent = () => {
 
       // EmailJS configuration
       const templateParams = {
-        to_email: 'krushal@example.com', // Replace with actual Krushal email
+        to_email: 'krushal@example.com', // Change this to your actual email
         from_name: formData.fullName,
         from_email: formData.email,
         subject: `New Agent Submission: ${formData.agentName}`,
@@ -96,8 +100,8 @@ const SubmitAgent = () => {
 
       // Send email using EmailJS
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
+        import.meta.env.VITE_EMAILJS_AGENT_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
         templateParams
       );
 
