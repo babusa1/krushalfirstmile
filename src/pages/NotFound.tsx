@@ -1,6 +1,6 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Seo from '@/components/Seo';
 
 const NotFound = () => {
   const location = useLocation();
@@ -14,6 +14,13 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+      <Seo 
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Return to Krushal's home page to explore our AI-powered agriculture and dairy farming solutions."
+        canonicalUrl="https://krushal.ai/404"
+        ogType="website"
+      />
+      
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4 text-krushal-darkPurple dark:text-white">404</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">Oops! Page not found</p>

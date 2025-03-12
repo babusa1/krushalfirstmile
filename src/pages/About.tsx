@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, LineChart, Users, Zap, Leaf, Lightbulb, Heart } from 'lucide-react';
+import Seo from '@/components/Seo';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -22,7 +23,12 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Navbar />
+      <Seo 
+        title="About Us"
+        description="Learn about Krushal's mission to transform agriculture and dairy farming through innovative AI solutions. Discover how we're empowering farmers with smart technology."
+        canonicalUrl="https://krushal.ai/about"
+        keywords="Krushal mission, dairy farming innovation, agricultural technology, smart farming solutions, AI in agriculture"
+      />
       
       {/* Hero Section */}
       <section className="pt-32 md:pt-40 pb-20 px-6 relative overflow-hidden">

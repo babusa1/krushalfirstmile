@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -7,6 +6,7 @@ import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import emailjs from 'emailjs-com';
+import Seo from '@/components/Seo';
 
 // EmailJS credentials
 const EMAILJS_PUBLIC_KEY = "_oSvg9u-Rl1m3PVeH";
@@ -109,6 +109,14 @@ const SubmitAgent = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <Seo 
+        title="Submit Your Agent"
+        description="Submit your agricultural or dairy farming AI agent for evaluation. Join Krushal's ecosystem of smart farming solutions and help transform the agricultural sector."
+        canonicalUrl="https://krushal.ai/submit-agent"
+        keywords="submit agent, agricultural AI, farming technology, smart farming solutions, Krushal platform"
+        ogType="website"
+      />
+      
       {/* Breadcrumb */}
       <nav className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
