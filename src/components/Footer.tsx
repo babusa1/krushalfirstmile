@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -111,13 +110,13 @@ const Footer: React.FC = () => {
               <li className="flex flex-col space-y-2">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-deep-orange-500 dark:text-deep-orange-300" />
-                  <a href="mailto:info@krushalconnect.com" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
-                    info@krushalconnect.com
+                  <a href="mailto:info@krushal.in" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
+                    info@krushal.in
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 ml-8">
-                  <a href="mailto:support@krushalconnect.com" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
-                    support@krushalconnect.com
+                  <a href="mailto:support@krushal.in" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
+                    support@krushal.in
                   </a>
                 </div>
               </li>
