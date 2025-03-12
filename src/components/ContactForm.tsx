@@ -1,16 +1,13 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Send, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import emailjs from 'emailjs-com';
 
-// ============================================================
-// REPLACE THESE VALUES WITH YOUR ACTUAL EMAILJS CREDENTIALS
-// ============================================================
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE"; // Replace with your actual public key
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE"; // Replace with your actual service ID
-const EMAILJS_CONTACT_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE"; // Replace with your actual template ID
+// EmailJS credentials
+const EMAILJS_PUBLIC_KEY = "_oSvg9u-Rl1m3PVeH";
+const EMAILJS_SERVICE_ID = "service_ql61pdg";
+const EMAILJS_CONTACT_TEMPLATE_ID = "template_wxzqq2i";
 
 // Initialize EmailJS with your public key
 emailjs.init(EMAILJS_PUBLIC_KEY);

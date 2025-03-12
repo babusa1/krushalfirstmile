@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -8,12 +7,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import emailjs from 'emailjs-com';
 
-// ============================================================
-// REPLACE THESE VALUES WITH YOUR ACTUAL EMAILJS CREDENTIALS
-// ============================================================
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE"; // Replace with your actual public key
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE"; // Replace with your actual service ID
-const EMAILJS_AGENT_TEMPLATE_ID = "YOUR_AGENT_TEMPLATE_ID_HERE"; // Replace with your actual template ID
+// EmailJS credentials
+const EMAILJS_PUBLIC_KEY = "_oSvg9u-Rl1m3PVeH";
+const EMAILJS_SERVICE_ID = "service_ql61pdg";
+const EMAILJS_AGENT_TEMPLATE_ID = "template_a6w9pqj";
 
 // Initialize EmailJS with your public key
 emailjs.init(EMAILJS_PUBLIC_KEY);
