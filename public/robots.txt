@@ -1,0 +1,7 @@
+
+# Robots.txt for Krushal First Mile
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://krushal.ai/sitemap.xml

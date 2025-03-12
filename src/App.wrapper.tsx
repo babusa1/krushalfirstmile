@@ -1,21 +1,22 @@
 
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import Index from './pages/Index';
-import NotFound from './pages/NotFound';
-import Contact from './pages/Contact';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import { Toaster } from '@/components/ui/toaster';
+import App from './App';
 
-export const AppContent: React.FC = () => {
-  const location = useLocation();
-
+const AppWrapper = () => {
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Index />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AnimatePresence>
+    <BrowserRouter>
+      <HelmetProvider>
+        <LanguageProvider>
+          <App />
+          <Toaster />
+        </LanguageProvider>
+      </HelmetProvider>
+    </BrowserRouter>
   );
 };
+
+export default AppWrapper;

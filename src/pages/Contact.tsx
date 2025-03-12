@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import Seo from '@/components/Seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact: React.FC = () => {
@@ -12,6 +13,13 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
+      <Seo 
+        title="Contact Us"
+        description="Get in touch with Krushal First Mile for any questions about our AI-powered agriculture and dairy farming solutions."
+        canonicalUrl="https://krushal.ai/contact"
+        keywords="contact Krushal, agriculture support, dairy farming help, get in touch"
+      />
+      
       <Navbar />
       
       <section className="pt-28 md:pt-32 pb-16 px-6 flex-grow">

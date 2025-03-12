@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
@@ -6,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AgentDetailsModal from '@/components/AgentDetailsModal';
 import CategorizedAgentList from '@/components/CategorizedAgentList';
+import Seo from '@/components/Seo';
 import { Agent } from '@/components/AgentCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { allAgents } from '@/data/agents';
@@ -30,8 +30,24 @@ const Agents = () => {
     return category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ');
   };
 
+  // Dynamic SEO title and description based on category
+  const seoTitle = categoryParam 
+    ? `${formatCategoryName(categoryParam)} Solutions` 
+    : 'All Agriculture & Dairy Solutions';
+    
+  const seoDescription = categoryParam
+    ? `Explore Krushal's AI-powered ${formatCategoryName(categoryParam).toLowerCase()} solutions for agriculture and dairy farming.`
+    : 'Browse all Krushal AI solutions for agriculture and dairy farming. Find the perfect tools for your farm management needs.';
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
+      <Seo 
+        title={seoTitle}
+        description={seoDescription}
+        canonicalUrl={`https://krushal.ai/agents${categoryParam ? `?category=${categoryParam}` : ''}`}
+        keywords={`Krushal agents, ${categoryParam || 'agriculture solutions'}, dairy farming tools, farm management`}
+      />
+      
       <Navbar />
 
       {/* Page Header */}

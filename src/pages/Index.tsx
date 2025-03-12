@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +8,7 @@ import AgentDetailsModal from '@/components/AgentDetailsModal';
 import CategorySection from '@/components/CategorySection';
 import CategorizedAgentList from '@/components/CategorizedAgentList';
 import RequestForm from '@/components/RequestForm';
+import Seo from '@/components/Seo';
 import { Agent } from '@/components/AgentCard';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -79,6 +79,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
+      <Seo 
+        title="Smart Agriculture & Dairy Solutions"
+        description="Krushal's AI-powered solutions for dairy farming, agriculture, and livestock management. Get personalized ration recommendations and milk volume predictions for your cattle."
+        canonicalUrl="https://krushal.ai/"
+        keywords="Krushal, dairy farming, agriculture, smart ration, milk prediction, livestock management, farm technology, AI agriculture, Jersey cows, HF cows"
+      />
+      
       <Navbar />
 
       {/* Hero Section with Integrated Carousel */}
