@@ -46,16 +46,13 @@ const Navbar = () => {
     >
       {/* Main navbar container - simplified for mobile */}
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo with Tagline */}
-        <Link to="/" className="flex flex-col items-start">
+        {/* Logo without Tagline */}
+        <Link to="/" className="flex items-center">
           <img
             src="/lovable-uploads/bc35cced-b481-467a-881f-6942a879f36e.png"
             alt="App Advisory"
             className="h-8 sm:h-10 w-auto"
           />
-          <span className="text-[#F97316] text-sm sm:text-base font-semibold mt-0.5">
-            The definitive guide to scoping, selling, pricing and delivering App Advisory as a service.
-          </span>
         </Link>
 
         {/* Desktop Navigation - hidden on mobile */}
