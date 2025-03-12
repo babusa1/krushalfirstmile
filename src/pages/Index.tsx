@@ -199,7 +199,7 @@ const Index = () => {
           <CategorizedAgentList 
             agents={allAgents} 
             onAgentClick={handleAgentClick} 
-            categoryTitle={t('available.title')}
+            categoryTitle={t('list.of.agents')}
             searchPlaceholder={t('available.search')}
             allCategoriesLabel={t('available.all')}
             noAgentsMessage={t('available.none')}

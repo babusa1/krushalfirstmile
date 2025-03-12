@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define available languages (just English for now)
@@ -167,7 +166,8 @@ const translations: Record<Language, Record<string, string>> = {
     'about.team.description': 'Krushal is led by a diverse team of experts passionate about technology, rural development, and sustainable business innovation.',
     'about.cta.title': 'Join the First Mile Revolution',
     'about.cta.description': 'Whether you\'re a business looking to optimize your first-mile operations, an innovator with an AI solution, or a community seeking technological transformation, we invite you to connect with Krushal.',
-    'about.cta.button': 'Get in Touch'
+    'about.cta.button': 'Get in Touch',
+    'list.of.agents': 'List of Agents'
   }
 };
 
