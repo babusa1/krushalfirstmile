@@ -4,6 +4,7 @@ import { Beef, Milk } from 'lucide-react';
 import AgentCard, { Agent } from '../AgentCard';
 import OptimizedImage from '../OptimizedImage';
 import { useLanguage } from '@/contexts/LanguageContext';
+import AgentImage from '../agent/AgentImage';
 
 interface AgentSlideProps {
   agent: Agent;
@@ -29,14 +30,14 @@ const AgentSlide: React.FC<AgentSlideProps> = ({ agent, featured, onClick }) => 
   if (isSpecialAgent) {
     return (
       <div className="bg-white dark:bg-primary/90 rounded-lg shadow-lg overflow-hidden">
-        <div className="h-40 sm:h-44 overflow-hidden relative">
+        <div className="h-56 sm:h-60 overflow-hidden relative">
           <OptimizedImage 
             src={agent.image}
             alt={`${agent.title} - ${agent.category} agent`}
             className="w-full h-full transition-transform duration-500 hover:scale-105"
-            objectFit="cover"
+            objectFit="contain"
             width={800}
-            height={400}
+            height={600}
             priority={featured}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
