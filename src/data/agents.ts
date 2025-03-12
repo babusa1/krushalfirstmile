@@ -306,31 +306,36 @@ export const allAgents: Agent[] = [
     id: "agent37",
     title: "Online Banking Assistance",
     description: "Guides individuals on using online banking services like UPI and Aadhaar-linked payments.",
-    category: "Digital & Financial Services"
+    category: "Digital & Financial Services",
+    image: "/lovable-uploads/61c3f479-4b38-44a8-8b4c-f04c9ba3bfa3.png" // Updated with new online banking image
   },
   {
     id: "agent38",
     title: "KYC Documentation Advisor",
     description: "Helps individuals complete Know Your Customer (KYC) processes for various services.",
-    category: "Digital & Financial Services"
+    category: "Digital & Financial Services",
+    image: "/lovable-uploads/fc7fbd41-a077-4b46-a240-34c5cb0bc5b0.png" // Updated with new KYC image
   },
   {
     id: "agent39",
     title: "Government Portals Access Assistant",
     description: "Assists in navigating government portals such as DigiLocker and UMANG for services and records.",
-    category: "Digital & Financial Services"
+    category: "Digital & Financial Services",
+    image: "/lovable-uploads/5f36b521-7570-424e-9ded-dc94cb3c4a17.png" // Updated with new government portals image
   },
   {
     id: "agent40",
     title: "Cybersecurity Awareness Agent",
     description: "Educates users about cybersecurity best practices to protect personal and financial information.",
-    category: "Digital & Financial Services"
+    category: "Digital & Financial Services",
+    image: "/lovable-uploads/3e824660-1a25-4880-809d-29bc3711401a.png" // Updated with new cybersecurity image
   },
   {
     id: "agent41",
     title: "Digital Payment Solutions Guide",
     description: "Provides information on digital payment options and how to use them effectively.",
-    category: "Digital & Financial Services"
+    category: "Digital & Financial Services",
+    image: "/lovable-uploads/06b197e0-ef65-4978-9c56-3001421522e5.png" // Updated with new digital payment image
   },
   // Women & Self-Help Groups (SHGs)
   {

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -35,12 +34,15 @@ const AgentCard: React.FC<AgentCardProps> = ({
   // Map of agent titles to the specific images
   const getAgentSpecificImage = () => {
     const agentImages: Record<string, string> = {
-      // Financial Services - Updated with new image
+      // Financial Services - Updated with new images
       "Mortgage Document Extractor": "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
-      
-      // Financial Services - Updated with new image
       "Technical Evaluation for Fund Management": "/lovable-uploads/8306145d-3f75-4988-a6ff-16533c4388a2.png",
       "Market Price Predictor": "/lovable-uploads/2df351f7-015b-48ef-aaf1-6d155110e68a.png",
+      "Online Banking Assistance": "/lovable-uploads/61c3f479-4b38-44a8-8b4c-f04c9ba3bfa3.png", // New image
+      "KYC Documentation Advisor": "/lovable-uploads/fc7fbd41-a077-4b46-a240-34c5cb0bc5b0.png", // New image
+      "Government Portals Access Assistant": "/lovable-uploads/5f36b521-7570-424e-9ded-dc94cb3c4a17.png", // New image
+      "Cybersecurity Awareness Agent": "/lovable-uploads/3e824660-1a25-4880-809d-29bc3711401a.png", // New image
+      "Digital Payment Solutions Guide": "/lovable-uploads/06b197e0-ef65-4978-9c56-3001421522e5.png", // New image
       
       // Livestock & Dairy - Updated with new images
       "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png", // Updated image
@@ -102,7 +104,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
   // Generate fallback image based on category
   const getCategoryImage = () => {
     const categoryImages: Record<string, string> = {
-      "Digital & Financial Services": "/lovable-uploads/85ed5798-b670-4cf6-9791-bae7e5eb46fc.png",
+      "Digital & Financial Services": "/lovable-uploads/61c3f479-4b38-44a8-8b4c-f04c9ba3bfa3.png", // Updated with new online banking image as category image
       "Livestock & Dairy": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
       "Agriculture & Farming": "/lovable-uploads/bb45d9fa-e284-4e60-9bc4-2665120beff9.png",
       "Healthcare & Medicine": "/lovable-uploads/41a33d28-bbc5-4d26-9c4c-d4683a37f1ff.png",
