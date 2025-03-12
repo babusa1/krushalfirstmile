@@ -1,4 +1,5 @@
 
+
 # EmailJS Integration Instructions
 
 This application uses EmailJS to send emails directly from JavaScript without a server. Follow these steps to set it up:
@@ -16,7 +17,7 @@ This application uses EmailJS to send emails directly from JavaScript without a 
 1. Go to "Email Templates" in your dashboard
 2. Create two templates:
    - One for contact form submissions (emails will be sent to info@krushal.in)
-   - One for agent submissions (emails will be sent to agents@krushal.in)
+   - One for agent submissions (emails will be sent to info@krushal.in)
 3. Use these template parameters:
    - Contact form template: `from_name`, `reply_to`, `phone_number`, `message`, `to_email`
    - Agent form template: `to_email`, `from_name`, `from_email`, `subject`, `message`
@@ -42,3 +43,4 @@ After setting up, test both forms to ensure emails are being sent correctly.
 ## Additional Resources
 - [EmailJS Documentation](https://www.emailjs.com/docs/)
 - [EmailJS React Guide](https://www.emailjs.com/docs/examples/reactjs/)
+
