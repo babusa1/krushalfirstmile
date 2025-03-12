@@ -40,7 +40,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-4 sm:px-6',
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm dark:bg-krushal-darkPurple/90'
+          ? 'bg-white/90 backdrop-blur-md shadow-sm dark:bg-primary/90'
           : 'bg-transparent'
       )}
     >
@@ -49,12 +49,12 @@ const Navbar = () => {
         {/* Logo with Tagline */}
         <Link to="/" className="flex flex-col items-start">
           <img
-            src="/lovable-uploads/f39e4e62-303a-4211-8623-78d6a814b86c.png"
-            alt="Krushal"
+            src="/lovable-uploads/bc35cced-b481-467a-881f-6942a879f36e.png"
+            alt="App Advisory"
             className="h-8 sm:h-10 w-auto"
           />
           <span className="text-[#F97316] text-sm sm:text-base font-semibold mt-0.5">
-            modernize the first mile
+            The definitive guide to scoping, selling, pricing and delivering App Advisory as a service.
           </span>
         </Link>
 
@@ -69,8 +69,8 @@ const Navbar = () => {
             className={cn(
               "px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm sm:text-base font-medium transition-all duration-300",
               isScrolled 
-                ? "bg-krushal-purple text-white hover:bg-krushal-brightPurple" 
-                : "bg-krushal-brightPurple text-white hover:bg-krushal-purple"
+                ? "bg-primary text-white hover:bg-primary/90" 
+                : "bg-primary text-white hover:bg-primary/90"
             )}
             onClick={scrollToRequestForm}
           >
@@ -81,7 +81,7 @@ const Navbar = () => {
         {/* Mobile Menu Button - Only visible on mobile */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden flex items-center justify-center h-10 w-10 text-krushal-darkPurple dark:text-white"
+          className="md:hidden flex items-center justify-center h-10 w-10 text-primary dark:text-white"
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? (
@@ -95,7 +95,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div
-          className="fixed top-[76px] sm:top-[88px] left-0 right-0 bg-white dark:bg-krushal-darkPurple shadow-lg md:hidden z-40"
+          className="fixed top-[76px] sm:top-[88px] left-0 right-0 bg-white dark:bg-primary/90 shadow-lg md:hidden z-40"
         >
           <nav className="container mx-auto py-4 flex flex-col space-y-4">
             <MobileNavLink href="/" label={t('nav.home')} onClick={() => setIsMobileMenuOpen(false)} />
@@ -103,7 +103,7 @@ const Navbar = () => {
             <MobileNavLink href="/about" label={t('nav.about')} onClick={() => setIsMobileMenuOpen(false)} />
             <MobileNavLink href="/contact" label={t('nav.contact')} onClick={() => setIsMobileMenuOpen(false)} />
             <button
-              className="w-full text-left text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-krushal-purple dark:text-krushal-lightPurple"
+              className="w-full text-left text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-primary dark:text-white"
               onClick={scrollToRequestForm}
             >
               {t('nav.list_agent') || "List your agent"}
@@ -127,8 +127,8 @@ const NavLink = ({ href, label, isScrolled }: NavLinkProps) => (
     className={cn(
       "text-sm lg:text-base font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full",
       isScrolled 
-        ? "text-krushal-darkPurple after:bg-krushal-purple dark:text-white dark:after:bg-white" 
-        : "text-krushal-purple after:bg-krushal-purple dark:text-white dark:after:bg-white"
+        ? "text-primary after:bg-primary dark:text-white dark:after:bg-white" 
+        : "text-primary after:bg-primary dark:text-white dark:after:bg-white"
     )}
   >
     {label}
@@ -145,7 +145,7 @@ const MobileNavLink = ({ href, label, onClick }: MobileNavLinkProps) => {
   return (
     <Link
       to={href}
-      className="text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-krushal-darkPurple dark:text-white"
+      className="text-base font-medium py-3 border-b border-gray-100 dark:border-gray-700 text-primary dark:text-white"
       onClick={onClick}
     >
       {label}

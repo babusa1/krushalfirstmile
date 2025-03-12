@@ -399,13 +399,15 @@ export const allAgents: Agent[] = [
     id: "agent50",
     title: "Mobile App Recommendations",
     description: "Recommends mobile apps that are helpful for farming, business management, and education.",
-    category: "Technology & Mobile Usage"
+    category: "Technology & Mobile Usage",
+    image: "/lovable-uploads/269c9c40-4eb7-4bba-a93b-6c2f2e46dd3e.png" // New image
   },
   {
     id: "agent51",
     title: "Technology Literacy Advisor",
     description: "Helps individuals learn basic and advanced technology skills to improve personal and professional life.",
-    category: "Technology & Mobile Usage"
+    category: "Technology & Mobile Usage",
+    image: "/lovable-uploads/3403b959-32d1-4695-9430-c4102875cb5f.png" // New image
   },
   // Local Governance & Legal Issues - Updated with new images
   {

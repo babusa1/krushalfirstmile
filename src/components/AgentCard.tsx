@@ -38,15 +38,15 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Mortgage Document Extractor": "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
       "Technical Evaluation for Fund Management": "/lovable-uploads/8306145d-3f75-4988-a6ff-16533c4388a2.png",
       "Market Price Predictor": "/lovable-uploads/2df351f7-015b-48ef-aaf1-6d155110e68a.png",
-      "Online Banking Assistance": "/lovable-uploads/61c3f479-4b38-44a8-8b4c-f04c9ba3bfa3.png", // New image
-      "KYC Documentation Advisor": "/lovable-uploads/fc7fbd41-a077-4b46-a240-34c5cb0bc5b0.png", // New image
-      "Government Portals Access Assistant": "/lovable-uploads/5f36b521-7570-424e-9ded-dc94cb3c4a17.png", // New image
-      "Cybersecurity Awareness Agent": "/lovable-uploads/3e824660-1a25-4880-809d-29bc3711401a.png", // New image
-      "Digital Payment Solutions Guide": "/lovable-uploads/06b197e0-ef65-4978-9c56-3001421522e5.png", // New image
+      "Online Banking Assistance": "/lovable-uploads/61c3f479-4b38-44a8-8b4c-f04c9ba3bfa3.png", 
+      "KYC Documentation Advisor": "/lovable-uploads/fc7fbd41-a077-4b46-a240-34c5cb0bc5b0.png", 
+      "Government Portals Access Assistant": "/lovable-uploads/5f36b521-7570-424e-9ded-dc94cb3c4a17.png", 
+      "Cybersecurity Awareness Agent": "/lovable-uploads/3e824660-1a25-4880-809d-29bc3711401a.png", 
+      "Digital Payment Solutions Guide": "/lovable-uploads/06b197e0-ef65-4978-9c56-3001421522e5.png", 
       
       // Livestock & Dairy - Updated with new images
-      "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png", // Updated image
-      "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png", // Updated image
+      "Smart Ration Agent for HF and Jersey Cows": "/lovable-uploads/2469e757-63a6-495b-b0ed-22e6ea7a7928.png", 
+      "Milk Volume Predictor for Dairy Cows": "/lovable-uploads/e705b3f9-ded6-4482-938d-33939973d249.png", 
       "Livestock Management Advisory": "/lovable-uploads/0719067b-f4de-48a7-ab89-0d65d2817830.png",
       "Dairy Production Optimizer": "/lovable-uploads/d4612a36-0fef-4e4f-be3e-e8d0f6ceb989.png",
       "Animal Disease Identifier": "/lovable-uploads/8433dbd9-ace0-4933-afa2-07c43d0e662e.png",
@@ -62,8 +62,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Free Medical Care Finder": "/lovable-uploads/020b7723-7f3b-4818-992f-0498b5b3e2c0.png",
       "Common Disease Remedies Advisor": "/lovable-uploads/f5045f36-6e61-4c40-8fea-d78f3007223b.png",
       "Maternal & Child Health Assistant": "/lovable-uploads/66bd66c5-3459-4f2d-be99-f099c259c166.png",
-      "Nearest PHC/CHC Locator": "/lovable-uploads/e8949723-18f7-400d-a706-7430318d2b77.png", // Added new image
-      "Vaccination Schedule Advisor": "/lovable-uploads/182cdf45-08d0-4bf7-923b-0d31c4334afb.png", // Added new image
+      "Nearest PHC/CHC Locator": "/lovable-uploads/e8949723-18f7-400d-a706-7430318d2b77.png", 
+      "Vaccination Schedule Advisor": "/lovable-uploads/182cdf45-08d0-4bf7-923b-0d31c4334afb.png", 
       
       // Weather & Disaster - Updated with new images
       "Weather Forecast Agent": "/lovable-uploads/ec334291-5296-49b2-9841-877a1edaf326.png",
@@ -101,6 +101,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Smartphone Usage for Business & Learning Advisor": "/lovable-uploads/eb6f3c72-78a4-4383-bc96-d88bee93cce1.png",
       "Social Media Management Agent": "/lovable-uploads/b506156b-6dea-4b73-aecd-71dbbbcc7296.png",
       "Internet Connectivity Advisor": "/lovable-uploads/7bb98b25-c033-4cf7-9d33-f99a73169c93.png",
+      "Mobile App Recommendations": "/lovable-uploads/269c9c40-4eb7-4bba-a93b-6c2f2e46dd3e.png", // New image
+      "Technology Literacy Advisor": "/lovable-uploads/3403b959-32d1-4695-9430-c4102875cb5f.png", // New image
     };
     
     return agentImages[agent.title];
@@ -118,7 +120,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
       "Education & Skill Development": "/lovable-uploads/a8ec3a7f-0b13-4f9f-9a19-4ad9393b0b3d.png",
       "Employment & Livelihood": "/lovable-uploads/37fcbdf5-c10c-47b1-8bd6-ee4d826cfbc9.png",
       "Women & Self-Help Groups (SHGs)": "/lovable-uploads/c369e240-ee98-4b58-a5c5-c6ee90fe4249.png", // Updated with the same image for SHGs category
-      "Technology & Mobile Usage": "/lovable-uploads/2fc287af-5e57-459d-af13-c3eb627b9390.png",
+      "Technology & Mobile Usage": "/lovable-uploads/269c9c40-4eb7-4bba-a93b-6c2f2e46dd3e.png", // Updated to use the new Mobile App Recommendations image
       "Local Governance & Legal Issues": "/lovable-uploads/90d4f459-e479-4a3c-a935-a1fa00bfeebe.png" // Updated to use one of the new images as category image
     };
     
