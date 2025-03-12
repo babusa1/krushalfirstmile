@@ -53,7 +53,7 @@ const Navbar = () => {
             alt="Krushal"
             className="h-8 sm:h-10 w-auto"
           />
-          <span className="text-[#F97316] text-xs sm:text-sm font-medium mt-0.5">
+          <span className="text-[#F97316] text-sm sm:text-base font-semibold mt-0.5">
             modernize the first mile
           </span>
         </Link>
