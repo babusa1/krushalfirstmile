@@ -120,14 +120,16 @@ const Footer: React.FC = () => {
                     +91 89560 19197
                   </a>
                 </div>
-                <div className="flex items-center space-x-3 ml-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-5 flex justify-center">
+                    <MessageSquare className="h-5 w-5 text-green-500 fill-green-100" />
+                  </div>
                   <a 
                     href="https://wa.me/918956019197" 
-                    className="text-gray-600 dark:text-gray-300 text-sm hover:text-green-600 dark:hover:text-green-400 transition-colors flex items-center"
+                    className="text-gray-600 dark:text-gray-300 text-sm hover:text-green-600 dark:hover:text-green-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageSquare className="h-4 w-4 text-green-500 mr-1.5 fill-green-100" />
                     +91 89560 19197
                   </a>
                 </div>
