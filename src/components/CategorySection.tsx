@@ -158,21 +158,21 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
               className="category-card-mobile hover:bg-gray-50 dark:hover:bg-gray-800/80 group cursor-pointer"
               onClick={() => onCategoryClick(category.id)}
             >
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10 text-primary dark:bg-primary/20 dark:text-krushal-lavender shrink-0">
+              <div className="flex items-start gap-3">
+                <div className="p-2.5 rounded-full bg-primary/10 text-primary dark:bg-primary/20 dark:text-krushal-lavender shrink-0">
                   {category.icon}
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors line-clamp-1">
+                <div className="flex-1 min-w-0">
+                  <h3 className="category-card-mobile-title group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors">
                     {/* Use shortName for screens smaller than sm breakpoint */}
                     <span className="sm:hidden">{category.shortName || category.name}</span>
                     <span className="hidden sm:inline">{category.name}</span>
                   </h3>
-                  <p className="text-base text-gray-600 dark:text-gray-300 mb-3 line-clamp-3">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-2 line-clamp-2 sm:line-clamp-3">
                     {category.description}
                   </p>
                   <div 
-                    className="flex items-center text-base font-medium text-krushal-purple dark:text-krushal-lightPurple"
+                    className="flex items-center text-sm sm:text-base font-medium text-krushal-purple dark:text-krushal-lightPurple"
                     onClick={(e) => handleExploreClick(e, category.id)}
                   >
                     <span>{t('categories.explore')}</span>

@@ -186,13 +186,14 @@
 .category-card-mobile {
   @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg;
   @apply border border-gray-200 dark:border-gray-700;
-  @apply p-5;
+  @apply p-4 sm:p-5;
   @apply transition-all duration-300 hover:shadow-xl;
 }
 
 /* Mobile-friendly category title */
 .category-card-mobile-title {
-  @apply text-lg font-semibold text-krushal-darkPurple dark:text-white truncate;
+  @apply text-base sm:text-lg font-semibold text-krushal-darkPurple dark:text-white;
+  @apply truncate mb-1;
 }
 
 /* Agent Card Enhancements with improved text size */
