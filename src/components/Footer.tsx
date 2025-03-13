@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -68,7 +69,6 @@ const Footer: React.FC = () => {
               <FooterLink href="/agents" label={t('nav.agents')} />
               <FooterLink href="/about" label={t('nav.about')} />
               <FooterLink href="/contact" label={t('nav.contact')} />
-              {/* Removed Blog link */}
             </ul>
           </motion.div>
           
@@ -113,11 +113,22 @@ const Footer: React.FC = () => {
                   info@krushal.in
                 </a>
               </li>
-              <li className="flex flex-col space-y-1">
+              <li className="flex flex-col space-y-2">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-deep-orange-500 dark:text-deep-orange-300" />
                   <a href="tel:+918956019197" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
                     +91 89560 19197
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 ml-8">
+                  <a 
+                    href="https://wa.me/918956019197" 
+                    className="text-gray-600 dark:text-gray-300 text-sm hover:text-green-600 dark:hover:text-green-400 transition-colors flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="bg-green-500 h-2.5 w-2.5 rounded-full mr-1.5 inline-block"></span>
+                    WhatsApp available
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 ml-8">
