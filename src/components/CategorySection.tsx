@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 interface Category {
   id: string;
   name: string;
+  shortName?: string; // Added shortName for mobile display
   description: string;
   icon: React.ReactNode;
 }
@@ -25,6 +26,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Agriculture & Farming",
       name: t('category.agriculture'),
+      shortName: "Agriculture",
       description: "Best farming techniques, crop diseases, weather forecasts, government schemes, market prices, fertilizers & pesticides",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,6 +37,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Livestock & Dairy",
       name: t('category.livestock'),
+      shortName: "Livestock",
       description: "Cattle, poultry, goat, and fish farming, animal diseases, veterinary care, dairy production, government subsidies",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,6 +48,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Government Schemes & Subsidies",
       name: t('category.schemes'),
+      shortName: "Govt. Schemes",
       description: "MGNREGA, PM-Kisan, Kisan Credit Card, PMAY-Gramin, Ayushman Bharat, Mudra loans, Fasal Bima Yojana",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,6 +59,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Healthcare & Medicine",
       name: t('category.healthcare'),
+      shortName: "Healthcare",
       description: "Free or affordable medical care, common disease remedies, nearest PHCs/CHCs, maternal & child health, vaccinations",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,6 +70,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Education & Skill Development",
       name: t('category.education'),
+      shortName: "Education",
       description: "Government scholarships, free online courses, vocational training (IT, carpentry, tailoring), English learning",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,6 +83,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Employment & Livelihood",
       name: t('category.employment'),
+      shortName: "Employment",
       description: "Government job vacancies (railways, teaching, police), private jobs, work-from-home, urban job migration",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,6 +94,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Digital & Financial Services",
       name: t('category.financial'),
+      shortName: "Digital Finance",
       description: "Online banking (UPI, Aadhaar-linked payments), KYC documentation, accessing govt portals (DigiLocker, UMANG), cybersecurity awareness",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,6 +105,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Weather & Disaster Management",
       name: t('category.weather'),
+      shortName: "Weather",
       description: "Rainfall predictions, flood & drought preparedness, cyclone alerts, disaster relief funds",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,6 +116,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
     {
       id: "Technology & Mobile Usage",
       name: t('category.technology'),
+      shortName: "Technology",
       description: "Smartphone usage for business & learning, social media (WhatsApp, Facebook, YouTube), internet connectivity",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -153,8 +163,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({ onCategoryClick, onEx
                   {category.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors">
-                    {category.name}
+                  <h3 className="text-xl font-semibold group-hover:text-primary dark:group-hover:text-krushal-lightPurple transition-colors line-clamp-1">
+                    {/* Use shortName for screens smaller than sm breakpoint */}
+                    <span className="sm:hidden">{category.shortName || category.name}</span>
+                    <span className="hidden sm:inline">{category.name}</span>
                   </h3>
                   <p className="text-base text-gray-600 dark:text-gray-300 mb-3 line-clamp-3">
                     {category.description}

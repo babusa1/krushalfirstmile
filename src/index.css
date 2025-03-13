@@ -190,6 +190,11 @@
   @apply transition-all duration-300 hover:shadow-xl;
 }
 
+/* Mobile-friendly category title */
+.category-card-mobile-title {
+  @apply text-lg font-semibold text-krushal-darkPurple dark:text-white truncate;
+}
+
 /* Agent Card Enhancements with improved text size */
 .agent-card-mobile {
   @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden;
