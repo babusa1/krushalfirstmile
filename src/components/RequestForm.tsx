@@ -37,7 +37,7 @@ const RequestForm: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-center"
+        className="space-y-4"
       >
         <button
           onClick={handleFormClick}
@@ -45,6 +45,10 @@ const RequestForm: React.FC = () => {
         >
           {t('nav.list_agent')}
         </button>
+        
+        <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-4">
+          Your message will be sent to info@krushal.in. We'll respond within 24 hours.
+        </p>
       </motion.div>
     </div>
   );
