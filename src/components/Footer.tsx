@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -123,8 +124,8 @@ const Footer: React.FC = () => {
               <li className="flex flex-col space-y-1">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-deep-orange-500 dark:text-deep-orange-300" />
-                  <a href="tel:+918001234567" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
-                    +91 (800) 123-4567
+                  <a href="tel:+918956019197" className="text-gray-600 dark:text-gray-300 text-sm hover:text-deep-purple-500 dark:hover:text-deep-purple-300 transition-colors">
+                    +91 89560 19197
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 ml-8">
