@@ -7,8 +7,15 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import SubmitAgent from './pages/SubmitAgent';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { initializeAnalytics } from './hooks/use-analytics';
+import { useEffect } from 'react';
 
 function App() {
+  // Initialize analytics when the app first loads
+  useEffect(() => {
+    initializeAnalytics();
+  }, []);
+
   return (
     <LanguageProvider>
       <Router>
