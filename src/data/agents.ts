@@ -1,22 +1,8 @@
 
 import { Agent } from '@/components/AgentCard';
 
-// Featured agents (Krushal Agents)
+// Featured agents (Krushal Agents) - Reordered to show Livestock & Dairy first
 export const featuredAgents: Agent[] = [
-  {
-    id: "agent1",
-    title: "Mortgage Document Extractor",
-    description: "AI agent trained to extract and process key information from mortgage documents, including warranty deeds, trust certifications, quit claim deeds, and more. Streamlines document processing for financial institutions and real estate professionals.",
-    category: "Digital & Financial Services",
-    image: "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
-    features: [
-      "Extracts data from Special Warranty Deeds",
-      "Processes Mortgage and Warranty Deed information",
-      "Handles Quit Claim Deeds and Trustee's Deeds",
-      "Manages Notice of Commencement and Termination",
-      "Extracts data from UCC Financing Statement Amendments"
-    ]
-  },
   {
     id: "agent2",
     title: "Smart Ration Agent for HF and Jersey Cows",
@@ -43,6 +29,20 @@ export const featuredAgents: Agent[] = [
       "Considers calvings, pregnancy status, and current production",
       "Aggregates projections at farm, route, and dairy levels",
       "Helps farmers assess income and dairies plan logistics"
+    ]
+  },
+  {
+    id: "agent1",
+    title: "Mortgage Document Extractor",
+    description: "AI agent trained to extract and process key information from mortgage documents, including warranty deeds, trust certifications, quit claim deeds, and more. Streamlines document processing for financial institutions and real estate professionals.",
+    category: "Digital & Financial Services",
+    image: "/lovable-uploads/07b4b28a-3781-4336-b1ff-73547e44b342.png",
+    features: [
+      "Extracts data from Special Warranty Deeds",
+      "Processes Mortgage and Warranty Deed information",
+      "Handles Quit Claim Deeds and Trustee's Deeds",
+      "Manages Notice of Commencement and Termination",
+      "Extracts data from UCC Financing Statement Amendments"
     ]
   },
   {
