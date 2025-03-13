@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Facebook, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactForm from './ContactForm';
 
@@ -127,8 +127,8 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="bg-green-500 h-2.5 w-2.5 rounded-full mr-1.5 inline-block"></span>
-                    WhatsApp available
+                    <MessageSquare className="h-4 w-4 text-green-500 mr-1.5 fill-green-100" />
+                    +91 89560 19197
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 ml-8">
